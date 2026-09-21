@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1960" height="2660" viewBox="0 0 1960 2660" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo1OWVlZDFmNy1kMDE4LTQ1MmQtYjNhMC1jOTdkMzViODliMTAAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaDKHHgGDq/R3gdvqx8EWoa4AAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDplZGMzYWNlNy00YWZmLTRiZWItYWYyOS02ZWEzZTdkNjcwZTBscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoNtjzArDF7MG38d/Kb+wccgAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggpA2UdZTO2Qmfyn1g/CNK8ilDs+W1IoefGOsO0YEg45ykZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaGMxkDn8Y9evTiUIVZkV9wsAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCC126+TldLma4MUazfq8IU0mU55ON2RdD+YTmc5J06ZymRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBjBZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjU5ZWVkMWY3LWQwMTgtNDUyZC1iM2EwLWM5N2QzNWI4OWIxMC9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjZlYjUxZjdjLTAxYzItNDFjMi1iYjliLTQyNTNhNWIwNTE1NnJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCCkDZR1lM7ZCZ/KfWD8I0ryKUOz5bUih58Y6w7RgSDjnKJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggV+JQjtNwmxTJ1asRrjZSIByX58ZhGvv3GnuS5ocjRb+iY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggrlx/umM/t6loXPyTZnlc0pCJzbroxd3FobchB/5LOFN0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQJlbQWpbCnnV+0l5+MlAz4JQ6rYWiQux+irOhYEC1iRB2tCnwTNQ0hNbNj8p5t+eV/5MyziRqvSQNGrNj5Ek6NI=</c2pa:manifest></metadata>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3A3F46"/></marker></defs>
+<rect width="1960" height="2660" fill="#FFFFFF"/>
+<text x="60.0" y="56.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="26" fill="#26292E" text-anchor="start" font-weight="700">중고거래 플랫폼 · IA / 화면 흐름도 (Flowchart v0.1)</text>
+<text x="60.0" y="84.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="13" fill="#6B7280" text-anchor="start" font-weight="500">화면 단위 내비게이션 흐름 · 세부 처리 로직은 02_flowchart_detail.svg 참조</text>
+<rect x="56" y="108" width="1120" height="86" rx="8" fill="#FFFFFF" fill-opacity="0.55" stroke="#9AA0A8" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="68.0" y="128.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#6B7280" text-anchor="start" font-weight="700">도형 규칙</text>
+<rect x="96" y="141.0" width="120" height="42" rx="21" fill="#F2C94C" stroke="#C9A227" stroke-width="1.4"/>
+<text x="156.0" y="166.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">Start</text>
+<rect x="276" y="141.0" width="120" height="42" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="336.0" y="166.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">화면/처리</text>
+<polygon points="474,141.0 576,141.0 558,183.0 456,183.0" fill="#A9C4F5" stroke="#6F93D8" stroke-width="1.4"/>
+<text x="516.0" y="166.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">사용자 입력</text>
+<polygon points="701.0,134.0 766,162.0 701.0,190.0 636,162.0" fill="#CDCDCD" stroke="#9A9A9A" stroke-width="1.4"/>
+<text x="701.0" y="166.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">분기</text>
+<path d="M816 149.0 a60.0 9 0 0 1 120 0 v26 a60.0 9 0 0 1 -120 0 z" fill="#F2CF4C" stroke="#C9A227" stroke-width="1.4"/>
+<path d="M816 149.0 a60.0 9 0 0 0 120 0" fill="none" stroke="#C9A227" stroke-width="1.2"/>
+<text x="876.0" y="171.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">데이터</text>
+<rect x="996" y="141.0" width="120" height="42" rx="21" fill="#EFA093" stroke="#D4796A" stroke-width="1.4"/>
+<text x="1056.0" y="166.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">End</text>
+<text x="1206.0" y="166.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#6B7280" text-anchor="start" font-weight="500">점선 박스 = 기능 그룹</text>
+<rect x="300" y="220" width="1600" height="480" rx="8" fill="#FFFFFF" fill-opacity="0.55" stroke="#9AA0A8" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="312.0" y="240.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#6B7280" text-anchor="start" font-weight="700">① 인증 / 계정  ·  AUTH</text>
+<rect x="300" y="720" width="1600" height="500" rx="8" fill="#FFFFFF" fill-opacity="0.55" stroke="#9AA0A8" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="312.0" y="740.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#6B7280" text-anchor="start" font-weight="700">② 상품 / 거래  ·  HOME · PROD · WISH · TRADE</text>
+<rect x="300" y="1240" width="1600" height="400" rx="8" fill="#FFFFFF" fill-opacity="0.55" stroke="#9AA0A8" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="312.0" y="1260.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#6B7280" text-anchor="start" font-weight="700">③ 커뮤니티 / 알림  ·  BOARD · NOTI</text>
+<rect x="300" y="1680" width="1600" height="340" rx="8" fill="#FFFFFF" fill-opacity="0.55" stroke="#9AA0A8" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="312.0" y="1700.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#6B7280" text-anchor="start" font-weight="700">④ 마이페이지 / 포인트  ·  MY · POINT</text>
+<rect x="300" y="2050" width="1600" height="130" rx="8" fill="#FFFFFF" fill-opacity="0.55" stroke="#9AA0A8" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="312.0" y="2070.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#6B7280" text-anchor="start" font-weight="700">⑤ AI 챗봇  ·  BOT</text>
+<rect x="300" y="2230" width="1600" height="350" rx="8" fill="#FFFFFF" fill-opacity="0.55" stroke="#9AA0A8" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="312.0" y="2250.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#6B7280" text-anchor="start" font-weight="700">⑥ 관리자  ·  ADM</text>
+<line x1="270" y1="1400.0" x2="300" y2="1400.0" stroke="#3A3F46" stroke-width="1.3"/>
+<line x1="300" y1="300.0" x2="300" y2="2340.0" stroke="#3A3F46" stroke-width="1.3"/>
+<polyline points="300.0,300.0 336.0,300.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="300.0,480.0 336.0,480.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="300.0,580.0 336.0,580.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="300.0,670.0 336.0,670.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="300.0,880.0 336.0,880.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="300.0,1120.0 336.0,1120.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="300.0,1190.0 336.0,1190.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="300.0,1320.0 336.0,1320.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="300.0,1420.0 336.0,1420.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="300.0,1550.0 336.0,1550.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="300.0,1615.0 336.0,1615.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="300.0,1840.0 336.0,1840.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="300.0,2110.0 336.0,2110.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="300.0,2340.0 336.0,2340.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="508.0,300.0 554.0,300.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="726.0,300.0 772.0,300.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="924.0,300.0 990.0,300.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<text x="957.0" y="294.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#3A3F46" text-anchor="middle" font-weight="500">Y</text>
+<polyline points="1162.0,300.0 1208.0,300.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="1360.0,300.0 1426.0,300.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="849.0,339.0 849.0,357.5 1067.0,357.5 1067.0,374.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<text x="1079.0" y="365.8" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#3A3F46" text-anchor="start" font-weight="500">N</text>
+<polyline points="508.0,480.0 554.0,480.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="726.0,480.0 772.0,480.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="944.0,480.0 978.0,480.0 978.0,334.0 1077.0,334.0 1077.0,326.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="508.0,580.0 554.0,580.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="726.0,580.0 772.0,580.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="924.0,580.0 990.0,580.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<text x="957.0" y="574.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#3A3F46" text-anchor="middle" font-weight="500">OK</text>
+<polyline points="1162.0,580.0 1208.0,580.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="1360.0,580.0 1426.0,580.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="508.0,670.0 554.0,670.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="726.0,670.0 772.0,670.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="944.0,670.0 990.0,670.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="508.0,880.0 554.0,880.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="726.0,880.0 772.0,880.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<line x1="944" y1="880.0" x2="970" y2="880.0" stroke="#3A3F46" stroke-width="1.3"/>
+<line x1="970" y1="790.0" x2="970" y2="1030.0" stroke="#3A3F46" stroke-width="1.3"/>
+<polyline points="970.0,790.0 990.0,790.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="970.0,870.0 990.0,870.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="970.0,950.0 990.0,950.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="970.0,1030.0 990.0,1030.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="1162.0,790.0 1208.0,790.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="1162.0,870.0 1208.0,870.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="1162.0,950.0 1208.0,950.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="1162.0,1030.0 1208.0,1030.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="508.0,1120.0 554.0,1120.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="736.0,1120.0 772.0,1120.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="508.0,1190.0 554.0,1190.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="508.0,1320.0 554.0,1320.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="726.0,1320.0 772.0,1320.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="949.0,1320.0 990.0,1320.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="1142.0,1320.0 1208.0,1320.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="508.0,1420.0 532.0,1420.0 532.0,1430.0 554.0,1430.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="706.0,1430.0 740.0,1430.0 740.0,1395.0 772.0,1395.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<text x="756.0" y="1389.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#3A3F46" text-anchor="middle" font-weight="500">OK</text>
+<polyline points="706.0,1430.0 740.0,1430.0 740.0,1495.0 772.0,1495.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<text x="756.0" y="1489.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#3A3F46" text-anchor="middle" font-weight="500">N</text>
+<polyline points="508.0,1550.0 554.0,1550.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="518.0,1615.0 554.0,1615.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<line x1="508" y1="1840.0" x2="548" y2="1840.0" stroke="#3A3F46" stroke-width="1.3"/>
+<line x1="548" y1="1730.0" x2="548" y2="1970.0" stroke="#3A3F46" stroke-width="1.3"/>
+<polyline points="548.0,1730.0 732.0,1730.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="548.0,1790.0 732.0,1790.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="548.0,1850.0 732.0,1850.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="548.0,1910.0 732.0,1910.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="548.0,1970.0 732.0,1970.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="894.0,1970.0 950.0,1970.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="1092.0,1970.0 1168.0,1970.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<text x="1130.0" y="1964.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#3A3F46" text-anchor="middle" font-weight="500">Y</text>
+<polyline points="508.0,2110.0 554.0,2110.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="726.0,2110.0 772.0,2110.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="949.0,2110.0 990.0,2110.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="1132.0,2110.0 1171.0,2110.0 1171.0,2075.0 1208.0,2075.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<text x="1189.5" y="2069.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#3A3F46" text-anchor="middle" font-weight="500">Y</text>
+<polyline points="1132.0,2110.0 1171.0,2110.0 1171.0,2150.0 1208.0,2150.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<text x="1189.5" y="2144.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#3A3F46" text-anchor="middle" font-weight="500">N</text>
+<polyline points="508.0,2340.0 554.0,2340.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="706.0,2340.0 772.0,2340.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<text x="739.0" y="2334.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#3A3F46" text-anchor="middle" font-weight="500">ADMIN</text>
+<polyline points="706.0,2340.0 740.0,2340.0 740.0,2480.0 772.0,2480.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<text x="756.0" y="2474.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#3A3F46" text-anchor="middle" font-weight="500">USER</text>
+<line x1="944" y1="2340.0" x2="970" y2="2340.0" stroke="#3A3F46" stroke-width="1.3"/>
+<line x1="970" y1="2270.0" x2="970" y2="2510.0" stroke="#3A3F46" stroke-width="1.3"/>
+<polyline points="970.0,2270.0 990.0,2270.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="970.0,2330.0 990.0,2330.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="970.0,2390.0 990.0,2390.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="970.0,2450.0 990.0,2450.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="970.0,2510.0 990.0,2510.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="1162.0,2270.0 1208.0,2270.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="1162.0,2330.0 1208.0,2330.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="1162.0,2390.0 1208.0,2390.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="1162.0,2450.0 1208.0,2450.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<polyline points="1162.0,2510.0 1208.0,2510.0" fill="none" stroke="#3A3F46" stroke-width="1.3" marker-end="url(#ah)" stroke-linejoin="round"/>
+<rect x="120" y="1376.0" width="150" height="48" rx="24" fill="#F2C94C" stroke="#C9A227" stroke-width="1.4"/>
+<text x="195.0" y="1397.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">스플래시</text>
+<text x="195.0" y="1411.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">COM-001</text>
+<rect x="338" y="276.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="423.0" y="297.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">로그인</text>
+<text x="423.0" y="311.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">AUTH-001</text>
+<polygon points="574,276.0 726,276.0 708,324.0 556,324.0" fill="#A9C4F5" stroke="#6F93D8" stroke-width="1.4"/>
+<text x="641.0" y="304.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">이메일 / 비밀번호</text>
+<polygon points="849.0,261.0 924,300.0 849.0,339.0 774,300.0" fill="#CDCDCD" stroke="#9A9A9A" stroke-width="1.4"/>
+<text x="849.0" y="304.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">인증 성공?</text>
+<rect x="992" y="276.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="1077.0" y="297.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">JWT 발급 ·</text>
+<text x="1077.0" y="311.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">세션 저장</text>
+<path d="M1210 281.0 a75.0 9 0 0 1 150 0 v38 a75.0 9 0 0 1 -150 0 z" fill="#F2CF4C" stroke="#C9A227" stroke-width="1.4"/>
+<path d="M1210 281.0 a75.0 9 0 0 0 150 0" fill="none" stroke="#C9A227" stroke-width="1.2"/>
+<text x="1285.0" y="309.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">회원 DB</text>
+<rect x="1428" y="276.0" width="150" height="48" rx="24" fill="#EFA093" stroke="#D4796A" stroke-width="1.4"/>
+<text x="1503.0" y="304.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">홈 진입</text>
+<rect x="992" y="376.0" width="150" height="48" rx="24" fill="#EFA093" stroke="#D4796A" stroke-width="1.4"/>
+<text x="1067.0" y="404.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">오류 안내</text>
+<rect x="338" y="456.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="423.0" y="477.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">소셜 로그인</text>
+<text x="423.0" y="491.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">Google / Kakao</text>
+<rect x="556" y="456.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="641.0" y="484.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">OAuth 콜백 검증</text>
+<rect x="774" y="456.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="859.0" y="477.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">계정 연동 /</text>
+<text x="859.0" y="491.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">신규 생성</text>
+<rect x="338" y="556.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="423.0" y="577.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">회원가입</text>
+<text x="423.0" y="591.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">AUTH-002</text>
+<polygon points="574,556.0 726,556.0 708,604.0 556,604.0" fill="#A9C4F5" stroke="#6F93D8" stroke-width="1.4"/>
+<text x="641.0" y="577.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">약관 동의 ·</text>
+<text x="641.0" y="591.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">가입 정보 입력</text>
+<polygon points="849.0,541.0 924,580.0 849.0,619.0 774,580.0" fill="#CDCDCD" stroke="#9A9A9A" stroke-width="1.4"/>
+<text x="849.0" y="577.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">중복 /</text>
+<text x="849.0" y="591.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">유효성</text>
+<rect x="992" y="556.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="1077.0" y="577.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">계정 생성</text>
+<text x="1077.0" y="591.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">비밀번호 해시</text>
+<path d="M1210 561.0 a75.0 9 0 0 1 150 0 v38 a75.0 9 0 0 1 -150 0 z" fill="#F2CF4C" stroke="#C9A227" stroke-width="1.4"/>
+<path d="M1210 561.0 a75.0 9 0 0 0 150 0" fill="none" stroke="#C9A227" stroke-width="1.2"/>
+<text x="1285.0" y="589.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">회원 DB</text>
+<rect x="1428" y="556.0" width="150" height="48" rx="24" fill="#EFA093" stroke="#D4796A" stroke-width="1.4"/>
+<text x="1503.0" y="584.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">가입 완료</text>
+<rect x="338" y="646.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="423.0" y="667.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">비밀번호 재설정</text>
+<text x="423.0" y="681.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">AUTH-003</text>
+<polygon points="574,646.0 726,646.0 708,694.0 556,694.0" fill="#A9C4F5" stroke="#6F93D8" stroke-width="1.4"/>
+<text x="641.0" y="674.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">이메일 인증코드</text>
+<rect x="774" y="646.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="859.0" y="667.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">비밀번호 변경</text>
+<text x="859.0" y="681.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">전 세션 만료</text>
+<rect x="992" y="646.0" width="150" height="48" rx="24" fill="#EFA093" stroke="#D4796A" stroke-width="1.4"/>
+<text x="1067.0" y="674.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">완료</text>
+<rect x="338" y="856.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="423.0" y="877.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">홈 · 상품 목록</text>
+<text x="423.0" y="891.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">HOME-001</text>
+<polygon points="574,856.0 726,856.0 708,904.0 556,904.0" fill="#A9C4F5" stroke="#6F93D8" stroke-width="1.4"/>
+<text x="641.0" y="877.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">검색 / 정렬 /</text>
+<text x="641.0" y="891.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">필터</text>
+<rect x="774" y="856.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="859.0" y="877.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">상품 상세</text>
+<text x="859.0" y="891.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">PROD-001</text>
+<rect x="992" y="766.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="1077.0" y="794.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">찜 등록 / 해제</text>
+<path d="M1210 771.0 a75.0 9 0 0 1 150 0 v38 a75.0 9 0 0 1 -150 0 z" fill="#F2CF4C" stroke="#C9A227" stroke-width="1.4"/>
+<path d="M1210 771.0 a75.0 9 0 0 0 150 0" fill="none" stroke="#C9A227" stroke-width="1.2"/>
+<text x="1285.0" y="792.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">찜 데이터</text>
+<text x="1285.0" y="806.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">카운터</text>
+<rect x="992" y="846.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="1077.0" y="867.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">채팅 문의</text>
+<text x="1077.0" y="881.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">CHAT-002</text>
+<path d="M1210 851.0 a75.0 9 0 0 1 150 0 v38 a75.0 9 0 0 1 -150 0 z" fill="#F2CF4C" stroke="#C9A227" stroke-width="1.4"/>
+<path d="M1210 851.0 a75.0 9 0 0 0 150 0" fill="none" stroke="#C9A227" stroke-width="1.2"/>
+<text x="1285.0" y="879.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">메시지 데이터</text>
+<rect x="992" y="926.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="1077.0" y="947.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">거래 요청</text>
+<text x="1077.0" y="961.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">TRADE-001</text>
+<rect x="1210" y="926.0" width="160" height="48" rx="24" fill="#EFA093" stroke="#D4796A" stroke-width="1.4"/>
+<text x="1290.0" y="954.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">F-01 거래 플로우</text>
+<rect x="992" y="1006.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="1077.0" y="1027.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">신고하기</text>
+<text x="1077.0" y="1041.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">REPORT-001</text>
+<rect x="1210" y="1006.0" width="160" height="48" rx="24" fill="#EFA093" stroke="#D4796A" stroke-width="1.4"/>
+<text x="1290.0" y="1034.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">F-02 신고 플로우</text>
+<rect x="338" y="1096.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="423.0" y="1117.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">상품 등록 / 수정</text>
+<text x="423.0" y="1131.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">PROD-002</text>
+<polygon points="574,1096.0 736,1096.0 718,1144.0 556,1144.0" fill="#A9C4F5" stroke="#6F93D8" stroke-width="1.4"/>
+<text x="646.0" y="1124.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">이미지 첨부 (최대 5)</text>
+<rect x="774" y="1096.0" width="170" height="48" rx="24" fill="#EFA093" stroke="#D4796A" stroke-width="1.4"/>
+<text x="859.0" y="1124.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">F-03 업로드 플로우</text>
+<rect x="338" y="1166.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="423.0" y="1187.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">찜 목록</text>
+<text x="423.0" y="1201.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">WISH-001</text>
+<rect x="556" y="1166.0" width="170" height="48" rx="24" fill="#EFA093" stroke="#D4796A" stroke-width="1.4"/>
+<text x="641.0" y="1194.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">상품 상세로 이동</text>
+<rect x="338" y="1296.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="423.0" y="1317.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">게시판 목록</text>
+<text x="423.0" y="1331.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">BOARD-001</text>
+<rect x="556" y="1296.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="641.0" y="1317.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">게시글 상세</text>
+<text x="641.0" y="1331.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">BOARD-002</text>
+<polygon points="792,1296.0 949,1296.0 931,1344.0 774,1344.0" fill="#A9C4F5" stroke="#6F93D8" stroke-width="1.4"/>
+<text x="861.5" y="1324.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">댓글 / 대댓글 입력</text>
+<path d="M992 1301.0 a75.0 9 0 0 1 150 0 v38 a75.0 9 0 0 1 -150 0 z" fill="#F2CF4C" stroke="#C9A227" stroke-width="1.4"/>
+<path d="M992 1301.0 a75.0 9 0 0 0 150 0" fill="none" stroke="#C9A227" stroke-width="1.2"/>
+<text x="1067.0" y="1329.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">댓글 데이터</text>
+<rect x="1210" y="1296.0" width="150" height="48" rx="24" fill="#EFA093" stroke="#D4796A" stroke-width="1.4"/>
+<text x="1285.0" y="1324.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">등록 완료</text>
+<rect x="338" y="1396.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="423.0" y="1417.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">게시글 작성</text>
+<text x="423.0" y="1431.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">BOARD-003</text>
+<polygon points="631.0,1391.0 706,1430.0 631.0,1469.0 556,1430.0" fill="#CDCDCD" stroke="#9A9A9A" stroke-width="1.4"/>
+<text x="631.0" y="1427.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">공지 작성</text>
+<text x="631.0" y="1441.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">권한?</text>
+<path d="M774 1376.0 a75.0 9 0 0 1 150 0 v38 a75.0 9 0 0 1 -150 0 z" fill="#F2CF4C" stroke="#C9A227" stroke-width="1.4"/>
+<path d="M774 1376.0 a75.0 9 0 0 0 150 0" fill="none" stroke="#C9A227" stroke-width="1.2"/>
+<text x="849.0" y="1404.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">게시글 데이터</text>
+<rect x="774" y="1471.0" width="160" height="48" rx="24" fill="#EFA093" stroke="#D4796A" stroke-width="1.4"/>
+<text x="854.0" y="1499.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">권한 없음 안내</text>
+<rect x="338" y="1526.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="423.0" y="1547.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">알림 목록</text>
+<text x="423.0" y="1561.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">NOTI-001</text>
+<polygon points="574,1526.0 726,1526.0 708,1574.0 556,1574.0" fill="#A9C4F5" stroke="#6F93D8" stroke-width="1.4"/>
+<text x="641.0" y="1554.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">유형 필터 · 읽음</text>
+<rect x="338" y="1591.0" width="180" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="428.0" y="1612.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">알림 설정 on/off</text>
+<text x="428.0" y="1626.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">NOTI-002</text>
+<path d="M556 1596.0 a85.0 9 0 0 1 170 0 v38 a85.0 9 0 0 1 -170 0 z" fill="#F2CF4C" stroke="#C9A227" stroke-width="1.4"/>
+<path d="M556 1596.0 a85.0 9 0 0 0 170 0" fill="none" stroke="#C9A227" stroke-width="1.2"/>
+<text x="641.0" y="1624.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">알림 설정 데이터</text>
+<rect x="338" y="1816.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="423.0" y="1837.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">마이페이지</text>
+<text x="423.0" y="1851.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">MY-001</text>
+<rect x="734" y="1706.0" width="160" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="814.0" y="1727.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">프로필 수정</text>
+<text x="814.0" y="1741.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">MY-002</text>
+<rect x="734" y="1766.0" width="160" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="814.0" y="1794.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">내 판매 게시글</text>
+<rect x="734" y="1826.0" width="160" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="814.0" y="1854.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">거래 내역</text>
+<rect x="734" y="1886.0" width="160" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="814.0" y="1907.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">포인트 내역</text>
+<text x="814.0" y="1921.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">POINT-001</text>
+<rect x="734" y="1946.0" width="160" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="814.0" y="1974.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">회원 탈퇴</text>
+<polygon points="1022.0,1931.0 1092,1970.0 1022.0,2009.0 952,1970.0" fill="#CDCDCD" stroke="#9A9A9A" stroke-width="1.4"/>
+<text x="1022.0" y="1974.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">탈퇴 확인?</text>
+<rect x="1170" y="1946.0" width="160" height="48" rx="24" fill="#EFA093" stroke="#D4796A" stroke-width="1.4"/>
+<text x="1250.0" y="1967.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">계정 비활성화</text>
+<text x="1250.0" y="1981.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">Soft delete</text>
+<rect x="338" y="2086.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="423.0" y="2107.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">AI 챗봇</text>
+<text x="423.0" y="2121.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">BOT-001</text>
+<polygon points="574,2086.0 726,2086.0 708,2134.0 556,2134.0" fill="#A9C4F5" stroke="#6F93D8" stroke-width="1.4"/>
+<text x="641.0" y="2114.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">질문 리스트 선택</text>
+<rect x="774" y="2086.0" width="175" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="861.5" y="2114.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">외부 LLM API 호출</text>
+<polygon points="1062.0,2071.0 1132,2110.0 1062.0,2149.0 992,2110.0" fill="#CDCDCD" stroke="#9A9A9A" stroke-width="1.4"/>
+<text x="1062.0" y="2114.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">응답 성공?</text>
+<rect x="1210" y="2051.0" width="150" height="48" rx="24" fill="#EFA093" stroke="#D4796A" stroke-width="1.4"/>
+<text x="1285.0" y="2079.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">답변 표시</text>
+<rect x="1210" y="2126.0" width="160" height="48" rx="24" fill="#EFA093" stroke="#D4796A" stroke-width="1.4"/>
+<text x="1290.0" y="2154.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">오류 상태 안내</text>
+<rect x="338" y="2316.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="423.0" y="2344.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">관리자 진입</text>
+<polygon points="631.0,2301.0 706,2340.0 631.0,2379.0 556,2340.0" fill="#CDCDCD" stroke="#9A9A9A" stroke-width="1.4"/>
+<text x="631.0" y="2337.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">역할 확인</text>
+<text x="631.0" y="2351.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">RBAC</text>
+<rect x="774" y="2456.0" width="160" height="48" rx="24" fill="#EFA093" stroke="#D4796A" stroke-width="1.4"/>
+<text x="854.0" y="2484.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">접근 거부 403</text>
+<rect x="774" y="2316.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="859.0" y="2337.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">관리자 대시보드</text>
+<text x="859.0" y="2351.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">ADM-001</text>
+<rect x="992" y="2246.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="1077.0" y="2267.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">회원 관리</text>
+<text x="1077.0" y="2281.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">ADM-002</text>
+<rect x="992" y="2306.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="1077.0" y="2327.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">신고 처리</text>
+<text x="1077.0" y="2341.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">ADM-003</text>
+<rect x="992" y="2366.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="1077.0" y="2387.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">게시글 · 공지</text>
+<text x="1077.0" y="2401.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">ADM-004</text>
+<rect x="992" y="2426.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="1077.0" y="2447.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">Secret 관리</text>
+<text x="1077.0" y="2461.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">ADM-005</text>
+<rect x="992" y="2486.0" width="170" height="48" rx="4" fill="#C3A6F0" stroke="#8E6FD8" stroke-width="1.4"/>
+<text x="1077.0" y="2507.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">감사 로그</text>
+<text x="1077.0" y="2521.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">ADM-006</text>
+<path d="M1210 2251.0 a77.5 9 0 0 1 155 0 v38 a77.5 9 0 0 1 -155 0 z" fill="#F2CF4C" stroke="#C9A227" stroke-width="1.4"/>
+<path d="M1210 2251.0 a77.5 9 0 0 0 155 0" fill="none" stroke="#C9A227" stroke-width="1.2"/>
+<text x="1287.5" y="2272.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">회원 상태 ·</text>
+<text x="1287.5" y="2286.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">사유 기록</text>
+<rect x="1210" y="2306.0" width="155" height="48" rx="24" fill="#EFA093" stroke="#D4796A" stroke-width="1.4"/>
+<text x="1287.5" y="2334.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">F-02 신고 처리</text>
+<path d="M1210 2371.0 a77.5 9 0 0 1 155 0 v38 a77.5 9 0 0 1 -155 0 z" fill="#F2CF4C" stroke="#C9A227" stroke-width="1.4"/>
+<path d="M1210 2371.0 a77.5 9 0 0 0 155 0" fill="none" stroke="#C9A227" stroke-width="1.2"/>
+<text x="1287.5" y="2399.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">게시글 상태</text>
+<rect x="1210" y="2426.0" width="165" height="48" rx="24" fill="#EFA093" stroke="#D4796A" stroke-width="1.4"/>
+<text x="1292.5" y="2454.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10.5" fill="#26292E" text-anchor="middle" font-weight="500">F-04 Secret 플로우</text>
+<path d="M1210 2491.0 a77.5 9 0 0 1 155 0 v38 a77.5 9 0 0 1 -155 0 z" fill="#F2CF4C" stroke="#C9A227" stroke-width="1.4"/>
+<path d="M1210 2491.0 a77.5 9 0 0 0 155 0" fill="none" stroke="#C9A227" stroke-width="1.2"/>
+<text x="1287.5" y="2519.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#26292E" text-anchor="middle" font-weight="500">Audit Log</text>
+</svg>
