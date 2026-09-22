@@ -42,6 +42,12 @@
   "profileImageUrl": "https://..."
 }
 
+// CommunityAuthorResponse — 커뮤니티 작성자 표현
+{
+  "userId": 5,              // 탈퇴 작성자는 null
+  "nickname": "재사용러"   // 탈퇴 작성자는 "탈퇴한 사용자"
+}
+
 // SellerBriefResponse — 게시글 상세에서 신뢰 정보를 함께 노출
 {
   "userId": 5,
@@ -73,7 +79,9 @@
 | Access Token | `Authorization: Bearer {token}` |
 | Refresh Token | HttpOnly·Secure 쿠키 (`refresh_token`) |
 
-인증 표기: `—`(불필요) / `USER` / `ADMIN`
+인증 표기: `—`(불필요, 선택적 토큰을 허용하면 별도 표기) / `USER` / `ADMIN`
+
+커뮤니티 공개 조회 API는 Bearer 토큰 없이 호출할 수 있다. 유효한 토큰이 있으면 `isMine` 계산과 차단 사용자 콘텐츠 필터에 사용한다. `Authorization` 헤더를 보냈지만 토큰이 잘못되었거나 만료된 경우에는 익명 요청으로 무시하지 않고 `401 UNAUTHENTICATED`로 응답한다.
 
 #### 0.4. 페이지네이션
 
@@ -108,7 +116,10 @@
 - 시간은 ISO 8601 UTC (`2026-03-15T09:30:00Z`)
 - 필드명은 camelCase
 - 소유권·당사자 검증은 서버에서 수행한다 (`NFR-AUTH-010`)
-- 차단 필터는 **목록 조회에만** 적용한다. 차단한 사용자의 프로필과 게시글에 직접 접근하는 것은 제한하지 않는다
+- 차단 필터는 **목록 조회에만** 적용한다. 중고거래 게시글 목록과 커뮤니티 게시글·댓글 목록에서 차단한 작성자의 콘텐츠를 제외하며, 직접 접근은 제한하지 않는다
+- 커뮤니티 응답에서 탈퇴 작성자는 `CommunityAuthorResponse.userId=null`, `nickname="탈퇴한 사용자"`로 익명화한다
+- 커뮤니티 게시글 목록은 `excerpt`, 상세는 원문 `content`를 반환하며 두 응답 모두 `category`, `author`, `commentCount`, `viewCount`, `isMine`, `createdAt`, `updatedAt`을 포함한다
+- 커뮤니티 제목·본문·댓글의 길이는 앞뒤 공백을 제거한 값으로 검증하고, 제거된 값을 저장한다
 - 이미지 URL은 비공개 S3 버킷에 대한 서명된 URL이다
 
 ### 1. WebSocket 이벤트
@@ -193,12 +204,13 @@ wss://reused.app/socket.io
 | 거래 | 7 | `/trades/*` |
 | 판매 관리 | 2 | `/me/*` |
 | 채팅 | 6 | `/chat-rooms/*` |
+| 커뮤니티 | 8 | `/community/posts/*` |
 | 후기 | 1 | `/reviews` |
 | 신고·차단 | 5 | `/reports/*`, `/blocks/*` |
 | 알림 | 6 | `/notifications/*` |
 | 챗봇 | 2 | `/chatbot/*` |
 | 공지사항 | 2 | `/notices/*` |
 | 관리자 | 14 | `/admin/*` |
-| 합계 | **67** |  |
+| 합계 | **75** |  |
 
 [엔드포인트 (DB) c80f026c8600432ab3aee1fed9235da2](catalog/endpoints.csv)

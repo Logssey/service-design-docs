@@ -201,13 +201,47 @@
 - `CHECK (reviewer_id <> reviewee_id)`
 - 거래가 `COMPLETED`일 때만 작성 가능 — 애플리케이션에서 검증
 
-### 12. `reports` (신고)
+### 12. `community_posts` (커뮤니티 게시글)
+
+| 컬럼 | 타입 | NULL | UNIQUE | 설명 |
+| --- | --- | --- | --- | --- |
+| post_id | BIGINT, PK, GENERATED ALWAYS AS IDENTITY | NOT NULL | - |  |
+| author_id | BIGINT, FK → users.user_id, ON DELETE RESTRICT | NOT NULL | - | 작성자 |
+| category | VARCHAR(20), CHECK IN ('GENERAL','QUESTION','TIP','SHARE') | NOT NULL | - | 커뮤니티 카테고리 |
+| title | VARCHAR(100), CHECK 길이 2~100 | NOT NULL | - | 제목 |
+| content | VARCHAR(3000), CHECK 길이 10~3,000 | NOT NULL | - | 본문 |
+| status | VARCHAR(20), CHECK IN ('PUBLISHED','HIDDEN') | NOT NULL, DEFAULT 'PUBLISHED' | - | 공개·신고 처리 숨김 상태 |
+| comment_count | INTEGER, CHECK >= 0 | NOT NULL, DEFAULT 0 | - | 노출 가능한 댓글 수 |
+| view_count | INTEGER, CHECK >= 0 | NOT NULL, DEFAULT 0 | - | 조회수 |
+| created_at | TIMESTAMPTZ | NOT NULL, DEFAULT now() | - |  |
+| updated_at | TIMESTAMPTZ | NULL 허용 | - |  |
+| deleted_at | TIMESTAMPTZ | NULL 허용 | - | 작성자 소프트 삭제 시각 |
+| deleted_by | BIGINT, FK → users.user_id, ON DELETE RESTRICT | NULL 허용 | - | 삭제 수행자 |
+- 공개 목록·상세에는 `status='PUBLISHED' AND deleted_at IS NULL`인 행만 노출
+- 탈퇴 회원이 작성한 게시글은 보존하되 API 응답의 `author.userId`를 null로 익명화
+
+### 13. `community_comments` (커뮤니티 댓글)
+
+| 컬럼 | 타입 | NULL | UNIQUE | 설명 |
+| --- | --- | --- | --- | --- |
+| comment_id | BIGINT, PK, GENERATED ALWAYS AS IDENTITY | NOT NULL | - |  |
+| post_id | BIGINT, FK → community_posts.post_id, ON DELETE RESTRICT | NOT NULL | - | 대상 게시글 |
+| author_id | BIGINT, FK → users.user_id, ON DELETE RESTRICT | NOT NULL | - | 작성자 |
+| content | VARCHAR(500), CHECK 길이 1~500 | NOT NULL | - | 평면 텍스트 댓글 |
+| status | VARCHAR(20), CHECK IN ('PUBLISHED','HIDDEN') | NOT NULL, DEFAULT 'PUBLISHED' | - | 공개·신고 처리 숨김 상태 |
+| created_at | TIMESTAMPTZ | NOT NULL, DEFAULT now() | - |  |
+| deleted_at | TIMESTAMPTZ | NULL 허용 | - | 작성자 소프트 삭제 시각 |
+| deleted_by | BIGINT, FK → users.user_id, ON DELETE RESTRICT | NULL 허용 | - | 삭제 수행자 |
+- 대댓글 구조를 두지 않으며 이미지·좋아요·북마크 컬럼도 두지 않음
+- 공개 목록에는 `status='PUBLISHED' AND deleted_at IS NULL`인 행만 노출
+
+### 14. `reports` (신고)
 
 | 컬럼 | 타입 | NULL | UNIQUE | 설명 |
 | --- | --- | --- | --- | --- |
 | report_id | BIGINT, PK, GENERATED ALWAYS AS IDENTITY | NOT NULL | - |  |
 | reporter_id | BIGINT, FK → users.user_id, ON DELETE RESTRICT | NOT NULL | 복합 |  |
-| target_type | VARCHAR(20), CHECK IN ('LISTING','USER','MESSAGE') | NOT NULL | 복합 |  |
+| target_type | VARCHAR(20), CHECK IN ('LISTING','USER','MESSAGE','COMMUNITY_POST','COMMUNITY_COMMENT') | NOT NULL | 복합 |  |
 | target_id | BIGINT | NOT NULL | 복합 | 대상 식별자. FK 없음 |
 | reason_code | VARCHAR(30) | NOT NULL | 복합 | 사유 코드 |
 | detail | VARCHAR(500) | NULL 허용 | - | 상세 내용 |
@@ -219,7 +253,7 @@
 - `target_type` + `target_id` 다형 참조이므로 FK를 걸지 않음 → 대상 존재 여부는 애플리케이션에서 검증
 - **부분 유니크 인덱스**: 미처리 상태의 동일 신고자·대상·사유 조합 중복 방지
 
-### 13. `blocks` (사용자 차단)
+### 15. `blocks` (사용자 차단)
 
 | 컬럼 | 타입 | NULL | UNIQUE | 설명 |
 | --- | --- | --- | --- | --- |
@@ -231,7 +265,7 @@
 - `CHECK (blocker_id <> blocked_id)`
 - 단방향. 차단당한 쪽은 차단 사실을 알 수 없음
 
-### 14. `notifications` (알림)
+### 16. `notifications` (알림)
 
 | 컬럼 | 타입 | NULL | UNIQUE | 설명 |
 | --- | --- | --- | --- | --- |
@@ -246,7 +280,7 @@
 | created_at | TIMESTAMPTZ | NOT NULL, DEFAULT now() | - |  |
 - 폴링 방식으로 조회 (ADR-014)
 
-### 15. `notification_settings` (알림 수신 설정)
+### 17. `notification_settings` (알림 수신 설정)
 
 | 컬럼 | 타입 | NULL | UNIQUE | 설명 |
 | --- | --- | --- | --- | --- |
@@ -259,7 +293,7 @@
 | updated_at | TIMESTAMPTZ | NULL 허용 | - |  |
 - 회원가입 시 기본값으로 1행 생성
 
-### 16. `notices` (공지사항)
+### 18. `notices` (공지사항)
 
 | 컬럼 | 타입 | NULL | UNIQUE | 설명 |
 | --- | --- | --- | --- | --- |
@@ -272,7 +306,7 @@
 | updated_at | TIMESTAMPTZ | NULL 허용 | - |  |
 | deleted_at | TIMESTAMPTZ | NULL 허용 | - | 소프트 삭제 |
 
-### 17. `audit_logs` (감사 로그)
+### 19. `audit_logs` (감사 로그)
 
 | 컬럼 | 타입 | NULL | UNIQUE | 설명 |
 | --- | --- | --- | --- | --- |
@@ -304,6 +338,9 @@
 | 메시지 | 최대 1,000자 | DB 길이 |
 | 후기 내용 | 최대 500자 | DB 길이 |
 | 후기 별점 | 1~5 | DB CHECK |
+| 커뮤니티 게시글 제목 | 2~100자 | DB CHECK + 앱 |
+| 커뮤니티 게시글 본문 | 10~3,000자 | DB CHECK + 앱 |
+| 커뮤니티 댓글 | 1~500자 | DB CHECK + 앱 |
 | 신고 상세 | 최대 500자 | DB 길이 |
 | 공지 내용 | 최대 5,000자 | DB 길이 |
 
@@ -327,7 +364,17 @@ FK 컬럼은 PostgreSQL이 자동으로 인덱스를 만들어주지 않으므�
 | `idx_chat_rooms_buyer` | `chat_rooms(buyer_id)` | 채팅 목록 |
 | `idx_messages_room` | `messages(chat_room_id)` | 메시지 조회 |
 | `idx_reviews_reviewee` | `reviews(reviewee_id)` | 판매자 프로필 |
+| `idx_community_posts_author` | `community_posts(author_id)` | 작성자 게시글 조회 |
+| `idx_community_comments_post_latest` | `community_comments(post_id, created_at DESC, comment_id DESC)` | 게시글 댓글 최신순 조회 |
+| `idx_community_comments_author` | `community_comments(author_id)` | 작성자 댓글 조회 |
 | `idx_notifications_user` | `notifications(user_id)` | 알림 목록 |
+
+**커뮤니티 조회 인덱스**
+
+| 인덱스 | 대상 | 이유 |
+| --- | --- | --- |
+| `idx_community_posts_latest` | `community_posts(created_at DESC, post_id DESC) WHERE deleted_at IS NULL AND status = 'PUBLISHED'` | 전체 최신순 커서 조회 |
+| `idx_community_posts_category_latest` | `community_posts(category, created_at DESC, post_id DESC) WHERE deleted_at IS NULL AND status = 'PUBLISHED'` | 카테고리별 최신순 커서 조회 |
 
 **부분 유니크 인덱스 (무결성 강제용)**
 
@@ -360,6 +407,8 @@ erDiagram
   USERS ||--o{ CHAT_ROOMS : participates
   USERS ||--o{ MESSAGES : sends
   USERS ||--o{ REVIEWS : writes
+  USERS ||--o{ COMMUNITY_POSTS : writes
+  USERS ||--o{ COMMUNITY_COMMENTS : writes
   USERS ||--o{ REPORTS : reports
   USERS ||--o{ BLOCKS : blocks
   USERS ||--o{ NOTIFICATIONS : receives
@@ -380,6 +429,7 @@ erDiagram
   TRADES ||--o| CHAT_ROOMS : "linked to"
 
   CHAT_ROOMS ||--o{ MESSAGES : contains
+  COMMUNITY_POSTS ||--o{ COMMUNITY_COMMENTS : contains
 
   USERS {
     bigint user_id PK
@@ -482,6 +532,30 @@ erDiagram
     varchar content
     timestamptz deleted_at
   }
+  COMMUNITY_POSTS {
+    bigint post_id PK
+    bigint author_id FK
+    varchar category
+    varchar title
+    varchar content
+    varchar status
+    integer comment_count
+    integer view_count
+    timestamptz created_at
+    timestamptz updated_at
+    timestamptz deleted_at
+    bigint deleted_by FK
+  }
+  COMMUNITY_COMMENTS {
+    bigint comment_id PK
+    bigint post_id FK
+    bigint author_id FK
+    varchar content
+    varchar status
+    timestamptz created_at
+    timestamptz deleted_at
+    bigint deleted_by FK
+  }
   REPORTS {
     bigint report_id PK
     bigint reporter_id FK
@@ -542,6 +616,7 @@ erDiagram
 - `users` → 대부분 테이블과 1:N. 사용자는 판매자·구매자·작성자·신고자 등 여러 역할로 등장하므로 동일 테이블에 복수 FK가 걸림
 - `listings` ↔ `users`는 `trades`를 통한 다대다. 단 `trades`는 단순 조인 테이블이 아니라 상태와 이력을 가진 독립 엔티티 (ADR-007)
 - `chat_rooms`는 `trades`와 1:0..1. 채팅이 거래보다 먼저 시작되므로 `trade_id`는 null 허용
+- `community_posts` → `community_comments`는 1:N이며 댓글은 한 게시글에만 속하는 평면 구조
 - `reports`의 `target_type` + `target_id`는 다형 참조이므로 FK 없음
 
 ---
@@ -573,7 +648,7 @@ erDiagram
 **5. 탈퇴 시 익명화 대상 누락 주의**
 
 - 문제: `users.status='WITHDRAWN'`만 바꾸면 닉네임과 소셜 식별자가 그대로 남음
-- 규칙: 같은 트랜잭션에서 `nickname` 대체, `provider_user_id` 해시 변환, 진행 중 거래 취소를 함께 처리 (ADR-012)
+- 규칙: 같은 트랜잭션에서 `nickname` 대체, `provider_user_id` 해시 변환, 진행 중 거래 취소를 함께 처리하고 커뮤니티 응답의 작성자는 `userId=null`로 익명화 (ADR-012)
 
 **6. 채팅방·거래 조회 시 당사자 검증 필수**
 
@@ -583,6 +658,17 @@ erDiagram
 **7. 차단 관계는 조회 시마다 필터링**
 
 - 문제: 차단은 관계 테이블에만 기록되고 게시글·채팅에 반영되지 않음
-- 규칙: 목록 조회 쿼리에 차단 사용자 제외 조건을 포함
+- 규칙: 중고거래와 커뮤니티 게시글·댓글 목록 조회 쿼리에 차단 사용자 제외 조건을 포함
+
+**8. 커뮤니티 변경 권한은 앱에서 검증**
+
+- 문제: DB는 요청자의 회원 상태와 작성자 일치 여부를 알 수 없음
+- 규칙: 작성·수정·삭제 전에 `users.status='ACTIVE'`를 확인하고, 게시글 수정·삭제와 댓글 삭제는 각 `author_id` 일치까지 검증
+
+**9. 댓글 등록·삭제·숨김과 `comment_count` 갱신은 한 트랜잭션**
+
+- 문제: 댓글 행과 게시글의 비정규화 집계 값이 별도로 변경됨
+- 규칙: 노출 가능한 댓글 등록·삭제·신고 숨김 시 `community_posts.comment_count`를 같은 트랜잭션에서 증감하고 음수가 되지 않게 처리
+- 신고 숨김은 `PUBLISHED → HIDDEN` 최초 전이에 성공한 조건부 갱신에서만 1 감소시켜, 같은 댓글의 반복 신고 처리에도 집계가 중복 감소하지 않게 한다
 
 ---
