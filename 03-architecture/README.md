@@ -31,6 +31,7 @@
 | [ADR-015](adr/ADR-015.md) | 프론트엔드 프레임워크 선택 | **Proposed** |
 | [ADR-016](adr/ADR-016.md) | 자체 이메일·비밀번호 계정을 소셜 로그인과 병행 | Accepted |
 | [ADR-017](adr/ADR-017.md) | 인증 수단을 계정과 분리된 엔티티로 모델링 | Accepted |
+| [ADR-018](adr/ADR-018.md) | 탈퇴 시 인증 수단 파기, 재가입 제한 없음 | Accepted |
 
 ## 후속 검토
 

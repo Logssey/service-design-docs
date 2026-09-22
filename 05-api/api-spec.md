@@ -195,8 +195,8 @@ wss://reused.app/socket.io
 
 | 도메인 | 개수 | 경로 |
 | --- | --- | --- |
-| 인증 | 4 | `/auth/*` |
-| 사용자 | 6 | `/users/*` |
+| 인증 | 10 | `/auth/*` |
+| 사용자 | 8 | `/users/*` |
 | 카테고리 | 1 | `/categories` |
 | 게시글 | 5 | `/listings/*` |
 | 이미지 | 3 | `/images/*` |
@@ -211,6 +211,6 @@ wss://reused.app/socket.io
 | 챗봇 | 2 | `/chatbot/*` |
 | 공지사항 | 2 | `/notices/*` |
 | 관리자 | 14 | `/admin/*` |
-| 합계 | **75** |  |
+| 합계 | **83** |  |
 
 [엔드포인트 (DB) c80f026c8600432ab3aee1fed9235da2](catalog/endpoints.csv)
