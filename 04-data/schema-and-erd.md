@@ -23,8 +23,6 @@
 | 컬럼 | 타입 | NULL | UNIQUE | 설명 |
 | --- | --- | --- | --- | --- |
 | user_id | BIGINT, PK, GENERATED ALWAYS AS IDENTITY | NOT NULL | - |  |
-| provider | VARCHAR(20), CHECK IN ('KAKAO') | NOT NULL | 복합 | 소셜 로그인 제공자 |
-| provider_user_id | VARCHAR(255) | NOT NULL | 복합 | 카카오 회원번호. 탈퇴 시 해시로 대체 |
 | nickname | VARCHAR(20) | NOT NULL | UNIQUE | 온보딩 시 입력. 중복 불허 |
 | profile_image_url | TEXT | NULL 허용 | - |  |
 | bio | VARCHAR(200) | NULL 허용 | - | 자기소개 |
@@ -35,11 +33,31 @@
 | created_at | TIMESTAMPTZ | NOT NULL, DEFAULT now() | - |  |
 | updated_at | TIMESTAMPTZ | NULL 허용 | - |  |
 | withdrawn_at | TIMESTAMPTZ | NULL 허용 | - | 탈퇴 시각 |
-- `UNIQUE(provider, provider_user_id)` — 이메일은 수집하지 않으며 식별에 사용하지 않음 (ADR-004)
-- 탈퇴 시: `nickname`을 `탈퇴회원#{user_id}`로 대체, `provider_user_id`를 단방향 해시로 변환, `status='WITHDRAWN'`
+- 인증 수단은 `user_identities`로 분리한다. `users`는 사람만 표현한다 (ADR-017)
+- 탈퇴 시: `nickname`을 `탈퇴회원#{user_id}`로 대체, `status='WITHDRAWN'`. 인증 수단은 `user_identities`에서 처리
 - 닉네임 유니크를 유지하기 위해 탈퇴 대체 문구에 `user_id`를 붙임
 
-### 2. `user_status_histories` (회원 상태·역할 변경 이력)
+### 2. `user_identities` (인증 수단)
+
+| 컬럼 | 타입 | NULL | UNIQUE | 설명 |
+| --- | --- | --- | --- | --- |
+| identity_id | BIGINT, PK, GENERATED ALWAYS AS IDENTITY | NOT NULL | - |  |
+| user_id | BIGINT, FK → users.user_id, ON DELETE RESTRICT | NOT NULL | 복합 | 인증 수단을 소유한 회원 |
+| provider | VARCHAR(20), CHECK IN ('KAKAO','LOCAL') | NOT NULL | 복합 | 인증 제공자 |
+| provider_user_id | VARCHAR(255) | NOT NULL | 복합 | `KAKAO`는 회원번호, `LOCAL`은 서버 발급 UUID. 탈퇴 시 해시로 대체 |
+| email | VARCHAR(254) | NULL 허용 | 부분 | `LOCAL` 필수. 탈퇴 시 해시로 대체 |
+| password_hash | VARCHAR(255) | NULL 허용 | - | `LOCAL` 필수. 탈퇴 시 제거 |
+| email_verified_at | TIMESTAMPTZ | NULL 허용 | - | 이메일 소유 확인 시각. NULL이면 미인증 |
+| created_at | TIMESTAMPTZ | NOT NULL, DEFAULT now() | - |  |
+- `UNIQUE(provider, provider_user_id)` — 제공자 계정의 유일성. 이메일은 식별에 사용하지 않음 (ADR-016, ADR-017)
+- `UNIQUE(user_id, provider)` — 한 회원이 같은 제공자를 중복 연결하지 못하게 함
+- **부분 유니크 인덱스**: `UNIQUE(email) WHERE provider='LOCAL'` — 이메일은 `LOCAL` 범위에서만 유일. 이메일 로그인 조회 인덱스를 겸함
+- `CHECK (provider <> 'LOCAL' OR email IS NOT NULL)` — 이메일 계정은 이메일 필수
+- `CHECK (provider = 'LOCAL' OR (email IS NULL AND password_hash IS NULL))` — 소셜 계정에는 자격증명을 두지 않음
+- 탈퇴 시: `provider_user_id`와 `email`을 단방향 해시로 변환하고 `password_hash`를 `NULL`로 설정 (ADR-012, ADR-017)
+- `UNIQUE(user_id, provider)`가 `user_id`로 시작하므로 FK 조회용 인덱스를 따로 만들지 않는다
+
+### 3. `user_status_histories` (회원 상태·역할 변경 이력)
 
 | 컬럼 | 타입 | NULL | UNIQUE | 설명 |
 | --- | --- | --- | --- | --- |
@@ -52,7 +70,7 @@
 | changed_by | BIGINT, FK → users.user_id, ON DELETE RESTRICT | NULL 허용 | - | 시스템 처리(탈퇴 등) 시 null |
 | created_at | TIMESTAMPTZ | NOT NULL, DEFAULT now() | - |  |
 
-### 3. `categories` (카테고리)
+### 4. `categories` (카테고리)
 
 | 컬럼 | 타입 | NULL | UNIQUE | 설명 |
 | --- | --- | --- | --- | --- |
@@ -62,7 +80,7 @@
 | is_active | BOOLEAN | NOT NULL, DEFAULT true | - |  |
 - 고정 목록. 초기 데이터로 삽입하며 사용자가 추가할 수 없음
 
-### 4. `listings` (중고거래 게시글)
+### 5. `listings` (중고거래 게시글)
 
 | 컬럼 | 타입 | NULL | UNIQUE | 설명 |
 | --- | --- | --- | --- | --- |
@@ -85,7 +103,7 @@
 - `HIDDEN`은 관리자 조치 전용
 - 진행 중인 거래(`REQUESTED`/`ACCEPTED`)가 있으면 삭제 불가 — 애플리케이션에서 검증
 
-### 5. `listing_images` (게시글 이미지)
+### 6. `listing_images` (게시글 이미지)
 
 | 컬럼 | 타입 | NULL | UNIQUE | 설명 |
 | --- | --- | --- | --- | --- |
@@ -104,7 +122,7 @@
 - **게시글당 최대 5장** — DB로 강제할 수 없으므로 애플리케이션에서 검증
 - `listing_id`가 null인 채 일정 기간 경과한 행은 고아 객체로 정리
 
-### 6. `wishes` (관심 상품)
+### 7. `wishes` (관심 상품)
 
 | 컬럼 | 타입 | NULL | UNIQUE | 설명 |
 | --- | --- | --- | --- | --- |
@@ -114,7 +132,7 @@
 | created_at | TIMESTAMPTZ | NOT NULL, DEFAULT now() | - |  |
 - `UNIQUE(user_id, listing_id)` — 중복 등록 방지
 
-### 7. `trades` (거래)
+### 8. `trades` (거래)
 
 | 컬럼 | 타입 | NULL | UNIQUE | 설명 |
 | --- | --- | --- | --- | --- |
@@ -144,7 +162,7 @@
 - 취소·거절: `CANCELED`/`REJECTED` → 게시글 `ON_SALE` 복귀
 - 모든 전이는 `version` 낙관적 잠금 또는 행 잠금으로 직렬화
 
-### 8. `trade_status_histories` (거래 상태 이력)
+### 9. `trade_status_histories` (거래 상태 이력)
 
 | 컬럼 | 타입 | NULL | UNIQUE | 설명 |
 | --- | --- | --- | --- | --- |
@@ -157,7 +175,7 @@
 | created_at | TIMESTAMPTZ | NOT NULL, DEFAULT now() | - |  |
 - 이력은 덮어쓰지 않고 누적
 
-### 9. `chat_rooms` (채팅방)
+### 10. `chat_rooms` (채팅방)
 
 | 컬럼 | 타입 | NULL | UNIQUE | 설명 |
 | --- | --- | --- | --- | --- |
@@ -171,7 +189,7 @@
 - `UNIQUE(listing_id, buyer_id)` — 동일 게시글·구매자 조합은 방 하나
 - 채팅이 거래 요청보다 먼저 시작되므로 `trade_id`는 null 허용
 
-### 10. `messages` (메시지)
+### 11. `messages` (메시지)
 
 | 컬럼 | 타입 | NULL | UNIQUE | 설명 |
 | --- | --- | --- | --- | --- |
@@ -185,7 +203,7 @@
 - 1:1 채팅이므로 별도 참여자 테이블 없이 `read_at` 단일 컬럼으로 처리
 - 삭제해도 상대 화면에는 삭제 표시만 남김
 
-### 11. `reviews` (후기)
+### 12. `reviews` (후기)
 
 | 컬럼 | 타입 | NULL | UNIQUE | 설명 |
 | --- | --- | --- | --- | --- |
@@ -201,7 +219,7 @@
 - `CHECK (reviewer_id <> reviewee_id)`
 - 거래가 `COMPLETED`일 때만 작성 가능 — 애플리케이션에서 검증
 
-### 12. `community_posts` (커뮤니티 게시글)
+### 13. `community_posts` (커뮤니티 게시글)
 
 | 컬럼 | 타입 | NULL | UNIQUE | 설명 |
 | --- | --- | --- | --- | --- |
@@ -220,7 +238,7 @@
 - 공개 목록·상세에는 `status='PUBLISHED' AND deleted_at IS NULL`인 행만 노출
 - 탈퇴 회원이 작성한 게시글은 보존하되 API 응답의 `author.userId`를 null로 익명화
 
-### 13. `community_comments` (커뮤니티 댓글)
+### 14. `community_comments` (커뮤니티 댓글)
 
 | 컬럼 | 타입 | NULL | UNIQUE | 설명 |
 | --- | --- | --- | --- | --- |
@@ -235,7 +253,7 @@
 - 대댓글 구조를 두지 않으며 이미지·좋아요·북마크 컬럼도 두지 않음
 - 공개 목록에는 `status='PUBLISHED' AND deleted_at IS NULL`인 행만 노출
 
-### 14. `reports` (신고)
+### 15. `reports` (신고)
 
 | 컬럼 | 타입 | NULL | UNIQUE | 설명 |
 | --- | --- | --- | --- | --- |
@@ -253,7 +271,7 @@
 - `target_type` + `target_id` 다형 참조이므로 FK를 걸지 않음 → 대상 존재 여부는 애플리케이션에서 검증
 - **부분 유니크 인덱스**: 미처리 상태의 동일 신고자·대상·사유 조합 중복 방지
 
-### 15. `blocks` (사용자 차단)
+### 16. `blocks` (사용자 차단)
 
 | 컬럼 | 타입 | NULL | UNIQUE | 설명 |
 | --- | --- | --- | --- | --- |
@@ -265,7 +283,7 @@
 - `CHECK (blocker_id <> blocked_id)`
 - 단방향. 차단당한 쪽은 차단 사실을 알 수 없음
 
-### 16. `notifications` (알림)
+### 17. `notifications` (알림)
 
 | 컬럼 | 타입 | NULL | UNIQUE | 설명 |
 | --- | --- | --- | --- | --- |
@@ -280,7 +298,7 @@
 | created_at | TIMESTAMPTZ | NOT NULL, DEFAULT now() | - |  |
 - 폴링 방식으로 조회 (ADR-014)
 
-### 17. `notification_settings` (알림 수신 설정)
+### 18. `notification_settings` (알림 수신 설정)
 
 | 컬럼 | 타입 | NULL | UNIQUE | 설명 |
 | --- | --- | --- | --- | --- |
@@ -293,7 +311,7 @@
 | updated_at | TIMESTAMPTZ | NULL 허용 | - |  |
 - 회원가입 시 기본값으로 1행 생성
 
-### 18. `notices` (공지사항)
+### 19. `notices` (공지사항)
 
 | 컬럼 | 타입 | NULL | UNIQUE | 설명 |
 | --- | --- | --- | --- | --- |
@@ -306,7 +324,7 @@
 | updated_at | TIMESTAMPTZ | NULL 허용 | - |  |
 | deleted_at | TIMESTAMPTZ | NULL 허용 | - | 소프트 삭제 |
 
-### 19. `audit_logs` (감사 로그)
+### 20. `audit_logs` (감사 로그)
 
 | 컬럼 | 타입 | NULL | UNIQUE | 설명 |
 | --- | --- | --- | --- | --- |
@@ -329,6 +347,9 @@
 | 항목 | 값 | 강제 위치 |
 | --- | --- | --- |
 | 닉네임 | 2~20자, 중복 불허 | DB UNIQUE + 앱 |
+| 이메일 | `LOCAL` 범위에서 중복 불허 | DB 부분 UNIQUE + 앱 |
+| 비밀번호 | 8~128자 | 앱 (해시로 저장하므로 DB 길이 제약 불가) |
+| 사용자당 인증 수단 | 1차 릴리스는 1개 | 앱 (DB 제약 불가) |
 | 게시글 제목 | 2~100자 | 앱 |
 | 게시글 설명 | 1~2,000자 | DB 길이 + 앱 |
 | 게시글 가격 | 0 ~ 100,000,000원 | DB CHECK |
@@ -380,6 +401,7 @@ FK 컬럼은 PostgreSQL이 자동으로 인덱스를 만들어주지 않으므�
 
 | 인덱스 | 대상 | 이유 |
 | --- | --- | --- |
+| `uq_user_identities_email_local` | `user_identities(email) WHERE provider = 'LOCAL'` | 이메일 계정의 이메일 유일성 강제. 이메일 로그인 조회를 겸함 |
 | `uq_trades_one_accepted_per_listing` | `trades(listing_id) WHERE status = 'ACCEPTED'` | 게시글당 승인 거래 1개 강제 |
 | `uq_trades_active_per_buyer` | `trades(listing_id, buyer_id) WHERE status IN ('REQUESTED','ACCEPTED')` | 동일 구매자 중복 요청 방지 |
 | `uq_reports_pending_duplicate` | `reports(reporter_id, target_type, target_id, reason_code) WHERE status IN ('RECEIVED','IN_REVIEW')` | 미처리 중복 신고 방지 |
@@ -413,6 +435,7 @@ erDiagram
   USERS ||--o{ BLOCKS : blocks
   USERS ||--o{ NOTIFICATIONS : receives
   USERS ||--|| NOTIFICATION_SETTINGS : configures
+  USERS ||--o{ USER_IDENTITIES : "authenticates with"
   USERS ||--o{ USER_STATUS_HISTORIES : "status changed"
   USERS ||--o{ LISTING_IMAGES : uploads
   USERS ||--o{ NOTICES : posts
@@ -433,13 +456,20 @@ erDiagram
 
   USERS {
     bigint user_id PK
-    varchar provider UK
-    varchar provider_user_id UK
     varchar nickname UK
     varchar role
     varchar status
     timestamptz suspended_until
     timestamptz withdrawn_at
+  }
+  USER_IDENTITIES {
+    bigint identity_id PK
+    bigint user_id FK
+    varchar provider UK
+    varchar provider_user_id UK
+    varchar email
+    varchar password_hash
+    timestamptz email_verified_at
   }
   USER_STATUS_HISTORIES {
     bigint history_id PK
@@ -614,6 +644,7 @@ erDiagram
 **관계 요약**
 
 - `users` → 대부분 테이블과 1:N. 사용자는 판매자·구매자·작성자·신고자 등 여러 역할로 등장하므로 동일 테이블에 복수 FK가 걸림
+- `users` → `user_identities`는 1:N. 구조상 한 회원이 여러 인증 수단을 가질 수 있으나, 1차 릴리스는 애플리케이션이 1개로 제한한다 (ADR-017)
 - `listings` ↔ `users`는 `trades`를 통한 다대다. 단 `trades`는 단순 조인 테이블이 아니라 상태와 이력을 가진 독립 엔티티 (ADR-007)
 - `chat_rooms`는 `trades`와 1:0..1. 채팅이 거래보다 먼저 시작되므로 `trade_id`는 null 허용
 - `community_posts` → `community_comments`는 1:N이며 댓글은 한 게시글에만 속하는 평면 구조
@@ -647,25 +678,31 @@ erDiagram
 
 **5. 탈퇴 시 익명화 대상 누락 주의**
 
-- 문제: `users.status='WITHDRAWN'`만 바꾸면 닉네임과 소셜 식별자가 그대로 남음
-- 규칙: 같은 트랜잭션에서 `nickname` 대체, `provider_user_id` 해시 변환, 진행 중 거래 취소를 함께 처리하고 커뮤니티 응답의 작성자는 `userId=null`로 익명화 (ADR-012)
+- 문제: `users.status='WITHDRAWN'`만 바꾸면 닉네임과 인증 식별자가 그대로 남음. 인증 수단이 별도 테이블로 빠져 있어 더 놓치기 쉬움
+- 규칙: 같은 트랜잭션에서 `nickname` 대체, `user_identities`의 `provider_user_id`·`email` 해시 변환과 `password_hash` 제거, 진행 중 거래 취소를 함께 처리하고 커뮤니티 응답의 작성자는 `userId=null`로 익명화 (ADR-012, ADR-017)
+- `email`을 `NULL`로 비우면 탈퇴 후 같은 주소로 재가입할 수 있어 제재 우회가 가능하다. 반드시 해시로 보존한다
 
-**6. 채팅방·거래 조회 시 당사자 검증 필수**
+**6. 사용자당 인증 수단 1개 제한은 앱에서 검증**
+
+- 문제: `user_identities`는 회원당 행 개수를 DB로 제한할 수 없음. `UNIQUE(user_id, provider)`는 같은 제공자의 중복만 막는다
+- 규칙: 1차 릴리스에서는 가입·연결 시 해당 `user_id`의 기존 행이 없을 때만 삽입을 허용한다 (ADR-017)
+
+**7. 채팅방·거래 조회 시 당사자 검증 필수**
 
 - 문제: 식별자가 순차 증가값이므로 `/chat-rooms/47`처럼 값을 바꿔 호출 가능
 - 규칙: 모든 조회·변경 API에서 인증 사용자가 `seller_id` 또는 `buyer_id`인지 확인 (`NFR-AUTH-009`)
 
-**7. 차단 관계는 조회 시마다 필터링**
+**8. 차단 관계는 조회 시마다 필터링**
 
 - 문제: 차단은 관계 테이블에만 기록되고 게시글·채팅에 반영되지 않음
 - 규칙: 중고거래와 커뮤니티 게시글·댓글 목록 조회 쿼리에 차단 사용자 제외 조건을 포함
 
-**8. 커뮤니티 변경 권한은 앱에서 검증**
+**9. 커뮤니티 변경 권한은 앱에서 검증**
 
 - 문제: DB는 요청자의 회원 상태와 작성자 일치 여부를 알 수 없음
 - 규칙: 작성·수정·삭제 전에 `users.status='ACTIVE'`를 확인하고, 게시글 수정·삭제와 댓글 삭제는 각 `author_id` 일치까지 검증
 
-**9. 댓글 등록·삭제·숨김과 `comment_count` 갱신은 한 트랜잭션**
+**10. 댓글 등록·삭제·숨김과 `comment_count` 갱신은 한 트랜잭션**
 
 - 문제: 댓글 행과 게시글의 비정규화 집계 값이 별도로 변경됨
 - 규칙: 노출 가능한 댓글 등록·삭제·신고 숨김 시 `community_posts.comment_count`를 같은 트랜잭션에서 증감하고 음수가 되지 않게 처리
