@@ -30,6 +30,7 @@
 | [ADR-014](adr/ADR-014.md) | 인앱 알림 전용, 폴링 기반 조회 | Accepted |
 | [ADR-015](adr/ADR-015.md) | 프론트엔드 프레임워크 선택 | **Proposed** |
 | [ADR-016](adr/ADR-016.md) | 자체 이메일·비밀번호 계정을 소셜 로그인과 병행 | Accepted |
+| [ADR-017](adr/ADR-017.md) | 인증 수단을 계정과 분리된 엔티티로 모델링 | Accepted |
 
 ## 후속 검토
 
