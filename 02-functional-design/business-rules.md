@@ -144,8 +144,8 @@ Access Token이 최대 30분간 유효하므로, 정지 직후에도 기존 토�
 
 1. 진행 중인 거래(`REQUESTED`/`ACCEPTED`)를 `CANCELED`로 전환하고 상대방에게 알림
 2. `nickname`을 `탈퇴회원#{user_id}`로 대체
-3. `provider_user_id`를 단방향 해시로 변환
-4. `email`과 `password_hash`를 `NULL`로 설정
+3. `user_identities`의 `provider_user_id`와 `email`을 단방향 해시로 변환
+4. `user_identities.password_hash`를 제거
 5. `status = 'WITHDRAWN'`, `withdrawn_at` 기록
 6. 발급된 모든 Refresh Token 폐기
 
@@ -183,10 +183,11 @@ Access Token이 최대 30분간 유효하므로, 정지 직후에도 기존 토�
 ### 5. 인증 수단
 
 계정 수단은 소셜 로그인과 자체 이메일 계정 두 가지다 (ADR-004, ADR-016).
+인증 수단은 `user_identities`에 회원과 분리해 저장하며, 1차 릴리스는 사용자당 하나로 제한한다 (ADR-017).
 
-#### 제공자별 계정 구성
+#### 제공자별 인증 수단 구성
 
-| 제공자 | 계정 식별자 | 이메일 | 비밀번호 |
+| 제공자 | 인증 식별자 | 이메일 | 비밀번호 |
 | --- | --- | --- | --- |
 | `KAKAO` | 카카오 회원번호 | 저장하지 않음 | 없음 |
 | `LOCAL` | 서버 발급 UUID | 필수 · `LOCAL` 범위에서 유일 | 필수 |
