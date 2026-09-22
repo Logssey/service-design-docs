@@ -144,10 +144,11 @@ Access Token이 최대 30분간 유효하므로, 정지 직후에도 기존 토�
 
 1. 진행 중인 거래(`REQUESTED`/`ACCEPTED`)를 `CANCELED`로 전환하고 상대방에게 알림
 2. `nickname`을 `탈퇴회원#{user_id}`로 대체
-3. `user_identities`의 `provider_user_id`와 `email`을 단방향 해시로 변환
-4. `user_identities.password_hash`를 제거
-5. `status = 'WITHDRAWN'`, `withdrawn_at` 기록
-6. 발급된 모든 Refresh Token 폐기
+3. 해당 회원의 `user_identities` 행을 삭제 (ADR-018)
+4. `status = 'WITHDRAWN'`, `withdrawn_at` 기록
+5. 발급된 모든 Refresh Token 폐기
+
+인증 식별자와 이메일은 보존하지 않으므로 **탈퇴 후 같은 이메일로 재가입할 수 있다.** 이 경우 별개의 새 계정이며 이전 이력과 연결되지 않는다. 제재 회피 방지는 1차 릴리스 범위 밖이다 (ADR-018).
 
 게시글, 커뮤니티 게시글·댓글, 후기, 채팅 메시지는 삭제하지 않는다. 커뮤니티 응답에서는 탈퇴 작성자의 `author.userId`를 `null`로 반환하고 익명 작성자로 표시한다. 익명 처리된 후기는 상대방 평점 집계에 계속 반영한다.
 

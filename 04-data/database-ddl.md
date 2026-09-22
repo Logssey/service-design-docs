@@ -136,10 +136,10 @@ CREATE TABLE user_identities (
 CREATE UNIQUE INDEX uq_user_identities_email_local
     ON user_identities (email) WHERE provider = 'LOCAL';
 
-COMMENT ON TABLE  user_identities IS '인증 수단. 구조상 회원당 복수 행이 가능하나 1차 릴리스는 애플리케이션이 1개로 제한한다 (ADR-017)';
-COMMENT ON COLUMN user_identities.provider_user_id IS 'KAKAO는 회원번호, LOCAL은 서버 발급 UUID. 탈퇴 시 단방향 해시로 대체';
-COMMENT ON COLUMN user_identities.email IS 'LOCAL 필수. 탈퇴 시 단방향 해시로 대체해 재가입 우회를 막는다 (ADR-012)';
-COMMENT ON COLUMN user_identities.password_hash IS 'LOCAL 필수. 고유 Salt 적응형 단방향 해시. 탈퇴 시 NULL';
+COMMENT ON TABLE  user_identities IS '인증 수단. 구조상 회원당 복수 행이 가능하나 1차 릴리스는 애플리케이션이 1개로 제한한다 (ADR-017). 탈퇴 시 행을 삭제한다 (ADR-018)';
+COMMENT ON COLUMN user_identities.provider_user_id IS 'KAKAO는 회원번호, LOCAL은 서버 발급 UUID';
+COMMENT ON COLUMN user_identities.email IS 'LOCAL 필수. LOCAL 범위에서만 유일';
+COMMENT ON COLUMN user_identities.password_hash IS 'LOCAL 필수. 고유 Salt 적응형 단방향 해시';
 COMMENT ON COLUMN user_identities.email_verified_at IS '이메일 소유 확인 시각. NULL이면 미인증';
 
 -- ------------------------------------------------------------

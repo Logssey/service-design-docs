@@ -34,7 +34,7 @@
 | updated_at | TIMESTAMPTZ | NULL 허용 | - |  |
 | withdrawn_at | TIMESTAMPTZ | NULL 허용 | - | 탈퇴 시각 |
 - 인증 수단은 `user_identities`로 분리한다. `users`는 사람만 표현한다 (ADR-017)
-- 탈퇴 시: `nickname`을 `탈퇴회원#{user_id}`로 대체, `status='WITHDRAWN'`. 인증 수단은 `user_identities`에서 처리
+- 탈퇴 시: `nickname`을 `탈퇴회원#{user_id}`로 대체, `status='WITHDRAWN'`. 인증 수단 행은 삭제하므로 탈퇴 회원은 인증 수단이 없다 (ADR-018)
 - 닉네임 유니크를 유지하기 위해 탈퇴 대체 문구에 `user_id`를 붙임
 
 ### 2. `user_identities` (인증 수단)
@@ -44,9 +44,9 @@
 | identity_id | BIGINT, PK, GENERATED ALWAYS AS IDENTITY | NOT NULL | - |  |
 | user_id | BIGINT, FK → users.user_id, ON DELETE RESTRICT | NOT NULL | 복합 | 인증 수단을 소유한 회원 |
 | provider | VARCHAR(20), CHECK IN ('KAKAO','LOCAL') | NOT NULL | 복합 | 인증 제공자 |
-| provider_user_id | VARCHAR(255) | NOT NULL | 복합 | `KAKAO`는 회원번호, `LOCAL`은 서버 발급 UUID. 탈퇴 시 해시로 대체 |
-| email | VARCHAR(254) | NULL 허용 | 부분 | `LOCAL` 필수. 탈퇴 시 해시로 대체 |
-| password_hash | VARCHAR(255) | NULL 허용 | - | `LOCAL` 필수. 탈퇴 시 제거 |
+| provider_user_id | VARCHAR(255) | NOT NULL | 복합 | `KAKAO`는 회원번호, `LOCAL`은 서버 발급 UUID |
+| email | VARCHAR(254) | NULL 허용 | 부분 | `LOCAL` 필수 |
+| password_hash | VARCHAR(255) | NULL 허용 | - | `LOCAL` 필수 |
 | email_verified_at | TIMESTAMPTZ | NULL 허용 | - | 이메일 소유 확인 시각. NULL이면 미인증 |
 | created_at | TIMESTAMPTZ | NOT NULL, DEFAULT now() | - |  |
 - `UNIQUE(provider, provider_user_id)` — 제공자 계정의 유일성. 이메일은 식별에 사용하지 않음 (ADR-016, ADR-017)
@@ -54,7 +54,7 @@
 - **부분 유니크 인덱스**: `UNIQUE(email) WHERE provider='LOCAL'` — 이메일은 `LOCAL` 범위에서만 유일. 이메일 로그인 조회 인덱스를 겸함
 - `CHECK (provider <> 'LOCAL' OR email IS NOT NULL)` — 이메일 계정은 이메일 필수
 - `CHECK (provider = 'LOCAL' OR (email IS NULL AND password_hash IS NULL))` — 소셜 계정에는 자격증명을 두지 않음
-- 탈퇴 시: `provider_user_id`와 `email`을 단방향 해시로 변환하고 `password_hash`를 `NULL`로 설정 (ADR-012, ADR-017)
+- 탈퇴 시 행을 삭제한다. 식별자·이메일을 보존하지 않으므로 같은 이메일로 재가입할 수 있다 (ADR-018)
 - `UNIQUE(user_id, provider)`가 `user_id`로 시작하므로 FK 조회용 인덱스를 따로 만들지 않는다
 
 ### 3. `user_status_histories` (회원 상태·역할 변경 이력)
@@ -678,9 +678,9 @@ erDiagram
 
 **5. 탈퇴 시 익명화 대상 누락 주의**
 
-- 문제: `users.status='WITHDRAWN'`만 바꾸면 닉네임과 인증 식별자가 그대로 남음. 인증 수단이 별도 테이블로 빠져 있어 더 놓치기 쉬움
-- 규칙: 같은 트랜잭션에서 `nickname` 대체, `user_identities`의 `provider_user_id`·`email` 해시 변환과 `password_hash` 제거, 진행 중 거래 취소를 함께 처리하고 커뮤니티 응답의 작성자는 `userId=null`로 익명화 (ADR-012, ADR-017)
-- `email`을 `NULL`로 비우면 탈퇴 후 같은 주소로 재가입할 수 있어 제재 우회가 가능하다. 반드시 해시로 보존한다
+- 문제: `users.status='WITHDRAWN'`만 바꾸면 닉네임과 인증 수단이 그대로 남음. 인증 수단이 별도 테이블로 빠져 있어 더 놓치기 쉬움
+- 규칙: 같은 트랜잭션에서 `nickname` 대체, `user_identities` 행 삭제, 진행 중 거래 취소를 함께 처리하고 커뮤니티 응답의 작성자는 `userId=null`로 익명화 (ADR-012, ADR-018)
+- 인증 수단 행이 사라지므로 탈퇴 회원은 구조적으로 로그인할 수 없다. 별도의 로그인 차단 분기에 의존하지 않는다
 
 **6. 사용자당 인증 수단 1개 제한은 앱에서 검증**
 
