@@ -1,6 +1,6 @@
 # Re:Used — DB DDL
 
-> PostgreSQL 16 기준. `spring.jpa.hibernate.ddl-auto: none`으로 설정하고 이 스크립트를 직접 적용한다.
+> PostgreSQL 18.6 기준. `spring.jpa.hibernate.ddl-auto: none`으로 설정하고 이 스크립트를 직접 적용한다.
 > 
 
 #### DB 초기 세팅
@@ -43,7 +43,7 @@ sql
 ```sql
 -- ============================================================
 -- Re:Used 중고거래 플랫폼 DB 스키마
--- PostgreSQL 16
+-- PostgreSQL 18.6
 -- DB명: reused
 -- 파일: schema/001_init.sql
 -- ============================================================
