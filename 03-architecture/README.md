@@ -28,7 +28,7 @@
 | [ADR-012](adr/ADR-012.md) | 탈퇴 시 논리 삭제와 작성자 익명화 | Accepted |
 | [ADR-013](adr/ADR-013.md) | 커서 기반 페이지네이션 | Accepted |
 | [ADR-014](adr/ADR-014.md) | 인앱 알림 전용, 폴링 기반 조회 | Accepted |
-| [ADR-015](adr/ADR-015.md) | 프론트엔드 프레임워크 선택 | **Proposed** |
+| [ADR-015](adr/ADR-015.md) | 프론트엔드 프레임워크 선택 | Accepted |
 | [ADR-016](adr/ADR-016.md) | 자체 이메일·비밀번호 계정을 소셜 로그인과 병행 | Accepted |
 | [ADR-017](adr/ADR-017.md) | 인증 수단을 계정과 분리된 엔티티로 모델링 | Accepted |
 | [ADR-018](adr/ADR-018.md) | 탈퇴 시 인증 수단 파기, 재가입 제한 없음 | Accepted |
