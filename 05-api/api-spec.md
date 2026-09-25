@@ -188,15 +188,17 @@ wss://reused.app/socket.io
 
 메시지 전송은 WebSocket이 아닌 `POST /chat-rooms/{id}/messages`를 사용한다. 저장 성공을 보장하기 위함이다.
 
+`authenticate`는 호환 별칭 `accessToken`도 단독 사용 시 허용하지만 두 필드를 함께 보내면 거부한다. 토큰을 query·handshake auth·연결 Authorization 헤더에 넣지 않는다.
+
 #### 서버 → 클라이언트
 
 | 이벤트 | 페이로드 | 설명 |
 | --- | --- | --- |
 | `authenticated` | 없음 | 인증 성공 |
-| `auth_error` | `{ "reason": "EXPIRED" }` | 인증 실패. 연결 종료 |
+| `auth_error` | `{ "reason": "INVALID" }` | 잘못된/만료된 자격. `TIMEOUT`은 5초 미인증, `UNAVAILABLE`은 API 검증 불가. 모두 연결 종료 |
 | `forbidden` | `{ "chatRoomId": 12 }` | 참여자가 아닌 방 구독 시도 |
 | `message` | `MessageResponse` | 새 메시지 수신 |
-| `read` | `{ "chatRoomId": 12, "lastReadMessageId": 987, "readerId": 5 }` | 해당 사용자가 읽음 |
+| `read` | `{ "chatRoomId": 12, "lastReadMessageId": 987 }` | 상대방이 읽음. 읽은 본인 연결에는 보내지 않음 |
 | `message_deleted` | `{ "chatRoomId": 12, "messageId": 987 }` | 메시지 삭제됨 |
 
 #### 재연결
