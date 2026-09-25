@@ -1,0 +1,32 @@
+# 백엔드 구현 상태
+
+기준: 2026-09-25, `Logssey/service-backend`의 담당 기능 구현 및 통합 검증.
+
+엔드포인트 카탈로그 85개 중 60개를 구현했다. `개발완료여부: Yes`는 코드·검증 기준이며 운영 배포 완료를 뜻하지 않는다.
+
+## 담당 범위
+
+CATEGORIES, IMAGES(LISTING·PROFILE), LISTINGS, WISHES, TRADES, CHAT(REST·Socket.IO), REVIEWS, ME, 관리자 게시글·거래 API를 구현했다. 날짜 대신 실제 중고거래 흐름을 기준으로 구성했다.
+
+의존 기능도 함께 구현했다: 사용자 차단, 알림 조회·설정·읽음과 거래·채팅·후기 알림 생성, 관리자 감사 기록 저장, 판매자 공개 프로필·후기·게시글, 내 프로필 수정·탈퇴 처리.
+
+## 검증
+
+로컬 검증 결과: API 테스트 147개, 채팅 서버 테스트 8개, 전체 흐름 E2E 1개 통과. 채팅 Docker 이미지 빌드도 통과했다.
+
+- PostgreSQL·Redis Testcontainers 기반 API 통합 테스트: 권한·소유권·멱등성·경합·롤백·커서·이미지 바이트 검증·연결 수명주기.
+- 실제 Socket.IO 클라이언트와 Redis 기반 채팅 서버 테스트.
+- 실제 Spring HTTP + Socket.IO + PostgreSQL + Redis로 가입→게시글→관심→채팅·읽음·삭제→거래 승인·완료→상호 후기→관리자 숨김·복구→탈퇴·거래 취소를 검증한다.
+- 외부 카카오·SMTP·S3는 테스트 대역을 사용한다. 실제 클라우드 자격증명과 운영 라우팅 검증은 별도 배포 작업이다.
+- 실행: backend `./gradlew test`, `chat-server`의 `npm ci && npm run build && npm test`, backend `./gradlew marketplaceE2E`.
+
+## 운영 반영 조건
+
+1. [003 프로필 이미지 연결](../04-data/profile-images-migration.md) SQL을 기존 001·002 다음에 적용한다. 미적용 DB는 기존 상품 이미지를 유지하며 PROFILE 변경만 503으로 거부한다.
+2. 기존 비공개 S3 버킷·권한·CORS·`pending/` Lifecycle을 설정한다. PROFILE도 같은 버킷과 AWS 자격증명 체인을 사용한다.
+3. 채팅 런타임을 별도 기동하고 `CHAT_API_BASE_URL`, `CHAT_REDIS_URL`, `CHAT_ALLOWED_ORIGINS`를 주입한다. 외부 `/socket.io`를 이 런타임에 연결한다. 별도 JWT 비밀키를 복제하지 않는다.
+4. 실제 환경변수 값은 공개 문서·Git에 올리지 않고 기존 CI/CD 시크릿 전달 경로로 공유한다.
+
+## 이번 담당 범위 밖
+
+카탈로그의 나머지 25개: 비밀번호 변경, 신고 접수·내 신고, 챗봇, 공지사항, 커뮤니티, 관리자 회원·신고·공지·대시보드·감사 조회. 이들은 다른 담당 영역이며 완료로 표시하지 않았다. 감사 저장과 조회, 알림 생성 기반과 개별 신고·공지 이벤트 발행은 구분한다.

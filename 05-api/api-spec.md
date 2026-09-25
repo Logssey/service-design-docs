@@ -83,12 +83,12 @@
 
 **토큰 유형 구분**
 
-서버가 발급하는 JWT는 용도별로 `typ` 헤더를 다르게 부여하고, 검증 시 용도가 일치하는지 확인한다 (RFC 8725 §3.11 Use Explicit Typing).
+현재 API 서버는 서명된 JWT payload의 `typ` 용도 클레임을 검사한다. JOSE 헤더의 `typ`을 `at+jwt`로 설정하는 방식은 현재 구현하지 않는다.
 
-| 토큰 | `typ` | 용도 |
+| 토큰 | payload `typ` | 용도 |
 | --- | --- | --- |
-| Access Token | `at+jwt` | API 호출 인증 (RFC 9068 등록값) |
-| `signupToken` | `signup+jwt` | 소셜 온보딩 전용 단기 토큰 |
+| Access Token | `access` | API 호출 인증 |
+| `signupToken` | `signup` | 소셜 온보딩 전용 단기 토큰 |
 
 `typ` 검증을 생략하면 `signupToken`으로 일반 API를 호출하거나 그 반대가 가능해진다. 서명 검증만으로는 구분되지 않는다.
 
@@ -96,7 +96,7 @@
 
 HS256 키는 해시 출력과 같거나 큰 길이를 사용한다 — 최소 32바이트(256비트) (RFC 7518 §3.2). 키 값은 소스 코드와 형상관리 저장소에 포함하지 않는다 (`NFR-CRED-001`, `NFR-CRED-007`).
 
-커뮤니티 공개 조회 API는 Bearer 토큰 없이 호출할 수 있다. 유효한 토큰이 있으면 `isMine` 계산과 차단 사용자 콘텐츠 필터에 사용한다. `Authorization` 헤더를 보냈지만 토큰이 잘못되었거나 만료된 경우에는 익명 요청으로 무시하지 않고 `401 UNAUTHENTICATED`로 응답한다.
+공개 조회 API는 Bearer 토큰 없이 호출할 수 있다. 선택적 인증을 사용하는 목록에서는 유효한 토큰을 `isMine` 계산과 차단 사용자 콘텐츠 필터에 사용한다. `Authorization` 헤더를 보냈지만 토큰이 잘못되었거나 만료된 경우에는 익명 요청으로 무시하지 않고 `401 UNAUTHENTICATED`로 응답한다.
 
 #### 0.4. 페이지네이션
 
@@ -135,7 +135,7 @@ HS256 키는 해시 출력과 같거나 큰 길이를 사용한다 — 최소 32
 - 커뮤니티 응답에서 탈퇴 작성자는 `CommunityAuthorResponse.userId=null`, `nickname="탈퇴한 사용자"`로 익명화한다
 - 커뮤니티 게시글 목록은 `excerpt`, 상세는 원문 `content`를 반환하며 두 응답 모두 `category`, `author`, `commentCount`, `viewCount`, `isMine`, `createdAt`, `updatedAt`을 포함한다
 - 커뮤니티 제목·본문·댓글의 길이는 앞뒤 공백을 제거한 값으로 검증하고, 제거된 값을 저장한다
-- 이미지 URL은 비공개 S3 버킷에 대한 서명된 URL이다
+- 업로드한 이미지 URL은 비공개 S3 버킷에 대한 서명 URL이다. 기존 OAuth 제공자의 HTTPS 아바타 URL은 유지할 수 있다
 
 ### 1. WebSocket 이벤트
 
@@ -174,6 +174,9 @@ wss://reused.app/socket.io
 - 연결 후 5초 내 `authenticate`가 없으면 연결을 종료한다
 - 인증 실패 시 `auth_error` 발신 후 연결을 종료한다
 - 인증 전에는 `subscribe`를 포함한 어떤 이벤트도 처리하지 않는다
+- 인증과 구독 검증은 API 서버의 `/chat/session`, `/chat-rooms/{id}/subscription`을 사용한다. 이벤트 전달 전에도 현재 토큰·회원·참여자·차단 상태를 재검증한다.
+- `subscribe`는 callback으로 `{ok:true,chatRoomId}` 또는 `{ok:false,chatRoomId,code}`를 반환한다.
+- 한 연결의 구독 수와 인가 대기 요청 수, 수신 메시지 크기에 상한을 둔다. 설정·배포·실행 방법은 backend의 `chat-server/README.md`를 따른다.
 
 #### 클라이언트 → 서버
 
@@ -185,15 +188,17 @@ wss://reused.app/socket.io
 
 메시지 전송은 WebSocket이 아닌 `POST /chat-rooms/{id}/messages`를 사용한다. 저장 성공을 보장하기 위함이다.
 
+`authenticate`는 호환 별칭 `accessToken`도 단독 사용 시 허용하지만 두 필드를 함께 보내면 거부한다. 토큰을 query·handshake auth·연결 Authorization 헤더에 넣지 않는다.
+
 #### 서버 → 클라이언트
 
 | 이벤트 | 페이로드 | 설명 |
 | --- | --- | --- |
 | `authenticated` | 없음 | 인증 성공 |
-| `auth_error` | `{ "reason": "EXPIRED" }` | 인증 실패. 연결 종료 |
+| `auth_error` | `{ "reason": "INVALID" }` | 잘못된/만료된 자격. `TIMEOUT`은 5초 미인증, `UNAVAILABLE`은 API 검증 불가. 모두 연결 종료 |
 | `forbidden` | `{ "chatRoomId": 12 }` | 참여자가 아닌 방 구독 시도 |
 | `message` | `MessageResponse` | 새 메시지 수신 |
-| `read` | `{ "chatRoomId": 12, "lastReadMessageId": 987 }` | 상대방이 읽음 |
+| `read` | `{ "chatRoomId": 12, "lastReadMessageId": 987 }` | 상대방이 읽음. 읽은 본인 연결에는 보내지 않음 |
 | `message_deleted` | `{ "chatRoomId": 12, "messageId": 987 }` | 메시지 삭제됨 |
 
 #### 재연결
@@ -218,7 +223,7 @@ wss://reused.app/socket.io
 | 관심 상품 | 3 | `/wishes`, `/listings/{id}/wish` |
 | 거래 | 7 | `/trades/*` |
 | 판매 관리 | 2 | `/me/*` |
-| 채팅 | 6 | `/chat-rooms/*` |
+| 채팅 | 8 | `/chat-rooms/*`, `/chat/session` |
 | 커뮤니티 | 8 | `/community/posts/*` |
 | 후기 | 1 | `/reviews` |
 | 신고·차단 | 5 | `/reports/*`, `/blocks/*` |
@@ -226,6 +231,6 @@ wss://reused.app/socket.io
 | 챗봇 | 2 | `/chatbot/*` |
 | 공지사항 | 2 | `/notices/*` |
 | 관리자 | 14 | `/admin/*` |
-| 합계 | **83** |  |
+| 합계 | **85** |  |
 
 [엔드포인트 (DB) c80f026c8600432ab3aee1fed9235da2](catalog/endpoints.csv)

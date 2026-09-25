@@ -4,7 +4,7 @@
 | --- | --- | --- |
 | API 서버 | Spring Boot | 챗봇 모듈 포함, 복수 인스턴스 |
 | 채팅 서버 | Node.js + Socket.IO | 복수 인스턴스 |
-| 프론트엔드 | React 또는 Next.js | 정적 파일 |
+| 프론트엔드 | React + Vite | 정적 파일, ADR-015 Accepted |
 | 데이터베이스 | PostgreSQL |  |
 | 캐시·Pub/Sub | Redis |  |
 | 객체 스토리지 | S3 |  |
@@ -47,11 +47,11 @@ kakao:
 
 | **ID** | **항목** | **후속 문서** |
 | --- | --- | --- |
-| ADR-015 | 프론트엔드 프레임워크 | 본 문서 |
-| — | WebSocket 인증 토큰 전달 방식 | 클라우드 아키텍처 또는 FDD |
-| — | 썸네일 생성 위치 | FDD |
-| — | 감사 로그 저장 위치 | 클라우드 아키텍처 |
 | ADR-016 | 소셜 제공자 추가 (Google 등) | 신규 ADR |
 | ADR-016 | 운영 환경 메일 발송 수단 | 클라우드 아키텍처 |
 | ADR-017 | 계정 연결 기능 (한 계정에 인증 수단 추가) | 신규 ADR |
 | ADR-018 | 제재 회피 방지 (탈퇴 후 재가입 제한) | 신규 ADR |
+
+확정된 항목: WebSocket은 연결 후 `authenticate` 이벤트로 토큰을 전달한다. 1차 릴리스 썸네일은 원본 서명 URL을 사용하고, 감사 기록은 PostgreSQL `audit_logs`에 조치와 같은 트랜잭션으로 저장한다.
+
+API 서버와 채팅 서버 코드는 `service-backend` 한 저장소에 두며, 채팅 서버는 그 안의 `chat-server/` 별도 런타임으로 배포한다. `/api`는 Spring, `/socket.io`는 Socket.IO로 라우팅하며 WebSocket 업그레이드와 Origin 허용 목록이 필요하다.
