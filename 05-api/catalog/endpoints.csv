@@ -46,14 +46,14 @@
 메시지 읽음 처리,CHAT,POST,/api/v1/chat-rooms/{chatRoomId}/read,1,Yes
 채팅 인증 확인,CHAT,GET,/api/v1/chat/session,1,Yes
 채팅 구독 권한 확인,CHAT,GET,/api/v1/chat-rooms/{chatRoomId}/subscription,1,Yes
-커뮤니티 게시글 목록 조회,COMMUNITY,GET,/api/v1/community/posts,1,No
-커뮤니티 게시글 상세 조회,COMMUNITY,GET,/api/v1/community/posts/{postId},1,No
-커뮤니티 게시글 등록,COMMUNITY,POST,/api/v1/community/posts,1,No
-커뮤니티 게시글 수정,COMMUNITY,PATCH,/api/v1/community/posts/{postId},1,No
-커뮤니티 게시글 삭제,COMMUNITY,DELETE,/api/v1/community/posts/{postId},1,No
-커뮤니티 댓글 목록 조회,COMMUNITY,GET,/api/v1/community/posts/{postId}/comments,1,No
-커뮤니티 댓글 등록,COMMUNITY,POST,/api/v1/community/posts/{postId}/comments,1,No
-커뮤니티 댓글 삭제,COMMUNITY,DELETE,/api/v1/community/posts/{postId}/comments/{commentId},1,No
+커뮤니티 게시글 목록 조회,COMMUNITY,GET,/api/v1/community/posts,1,Yes
+커뮤니티 게시글 상세 조회,COMMUNITY,GET,/api/v1/community/posts/{postId},1,Yes
+커뮤니티 게시글 등록,COMMUNITY,POST,/api/v1/community/posts,1,Yes
+커뮤니티 게시글 수정,COMMUNITY,PATCH,/api/v1/community/posts/{postId},1,Yes
+커뮤니티 게시글 삭제,COMMUNITY,DELETE,/api/v1/community/posts/{postId},1,Yes
+커뮤니티 댓글 목록 조회,COMMUNITY,GET,/api/v1/community/posts/{postId}/comments,1,Yes
+커뮤니티 댓글 등록,COMMUNITY,POST,/api/v1/community/posts/{postId}/comments,1,Yes
+커뮤니티 댓글 삭제,COMMUNITY,DELETE,/api/v1/community/posts/{postId}/comments/{commentId},1,Yes
 후기 작성,REVIEWS,POST,/api/v1/reviews,1,Yes
 사용자 차단,REPORTS,POST,/api/v1/blocks,1,Yes
 차단 목록 조회,REPORTS,GET,/api/v1/blocks,1,Yes

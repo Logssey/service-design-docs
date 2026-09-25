@@ -7,6 +7,7 @@ API 공통 규약, 실시간 이벤트, 엔드포인트 목록과 엔드포인�
 - [API 공통 규약 및 엔드포인트 요약](api-spec.md)
 - [엔드포인트 상세 문서 인덱스](endpoints/README.md)
 - [엔드포인트 카탈로그](catalog/endpoints.csv)
+- [백엔드 구현·검증 현황](backend-implementation-status.md)
 
 ## 관리 기준
 
