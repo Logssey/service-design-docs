@@ -135,7 +135,7 @@ HS256 키는 해시 출력과 같거나 큰 길이를 사용한다 — 최소 32
 - 커뮤니티 응답에서 탈퇴 작성자는 `CommunityAuthorResponse.userId=null`, `nickname="탈퇴한 사용자"`로 익명화한다
 - 커뮤니티 게시글 목록은 `excerpt`, 상세는 원문 `content`를 반환하며 두 응답 모두 `category`, `author`, `commentCount`, `viewCount`, `isMine`, `createdAt`, `updatedAt`을 포함한다
 - 커뮤니티 제목·본문·댓글의 길이는 앞뒤 공백을 제거한 값으로 검증하고, 제거된 값을 저장한다
-- 이미지 URL은 비공개 S3 버킷에 대한 서명된 URL이다
+- 업로드한 이미지 URL은 비공개 S3 버킷에 대한 서명 URL이다. 기존 OAuth 제공자의 HTTPS 아바타 URL은 유지할 수 있다
 
 ### 1. WebSocket 이벤트
 

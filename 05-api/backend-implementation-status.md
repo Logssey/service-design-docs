@@ -12,6 +12,8 @@ CATEGORIES, IMAGES(LISTING·PROFILE), LISTINGS, WISHES, TRADES, CHAT(REST·Socke
 
 ## 검증
 
+로컬 검증 결과: API 테스트 147개, 채팅 서버 테스트 8개, 전체 흐름 E2E 1개 통과. 채팅 Docker 이미지 빌드도 통과했다.
+
 - PostgreSQL·Redis Testcontainers 기반 API 통합 테스트: 권한·소유권·멱등성·경합·롤백·커서·이미지 바이트 검증·연결 수명주기.
 - 실제 Socket.IO 클라이언트와 Redis 기반 채팅 서버 테스트.
 - 실제 Spring HTTP + Socket.IO + PostgreSQL + Redis로 가입→게시글→관심→채팅·읽음·삭제→거래 승인·완료→상호 후기→관리자 숨김·복구→탈퇴·거래 취소를 검증한다.

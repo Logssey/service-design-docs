@@ -13,7 +13,7 @@ DB 제약과 API 명세로 표현되지 않는 비즈니스 규칙을 정의한�
 | — | REQUESTED | 구매자 | 게시글 `ON_SALE`, 본인 게시글 아님 | 변화 없음 | 판매자 |
 | REQUESTED | ACCEPTED | 판매자 | 해당 게시글에 `ACCEPTED` 거래 없음 | → `RESERVED` | 구매자 |
 | REQUESTED | REJECTED | 판매자 | — | 변화 없음 | 구매자 |
-| REQUESTED | CANCELED | 구매자 | — | 변화 없음 | — |
+| REQUESTED | CANCELED | 구매자 | — | 변화 없음 | 판매자 |
 | ACCEPTED | COMPLETED | **구매자만** | — | → `COMPLETED` | 양측 |
 | ACCEPTED | CANCELED | 구매자 또는 판매자 | — | → `ON_SALE` | 상대방 |
 
@@ -43,7 +43,8 @@ stateDiagram-v2
 
 - 진행 중인 거래(`REQUESTED`/`ACCEPTED`)가 있으면 작성자는 게시글을 삭제할 수 없다
 - `RESERVED` 상태에서는 새 거래 요청을 받지 않는다
-- `HIDDEN`은 관리자 조치 전용이며, 복구 시 직전 상태로 되돌린다
+- `HIDDEN`은 관리자 조치 전용이다. 숨김 중 기존 승인 거래의 완료·취소를 허용하되 공개 상태는 유지한다. 복구 시 감사 기록과 현재 거래 상태를 함께 확인하여 완료/예약/판매 중으로 되돌린다
+- 탈퇴한 판매자의 상품은 공개 목록·상세·관심 목록에서 제외한다. 거래·채팅·관리자 기록은 보존한다
 
 ---
 
