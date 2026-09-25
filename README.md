@@ -15,6 +15,8 @@
 
 ## 권장 열람 순서
 
+현재 구현·검증·배포 조건은 [백엔드 구현 상태](05-api/backend-implementation-status.md)를 참고한다.
+
 1. [제품 요구사항](01-requirements/product-requirements.md)
 2. [기능 설계](02-functional-design/README.md)
 3. [서비스 아키텍처](03-architecture/README.md)

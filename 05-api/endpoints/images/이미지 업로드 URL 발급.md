@@ -4,7 +4,7 @@
 Method: POST
 URL: /api/v1/images/upload-url
 Version: 1
-개발완료여부: No
+개발완료여부: Yes
 
 Presigned URL 발급 (ADR-011).
 
