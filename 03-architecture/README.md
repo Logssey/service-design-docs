@@ -32,6 +32,7 @@
 | [ADR-016](adr/ADR-016.md) | 자체 이메일·비밀번호 계정을 소셜 로그인과 병행 | Accepted |
 | [ADR-017](adr/ADR-017.md) | 인증 수단을 계정과 분리된 엔티티로 모델링 | Accepted |
 | [ADR-018](adr/ADR-018.md) | 탈퇴 시 인증 수단 파기, 재가입 제한 없음 | Accepted |
+| [ADR-019](adr/ADR-019.md) | 소셜 계정 이메일을 온보딩에서 선택 입력 | Accepted |
 
 ## 후속 검토
 

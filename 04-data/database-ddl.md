@@ -31,7 +31,7 @@ psql -U postgres -d reused -f schema/002_seed_categories.sql
 
 #### 스크립트 관리 규칙
 
-후속 변경: [003 프로필 이미지 연결](profile-images-migration.md). 기존 스크립트 뒤에 순서대로 적용한다.
+후속 변경: [003 프로필 이미지 연결](profile-images-migration.md), [004 소셜 인증 수단 이메일](social-identity-email-migration.md). 기존 스크립트 뒤에 순서대로 적용한다.
 
 - `schema/` 디렉터리에 `001_`, `002_` 형식으로 번호를 붙여 순서대로 관리한다
 - **이미 적용된 파일은 절대 수정하지 않고 새 파일을 추가한다**
