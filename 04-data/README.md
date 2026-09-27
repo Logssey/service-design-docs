@@ -6,6 +6,8 @@
 
 - [스키마 및 ERD](schema-and-erd.md)
 - [DB DDL](database-ddl.md)
+  - [003 프로필 이미지 연결](profile-images-migration.md)
+  - [004 소셜 인증 수단 이메일](social-identity-email-migration.md)
 - [백엔드 DB 환경과 마이그레이션 전환](backend-db-environments.md)
 - [Redis 키 규약](redis-keys.md)
 

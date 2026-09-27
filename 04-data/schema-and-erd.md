@@ -45,16 +45,20 @@
 | user_id | BIGINT, FK → users.user_id, ON DELETE RESTRICT | NOT NULL | 복합 | 인증 수단을 소유한 회원 |
 | provider | VARCHAR(20), CHECK IN ('KAKAO','LOCAL') | NOT NULL | 복합 | 인증 제공자 |
 | provider_user_id | VARCHAR(255) | NOT NULL | 복합 | `KAKAO`는 회원번호, `LOCAL`은 서버 발급 UUID |
-| email | VARCHAR(254) | NULL 허용 | 부분 | `LOCAL` 필수 |
-| password_hash | VARCHAR(255) | NULL 허용 | - | `LOCAL` 필수 |
-| email_verified_at | TIMESTAMPTZ | NULL 허용 | - | 이메일 소유 확인 시각. NULL이면 미인증 |
+| email | VARCHAR(254) | NULL 허용 | 부분 | `LOCAL` 필수. 소셜은 온보딩 선택 입력 연락처 (ADR-016) |
+| password_hash | VARCHAR(255) | NULL 허용 | - | `LOCAL` 필수. 소셜은 항상 NULL |
+| email_verified_at | TIMESTAMPTZ | NULL 허용 | - | 이메일 소유 확인 시각. NULL이면 미인증. 이메일이 없으면 항상 NULL |
 | created_at | TIMESTAMPTZ | NOT NULL, DEFAULT now() | - |  |
+| email_consent_at | TIMESTAMPTZ | NULL 허용 | - | 소셜 이메일 수집·이용 선택 동의 시각. 소셜 인증 수단에 이메일이 있으면 필수. `LOCAL`은 쓰지 않음 (ADR-016, `004`에서 추가) |
 - `UNIQUE(provider, provider_user_id)` — 제공자 계정의 유일성. 이메일은 식별에 사용하지 않음 (ADR-016, ADR-017)
 - `UNIQUE(user_id, provider)` — 한 회원이 같은 제공자를 중복 연결하지 못하게 함
 - **부분 유니크 인덱스**: `UNIQUE(email) WHERE provider='LOCAL'` — 이메일은 `LOCAL` 범위에서만 유일. 이메일 로그인 조회 인덱스를 겸함
+- **부분 유니크 인덱스**: `UNIQUE(email) WHERE provider<>'LOCAL' AND email_verified_at IS NOT NULL` — 소유 확인이 끝난 소셜 이메일은 소셜 인증 수단 전체에서 하나만 둔다. 확인 전 주소끼리, 또는 `LOCAL` 이메일과는 겹쳐도 된다 (ADR-016, `004`에서 추가)
 - `CHECK (provider <> 'LOCAL' OR email IS NOT NULL)` — 이메일 계정은 이메일 필수
-- `CHECK (provider = 'LOCAL' OR (email IS NULL AND password_hash IS NULL))` — 소셜 계정에는 자격증명을 두지 않음
-- 탈퇴 시 행을 삭제한다. 식별자·이메일을 보존하지 않으므로 같은 이메일로 재가입할 수 있다 (ADR-018)
+- `CHECK (provider = 'LOCAL' OR password_hash IS NULL)` — 소셜 계정에는 비밀번호를 두지 않음. 이메일은 선택 연락처로 허용 (ADR-016, `004`에서 변경)
+- `CHECK (email_verified_at IS NULL OR email IS NOT NULL)` — 이메일 없이 소유 확인 시각만 남지 않게 함 (ADR-016, `004`에서 추가)
+- `CHECK (provider = 'LOCAL' OR email IS NULL OR email_consent_at IS NOT NULL)` — 소셜 이메일은 수집·이용 동의 시각과 함께 저장 (ADR-016, `004`에서 추가)
+- 탈퇴 시 행을 삭제한다. 식별자·이메일·동의 시각을 보존하지 않으므로 같은 이메일로 재가입할 수 있다 (ADR-018)
 - `UNIQUE(user_id, provider)`가 `user_id`로 시작하므로 FK 조회용 인덱스를 따로 만들지 않는다
 
 ### 3. `user_status_histories` (회원 상태·역할 변경 이력)
@@ -347,7 +351,7 @@
 | 항목 | 값 | 강제 위치 |
 | --- | --- | --- |
 | 닉네임 | 2~20자, 중복 불허 | DB UNIQUE + 앱 |
-| 이메일 | `LOCAL` 범위에서 중복 불허 | DB 부분 UNIQUE + 앱 |
+| 이메일 | `LOCAL` 범위에서 중복 불허. 소셜 이메일은 선택이며 소유 확인이 끝난 주소만 소셜 범위에서 중복 불허 | DB 부분 UNIQUE + 앱 |
 | 비밀번호 | 8~128자 | 앱 (해시로 저장하므로 DB 길이 제약 불가) |
 | 사용자당 인증 수단 | 1차 릴리스는 1개 | 앱 (DB 제약 불가) |
 | 게시글 제목 | 2~100자 | 앱 |
@@ -402,6 +406,7 @@ FK 컬럼은 PostgreSQL이 자동으로 인덱스를 만들어주지 않으므�
 | 인덱스 | 대상 | 이유 |
 | --- | --- | --- |
 | `uq_user_identities_email_local` | `user_identities(email) WHERE provider = 'LOCAL'` | 이메일 계정의 이메일 유일성 강제. 이메일 로그인 조회를 겸함 |
+| `uq_user_identities_email_social_verified` | `user_identities(email) WHERE provider <> 'LOCAL' AND email_verified_at IS NOT NULL` | 소유 확인된 소셜 이메일을 한 계정에만 둠. 동시 확인 경합도 막음 (ADR-016) |
 | `uq_trades_one_accepted_per_listing` | `trades(listing_id) WHERE status = 'ACCEPTED'` | 게시글당 승인 거래 1개 강제 |
 | `uq_trades_active_per_buyer` | `trades(listing_id, buyer_id) WHERE status IN ('REQUESTED','ACCEPTED')` | 동일 구매자 중복 요청 방지 |
 | `uq_reports_pending_duplicate` | `reports(reporter_id, target_type, target_id, reason_code) WHERE status IN ('RECEIVED','IN_REVIEW')` | 미처리 중복 신고 방지 |
@@ -470,6 +475,7 @@ erDiagram
     varchar email
     varchar password_hash
     timestamptz email_verified_at
+    timestamptz email_consent_at
   }
   USER_STATUS_HISTORIES {
     bigint history_id PK
@@ -707,5 +713,12 @@ erDiagram
 - 문제: 댓글 행과 게시글의 비정규화 집계 값이 별도로 변경됨
 - 규칙: 노출 가능한 댓글 등록·삭제·신고 숨김 시 `community_posts.comment_count`를 같은 트랜잭션에서 증감하고 음수가 되지 않게 처리
 - 신고 숨김은 `PUBLISHED → HIDDEN` 최초 전이에 성공한 조건부 갱신에서만 1 감소시켜, 같은 댓글의 반복 신고 처리에도 집계가 중복 감소하지 않게 한다
+
+**11. 이메일 조회는 제공자 조건을 함께 건다**
+
+- 문제: 소셜 인증 수단도 `email`을 가질 수 있어(ADR-016), 제공자 조건 없이 이메일로 조회하면 소셜 계정이 여러 건 잡히거나 로그인·재설정 대상이 된다
+- 규칙: 이메일 로그인, 이메일 가입 중복 검사, 비밀번호 재설정 대상 조회는 반드시 `provider = 'LOCAL'`을 포함한다
+- 소유 확인 단계의 소셜 이메일 중복 검사는 `provider <> 'LOCAL' AND email_verified_at IS NOT NULL`인 다른 행만 본다. 확인 전 주소와 `LOCAL` 이메일은 중복으로 보지 않는다. 동시 확인은 부분 UNIQUE 위반을 같은 `409`로 바꿔 처리한다
+- 위반 시: 소셜 계정에 등록된 이메일로 로그인·비밀번호 재설정이 시도되거나, 확인 전 주소 때문에 주인이 자기 이메일을 확인하지 못한다
 
 ---

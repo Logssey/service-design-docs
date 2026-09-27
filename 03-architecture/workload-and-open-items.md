@@ -53,6 +53,11 @@ app.chatbot.free-input-enabled=${CHATBOT_FREE_INPUT_ENABLED:false}
 | ADR-016 | 운영 환경 메일 발송 수단 | 클라우드 아키텍처 |
 | ADR-017 | 계정 연결 기능 (한 계정에 인증 수단 추가) | 신규 ADR |
 | ADR-018 | 제재 회피 방지 (탈퇴 후 재가입 제한) | 신규 ADR |
+| ADR-016 | 소셜 계정 이메일 등록·변경 (온보딩 이후, 기존 회원 포함) | 신규 ADR |
+| ADR-016 | 개인정보 처리방침에 소셜 가입자 이메일(선택 수집 항목)과 수집 목적 반영 | 약관·처리방침 |
+| ADR-016 | 수신 주소 기준 확인 메일 발송 제한 | 신규 ADR 또는 규칙 명세 |
+| ADR-016 | 온보딩 화면(AUTH-002)에 이메일 입력과 선택 동의 반영 | 화면설계서 (`wireframe.svg`) |
+| — | `schema-and-erd.md`에 `003` 반영 (`listing_images.purpose`·`profile_user_id`) | 데이터 설계 |
 
 확정된 항목: WebSocket은 연결 후 `authenticate` 이벤트로 토큰을 전달한다. 1차 릴리스 썸네일은 원본 서명 URL을 사용하고, 감사 기록은 PostgreSQL `audit_logs`에 조치와 같은 트랜잭션으로 저장한다.
 

@@ -10,11 +10,11 @@
 
 ## 현재 스키마 적용과 #43 목표
 
-현재 `develop`은 `spring.jpa.hibernate.ddl-auto=none`이고 `schema/001_init.sql`, `002_seed_categories.sql`, `003_profile_images.sql`을 사용한다. Testcontainers는 이 순서로 자동 초기화하지만, 로컬·운영 DB에는 백엔드 README에 따라 아직 수동 적용한다. 테스트가 통과했다는 사실만으로 이미 운영 중인 DB에 새 스키마가 적용되지는 않는다.
+현재 `develop`은 `spring.jpa.hibernate.ddl-auto=none`이고 `schema/001_init.sql`, `002_seed_categories.sql`, `003_profile_images.sql`을 사용한다. Testcontainers는 이 순서로 자동 초기화하지만, 로컬·운영 DB에는 백엔드 README에 따라 아직 수동 적용한다. 테스트가 통과했다는 사실만으로 이미 운영 중인 DB에 새 스키마가 적용되지는 않는다. 소셜 선택 이메일의 `004_social_identity_email.sql`은 해당 백엔드 PR이 병합되면 같은 방식으로 추가되며, 새 애플리케이션을 배포하기 **전에** 적용해야 한다([004 소셜 인증 수단 이메일](social-identity-email-migration.md)). #43과 병합 순서가 겹치면 Flyway 패키징 매핑에 `V4`로 등록한다.
 
 [#43](https://github.com/Logssey/service-backend/issues/43)의 목표는 **동일한 SQL 원본을 버전 관리형 마이그레이션으로 실행**해 새 빈 DB의 테스트·로컬·운영 경로가 달라지지 않게 하는 것이다. #43이 병합·검증되기 전에는 Flyway 자동 적용을 현재 동작이라고 설명하지 않는다. 이미 001~003을 수동 적용한 DB는 테이블·인덱스·데이터와 적용 순서를 먼저 확인한다. 자동 `baselineOnMigrate`를 켜거나 기존 스크립트를 재실행하지 않고, 백업 후 수동 baseline/전환 계획을 결정한다. 개발용 DB 재생성은 가능하지만 운영 데이터를 초기화하지 않는다.
 
-스키마 변경은 기존 적용 파일을 고치지 않고 다음 버전 파일로 추가한다. DDL의 설계 원본은 [DB DDL](database-ddl.md)과 [003 프로필 이미지](profile-images-migration.md)에 있고, 실제 실행 파일은 백엔드 저장소 `schema/`가 소유한다. 마이그레이션 체계가 확정되면 백엔드 README의 수동 적용 절차와 이 문서를 함께 갱신한다.
+스키마 변경은 기존 적용 파일을 고치지 않고 다음 버전 파일로 추가한다. DDL의 설계 원본은 [DB DDL](database-ddl.md), [003 프로필 이미지](profile-images-migration.md), [004 소셜 인증 수단 이메일](social-identity-email-migration.md)에 있고, 실제 실행 파일은 백엔드 저장소 `schema/`가 소유한다. 마이그레이션 체계가 확정되면 백엔드 README의 수동 적용 절차와 이 문서를 함께 갱신한다.
 
 ## CI/CD와 클라우드 연결
 
