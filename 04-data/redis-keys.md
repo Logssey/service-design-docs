@@ -41,14 +41,14 @@ reused : auth : verify : 1043
 
 Redis 키는 `SLOWLOG`, `MONITOR`, 모니터링 대시보드, APM 트레이스에 원문 그대로 노출된다. 이메일을 키에 넣으면 개인정보가 로그 전반에 남아 `NFR-LOG-003`을 위반한다.
 
-비밀번호 재설정처럼 미인증 요청이라 이메일만 가진 경우에도, 서버가 먼저 `user_identities`에서 `provider = 'LOCAL'`인 행의 `identity_id`를 조회해 그 값으로 키를 만든다. 계정이 없으면 키를 만들지 않고 `204`만 응답하므로 계정 존재 여부도 드러나지 않는다 (`NFR-AUTH-018`). 소셜 인증 수단도 이메일을 가질 수 있으므로 제공자 조건을 빼지 않는다 (ADR-019).
+비밀번호 재설정처럼 미인증 요청이라 이메일만 가진 경우에도, 서버가 먼저 `user_identities`에서 `provider = 'LOCAL'`인 행의 `identity_id`를 조회해 그 값으로 키를 만든다. 계정이 없으면 키를 만들지 않고 `204`만 응답하므로 계정 존재 여부도 드러나지 않는다 (`NFR-AUTH-018`). 소셜 인증 수단도 이메일을 가질 수 있으므로 제공자 조건을 빼지 않는다 (ADR-016).
 
 ## 키 목록
 
 | 키 | 타입 | TTL | 용도 | 근거 |
 | --- | --- | --- | --- | --- |
 | `reused:auth:refresh:{userId}:{tokenId}` | String | 14일 | Refresh Token 화이트리스트 | ADR-005 |
-| `reused:auth:verify:{identityId}` | String | 10분 | 이메일 소유 확인 코드 | ADR-016, ADR-019 |
+| `reused:auth:verify:{identityId}` | String | 10분 | 이메일 소유 확인 코드 | ADR-016 |
 | `reused:auth:verify-try:{identityId}` | Counter | 10분 | 소유 확인 코드 검증 시도 | `NFR-AUTH-017` |
 | `reused:auth:reset:{identityId}` | String | 10분 | 비밀번호 재설정 코드 | ADR-016 |
 | `reused:auth:reset-try:{identityId}` | Counter | 10분 | 재설정 코드 검증 시도 | `NFR-AUTH-017` |
@@ -59,7 +59,7 @@ Redis 키는 `SLOWLOG`, `MONITOR`, 모니터링 대시보드, APM 트레이스�
 | `reused:trade:lock:{tradeId}` | String | 짧게 | 거래 상태 변경 분산 락 | ADR-010 |
 | `reused:chat:room:{roomId}` | Pub/Sub 채널 | — | 채팅 메시지 전달 | ADR-002, ADR-010 |
 
-`verify`·`verify-try`는 이메일이 등록된 모든 인증 수단에, `reset`·`reset-try`·`login-fail`은 `LOCAL` 인증 수단에만 쓴다. `resend`·`resend-gap`은 소유 확인과 재설정 발송이 함께 쓰므로, 소셜 인증 수단에서는 소유 확인 발송에만 쓰인다 (ADR-019).
+`verify`·`verify-try`는 이메일이 등록된 모든 인증 수단에, `reset`·`reset-try`·`login-fail`은 `LOCAL` 인증 수단에만 쓴다. `resend`·`resend-gap`은 소유 확인과 재설정 발송이 함께 쓰므로, 소셜 인증 수단에서는 소유 확인 발송에만 쓰인다 (ADR-016).
 
 ## 설계 의도
 
