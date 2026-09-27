@@ -8,9 +8,10 @@
 - [DB DDL](database-ddl.md)
   - [003 프로필 이미지 연결](profile-images-migration.md)
   - [004 소셜 인증 수단 이메일](social-identity-email-migration.md)
+- [백엔드 DB 환경과 마이그레이션 전환](backend-db-environments.md)
 - [Redis 키 규약](redis-keys.md)
 
-`database-ddl.md`는 제공된 설계 기준 DDL이다. 백엔드 마이그레이션 체계가 확정되면 실제 실행 원본은 백엔드 저장소가 소유하고, 이 저장소에서는 설계 설명과 링크만 관리하는 것이 적합하다.
+`database-ddl.md`는 설계 기준 DDL이다. 현재 실제 실행 스크립트는 백엔드 저장소 `schema/`가 소유한다. CI 테스트는 그 스크립트로 임시 DB를 초기화하며, Flyway 전환은 백엔드 #43이 병합되기 전까지 예정 작업이다.
 
 ## 관련 문서
 
