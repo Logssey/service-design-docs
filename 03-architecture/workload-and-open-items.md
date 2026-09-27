@@ -18,16 +18,18 @@
 | 시크릿 주입 | 환경변수로 주입한다. 설정 파일에는 플레이스홀더만 둔다 |
 | 메일 발송 | MailHog 또는 Mailpit 대역을 사용한다 |
 
-```yaml
-# application.yml — 값이 아니라 플레이스홀더만 둔다
-jwt:
-  secret: ${JWT_SECRET}
-kakao:
-  client-id: ${KAKAO_CLIENT_ID}
-  client-secret: ${KAKAO_CLIENT_SECRET}
+```properties
+# 백엔드 application.properties — 값이 아니라 플레이스홀더만 둔다
+app.auth.secret=${JWT_SECRET}
+app.kakao.client-id=${KAKAO_CLIENT_ID}
+app.kakao.client-secret=${KAKAO_CLIENT_SECRET:}
+# 아래 자유 입력 스위치는 백엔드 #44 병합 후 적용된다.
+app.chatbot.free-input-enabled=${CHATBOT_FREE_INPUT_ENABLED:false}
 ```
 
 값을 적은 `application-local.yml`을 두는 방식은 사용하지 않는다. `.gitignore` 등록을 한 번 빠뜨리면 그대로 커밋되고, 형상관리 이력에서 제거하기 어렵다 (`NFR-CRED-007`).
+
+챗봇 자유 입력은 개인정보 정책 검토 전까지 비활성 유지([ADR-003](adr/ADR-003.md))한다. `CHATBOT_ENABLED`는 추천 질문까지 포함한 전체 기능 스위치이고, [백엔드 #44](https://github.com/Logssey/service-backend/issues/44)가 병합되면 `CHATBOT_FREE_INPUT_ENABLED`는 자유 입력만 제어한다. 그 전에는 LLM 키를 주입하지 않고, 병합 후에도 후자를 임의로 `true`로 바꾸지 않는다.
 
 메일 대역은 웹 UI로 수신 메일을 확인할 수 있어야 한다. 소유 확인·비밀번호 재설정은 코드가 메일 본문에만 존재하므로, 로그 출력만으로는 화면 흐름을 검증하기 어렵다.
 

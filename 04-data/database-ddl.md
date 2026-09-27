@@ -1,6 +1,6 @@
 # Re:Used — DB DDL
 
-> PostgreSQL 18.6 기준. `spring.jpa.hibernate.ddl-auto: none`으로 설정하고 이 스크립트를 직접 적용한다.
+> PostgreSQL 18.6 기준 설계 스냅샷. 현재 백엔드 `spring.jpa.hibernate.ddl-auto=none`; 실행 파일은 백엔드 저장소 `schema/`가 소유한다. CI는 Testcontainers에서 자동 초기화하며 로컬·기존 운영 DB는 아직 수동 적용한다. Flyway 전환 진행 상태와 기존 DB 안전 절차는 [DB 환경·전환 가이드](backend-db-environments.md)를 본다.
 > 
 
 #### DB 초기 세팅
