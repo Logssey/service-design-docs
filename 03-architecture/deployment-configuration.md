@@ -45,7 +45,7 @@ CI는 OIDC로 `secrets.AWS_ROLE_ARN`을 맡아 ECR에 올리고, GitHub App(`sec
 | `MAIL_USERNAME` / `MAIL_PASSWORD` | Secret | SMTP 인증 시 | SMTP 자격증명 | — |
 | `MAIL_FROM` | Config | | 발신 주소. 기본 `no-reply@reused.local`은 운영에 맞지 않는다 | 기본값 |
 | `IMAGE_S3_BUCKET` | Config | 이미지 사용 시 O | 비공개 버킷 이름. 비어 있으면 서버는 뜨지만 이미지 API가 503이다 | `reused-images` |
-| `IMAGE_S3_REGION` | Config | O | **`ap-northeast-1`(도쿄)**. 코드 기본값은 현재 `ap-northeast-2`(서울)이므로 운영에서 반드시 명시한다 | `us-east-1`(로컬 S3 대역) |
+| `IMAGE_S3_REGION` | Config | O | **`ap-northeast-1`(도쿄)**. 코드 기본값도 같지만 버킷 리전과 맞도록 운영에서 명시한다 | `us-east-1`(로컬 S3 대역) |
 | `ANTHROPIC_API_KEY` | Secret | | 챗봇 자유 입력용. 비어 있으면 자유 입력 503 | — |
 | `CHATBOT_FREE_INPUT_ENABLED` | Config | | 기본 `false`. 개인정보 외부 전송 정책 검토 전에는 켜지 않는다 | — |
 
@@ -143,5 +143,4 @@ S3 운영 조건의 상세는 백엔드 README "이미지 저장소 운영 조�
 | 운영 메일 발송 수단 | 미결정 (ADR-016 결과) | 클라우드 아키텍처 |
 | 카카오 실제 로그인 | CI는 공개 키 변수를 번들에 넣지만, GitHub Variables 값과 카카오 운영 리디렉트 URI 등록은 별도 필요 | 프론트엔드 CI·카카오 콘솔 |
 | RDS 스키마 적용 단계 | CI/CD에 없다. Flyway 기동 적용과 수동 baseline 중 운영 방식 결정 | [백엔드 DB 환경](../04-data/backend-db-environments.md) |
-| 이미지 버킷 리전 기본값 | 코드 기본값은 서울(`ap-northeast-2`)이며 서비스 리전은 도쿄(`ap-northeast-1`)다. 운영에서는 `IMAGE_S3_REGION`을 명시한다 | 백엔드 설정·GitOps |
 | GitOps values 내용 | 이 문서의 변수가 `apps/reused-api`, `apps/reused-web` values에 빠짐없이 있는지 대조하지 않았다 | GitOps 레포 |
