@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1532" height="1836" viewBox="0 0 1532 1836">
+<rect width="1532" height="1836" fill="#EFF1F4"/>
+<text x="70.0" y="60.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="30" fill="#2B2F36" text-anchor="start" font-weight="700">Re:Used · 화면설계서 보완 — 마이페이지 계정 (Wireframe v1.1)</text>
+<text x="70.0" y="88.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="14" fill="#6B7280" text-anchor="start" font-weight="400">Mobile Web 375×812 기준 · wireframe.svg v1.0의 MY-001 · MY-003을 보완하고 로그아웃 확인과 상태 화면을 더한다 · 2026-09-28</text>
+<rect x="50.0" y="146.0" width="1432.0" height="42.0" rx="6" fill="#FFFFFF" stroke="#D5D8DD" stroke-width="1"/>
+<text x="70.0" y="174.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="17" fill="#2B2F36" text-anchor="start" font-weight="700">D. 마이페이지 — 계정 (v1.1 보완)</text>
+<text x="330.0" y="174.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#8A9099" text-anchor="start" font-weight="400">MY-001 · MY-001-D1 · MY-003</text>
+<text x="70.0" y="222.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="13" fill="#5B5BD6" text-anchor="start" font-weight="700">MY-001</text>
+<text x="135.6" y="222.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="13" fill="#555" text-anchor="start" font-weight="400">마이페이지</text>
+<rect x="208.6" y="209.0" width="60.5" height="17.0" rx="8.5" fill="#FFF4E5" stroke="#F5C98B" stroke-width="1"/>
+<text x="238.9" y="220.5" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#B26A00" text-anchor="middle" font-weight="700">v1.1 변경</text>
+<rect x="70.0" y="248.0" width="300.0" height="600.0" rx="10" fill="#FFFFFF" stroke="#D5D8DD" stroke-width="1"/>
+<rect x="70.0" y="248.0" width="300.0" height="44.0" rx="0" fill="#FAFAFB" stroke="none"/>
+<line x1="70.0" y1="292.0" x2="370.0" y2="292.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="220.0" y="275.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="13" fill="#2B2F36" text-anchor="middle" font-weight="700">MY</text>
+<circle cx="116.0" cy="340.0" r="24" fill="#F3F4F6"/>
+<text x="154.0" y="334.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="14" fill="#2B2F36" text-anchor="start" font-weight="700">재현</text>
+<text x="154.0" y="354.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">★ 4.7 · 거래 12회</text>
+<text x="354.0" y="344.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#8A9099" text-anchor="end" font-weight="400">›</text>
+<line x1="86.0" y1="388.0" x2="354.0" y2="388.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="86.0" y="411.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#2B2F36" text-anchor="start" font-weight="400">판매 관리</text>
+<text x="354.0" y="411.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#8A9099" text-anchor="end" font-weight="400">›</text>
+<line x1="86.0" y1="424.0" x2="354.0" y2="424.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="86.0" y="447.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#2B2F36" text-anchor="start" font-weight="400">거래 내역</text>
+<text x="354.0" y="447.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#8A9099" text-anchor="end" font-weight="400">›</text>
+<line x1="86.0" y1="460.0" x2="354.0" y2="460.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="86.0" y="483.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#2B2F36" text-anchor="start" font-weight="400">찜 목록</text>
+<text x="354.0" y="483.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#8A9099" text-anchor="end" font-weight="400">›</text>
+<line x1="86.0" y1="496.0" x2="354.0" y2="496.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="86.0" y="519.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#2B2F36" text-anchor="start" font-weight="400">받은 후기</text>
+<text x="354.0" y="519.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#8A9099" text-anchor="end" font-weight="400">›</text>
+<rect x="71.0" y="532.0" width="298.0" height="8.0" rx="0" fill="#F3F4F6" stroke="none"/>
+<text x="86.0" y="563.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#2B2F36" text-anchor="start" font-weight="400">내 신고 내역</text>
+<text x="354.0" y="563.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#8A9099" text-anchor="end" font-weight="400">›</text>
+<line x1="86.0" y1="576.0" x2="354.0" y2="576.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="86.0" y="599.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#2B2F36" text-anchor="start" font-weight="400">차단 목록</text>
+<text x="354.0" y="599.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#8A9099" text-anchor="end" font-weight="400">›</text>
+<line x1="86.0" y1="612.0" x2="354.0" y2="612.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="86.0" y="635.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#2B2F36" text-anchor="start" font-weight="400">알림 설정</text>
+<text x="354.0" y="635.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#8A9099" text-anchor="end" font-weight="400">›</text>
+<line x1="86.0" y1="648.0" x2="354.0" y2="648.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="86.0" y="671.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#2B2F36" text-anchor="start" font-weight="400">공지사항</text>
+<text x="354.0" y="671.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#8A9099" text-anchor="end" font-weight="400">›</text>
+<rect x="71.0" y="684.0" width="298.0" height="8.0" rx="0" fill="#F3F4F6" stroke="none"/>
+<text x="86.0" y="715.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#2B2F36" text-anchor="start" font-weight="400">비밀번호 변경</text>
+<text x="354.0" y="715.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#8A9099" text-anchor="end" font-weight="400">›</text>
+<rect x="277.8" y="702.0" width="62.2" height="17.0" rx="8.5" fill="#F3F4F6" stroke="#E7E9EC" stroke-width="1"/>
+<text x="308.9" y="714.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9" fill="#7A7F87" text-anchor="middle" font-weight="600">이메일 계정</text>
+<line x1="86.0" y1="728.0" x2="354.0" y2="728.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="86.0" y="764.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10.5" fill="#8A9099" text-anchor="start" font-weight="400">로그아웃</text>
+<text x="354.0" y="764.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10.5" fill="#8A9099" text-anchor="end" font-weight="400">회원 탈퇴</text>
+<line x1="70.0" y1="792.0" x2="370.0" y2="792.0" stroke="#E7E9EC" stroke-width="1"/>
+<rect x="91.0" y="808.0" width="18.0" height="14.0" rx="3" fill="none" stroke="#8A9099" stroke-width="1"/>
+<text x="100.0" y="836.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9" fill="#8A9099" text-anchor="middle" font-weight="400">홈</text>
+<rect x="151.0" y="808.0" width="18.0" height="14.0" rx="3" fill="none" stroke="#8A9099" stroke-width="1"/>
+<text x="160.0" y="836.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9" fill="#8A9099" text-anchor="middle" font-weight="400">찜</text>
+<rect x="211.0" y="808.0" width="18.0" height="14.0" rx="3" fill="none" stroke="#8A9099" stroke-width="1"/>
+<text x="220.0" y="836.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9" fill="#8A9099" text-anchor="middle" font-weight="400">채팅</text>
+<rect x="271.0" y="808.0" width="18.0" height="14.0" rx="3" fill="none" stroke="#8A9099" stroke-width="1"/>
+<text x="280.0" y="836.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9" fill="#8A9099" text-anchor="middle" font-weight="400">커뮤니티</text>
+<rect x="331.0" y="808.0" width="18.0" height="14.0" rx="3" fill="none" stroke="#2B2F36" stroke-width="1"/>
+<text x="340.0" y="836.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9" fill="#2B2F36" text-anchor="middle" font-weight="700">MY</text>
+<rect x="80.0" y="300.0" width="280.0" height="80.0" rx="3" fill="none" stroke="#E03E2F" stroke-width="1"/>
+<circle cx="50.0" cy="340.0" r="8" fill="#E03E2F"/>
+<text x="50.0" y="343.5" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+<line x1="58.0" y1="340.0" x2="80.0" y2="340.0" stroke="#E03E2F" stroke-width="1"/>
+<rect x="80.0" y="693.0" width="280.0" height="34.0" rx="3" fill="none" stroke="#E03E2F" stroke-width="1"/>
+<circle cx="50.0" cy="710.0" r="8" fill="#E03E2F"/>
+<text x="50.0" y="713.5" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">2</text>
+<line x1="58.0" y1="710.0" x2="80.0" y2="710.0" stroke="#E03E2F" stroke-width="1"/>
+<rect x="80.0" y="744.0" width="280.0" height="28.0" rx="3" fill="none" stroke="#E03E2F" stroke-width="1"/>
+<circle cx="50.0" cy="760.0" r="8" fill="#E03E2F"/>
+<text x="50.0" y="763.5" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">3</text>
+<line x1="58.0" y1="760.0" x2="80.0" y2="760.0" stroke="#E03E2F" stroke-width="1"/>
+<text x="70.0" y="870.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">① 프로필 탭 → MY-002</text>
+<text x="70.0" y="884.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">  평점 · 거래 수는 판매자 프로필 API로 채운다</text>
+<text x="70.0" y="898.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">② provider = LOCAL일 때만 노출 (카카오는 행 없음)</text>
+<text x="70.0" y="912.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">③ 로그아웃 → MY-001-D1 · 회원 탈퇴 → MY-003</text>
+<text x="70.0" y="926.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">  헤더 '설정'은 알림 설정 행과 겹쳐 뺐다</text>
+<text x="70.0" y="940.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#5B5BD6" text-anchor="start" font-weight="400">API  GET /users/me · GET /users/{userId}/profile</text>
+<text x="70.0" y="954.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#7A7F87" text-anchor="start" font-weight="600">→  MY-002 · SELL-001 · TRADE-001 · WISH-001 · REPORT-002 ·</text>
+<text x="70.0" y="968.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#7A7F87" text-anchor="start" font-weight="600">    BLOCK-001 · NOTI-002 · NOTICE-001 · MY-001-D1 · MY-003</text>
+<text x="434.0" y="222.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="13" fill="#5B5BD6" text-anchor="start" font-weight="700">MY-001</text>
+<text x="499.6" y="222.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="13" fill="#555" text-anchor="start" font-weight="400">상태별 표시</text>
+<rect x="580.1" y="209.0" width="33.0" height="17.0" rx="8.5" fill="#E8F5EE" stroke="#A7D7BA" stroke-width="1"/>
+<text x="596.6" y="220.5" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#1E7B4A" text-anchor="middle" font-weight="700">신규</text>
+<rect x="434.0" y="248.0" width="300.0" height="600.0" rx="10" fill="#FFFFFF" stroke="#D5D8DD" stroke-width="1"/>
+<rect x="434.0" y="248.0" width="300.0" height="44.0" rx="0" fill="#FAFAFB" stroke="none"/>
+<line x1="434.0" y1="292.0" x2="734.0" y2="292.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="584.0" y="275.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="13" fill="#2B2F36" text-anchor="middle" font-weight="700">MY</text>
+<circle cx="480.0" cy="340.0" r="24" fill="#F3F4F6"/>
+<text x="518.0" y="334.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="14" fill="#2B2F36" text-anchor="start" font-weight="700">재현</text>
+<text x="518.0" y="354.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">★ 4.7 · 거래 12회</text>
+<text x="718.0" y="344.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#8A9099" text-anchor="end" font-weight="400">›</text>
+<line x1="450.0" y1="388.0" x2="718.0" y2="388.0" stroke="#E7E9EC" stroke-width="1"/>
+<rect x="450.0" y="400.0" width="268.0" height="54.0" rx="6" fill="#FDECEA" stroke="#F3C9C4" stroke-width="1"/>
+<text x="462.0" y="421.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11" fill="#E03E2F" text-anchor="start" font-weight="700">이용정지 중 · 10월 5일 14:00까지</text>
+<text x="462.0" y="440.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#8C3B33" text-anchor="start" font-weight="400">글 작성, 거래, 채팅 전송, 신고가 제한됩니다</text>
+<rect x="450.0" y="464.0" width="268.0" height="54.0" rx="6" fill="#EEF0FF" stroke="#C9CCF5" stroke-width="1"/>
+<text x="462.0" y="485.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11" fill="#5B5BD6" text-anchor="start" font-weight="700">이메일 인증이 필요해요</text>
+<text x="462.0" y="504.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#555" text-anchor="start" font-weight="400">jae@example.com</text>
+<rect x="642.0" y="479.0" width="64.0" height="24.0" rx="12" fill="#5B5BD6" stroke="none"/>
+<text x="674.0" y="495.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#FFF" text-anchor="middle" font-weight="600">인증하기</text>
+<text x="450.0" y="548.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#8A9099" text-anchor="start" font-weight="600">계정 영역 · 이메일 계정 (LOCAL)</text>
+<line x1="450.0" y1="556.0" x2="718.0" y2="556.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="450.0" y="579.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#2B2F36" text-anchor="start" font-weight="400">비밀번호 변경</text>
+<text x="718.0" y="579.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#8A9099" text-anchor="end" font-weight="400">›</text>
+<rect x="641.8" y="566.0" width="62.2" height="17.0" rx="8.5" fill="#F3F4F6" stroke="#E7E9EC" stroke-width="1"/>
+<text x="672.9" y="578.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9" fill="#7A7F87" text-anchor="middle" font-weight="600">이메일 계정</text>
+<line x1="450.0" y1="592.0" x2="718.0" y2="592.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="450.0" y="624.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#8A9099" text-anchor="start" font-weight="600">계정 영역 · 카카오 계정 (KAKAO)</text>
+<line x1="450.0" y1="632.0" x2="718.0" y2="632.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="450.0" y="655.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11" fill="#B6BAC0" text-anchor="start" font-weight="400">(비밀번호 변경 행 없음)</text>
+<line x1="450.0" y1="668.0" x2="718.0" y2="668.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="450.0" y="764.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10.5" fill="#8A9099" text-anchor="start" font-weight="400">로그아웃</text>
+<text x="718.0" y="764.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10.5" fill="#8A9099" text-anchor="end" font-weight="400">회원 탈퇴</text>
+<line x1="434.0" y1="792.0" x2="734.0" y2="792.0" stroke="#E7E9EC" stroke-width="1"/>
+<rect x="455.0" y="808.0" width="18.0" height="14.0" rx="3" fill="none" stroke="#8A9099" stroke-width="1"/>
+<text x="464.0" y="836.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9" fill="#8A9099" text-anchor="middle" font-weight="400">홈</text>
+<rect x="515.0" y="808.0" width="18.0" height="14.0" rx="3" fill="none" stroke="#8A9099" stroke-width="1"/>
+<text x="524.0" y="836.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9" fill="#8A9099" text-anchor="middle" font-weight="400">찜</text>
+<rect x="575.0" y="808.0" width="18.0" height="14.0" rx="3" fill="none" stroke="#8A9099" stroke-width="1"/>
+<text x="584.0" y="836.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9" fill="#8A9099" text-anchor="middle" font-weight="400">채팅</text>
+<rect x="635.0" y="808.0" width="18.0" height="14.0" rx="3" fill="none" stroke="#8A9099" stroke-width="1"/>
+<text x="644.0" y="836.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9" fill="#8A9099" text-anchor="middle" font-weight="400">커뮤니티</text>
+<rect x="695.0" y="808.0" width="18.0" height="14.0" rx="3" fill="none" stroke="#2B2F36" stroke-width="1"/>
+<text x="704.0" y="836.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9" fill="#2B2F36" text-anchor="middle" font-weight="700">MY</text>
+<rect x="444.0" y="395.0" width="280.0" height="64.0" rx="3" fill="none" stroke="#E03E2F" stroke-width="1"/>
+<circle cx="414.0" cy="427.0" r="8" fill="#E03E2F"/>
+<text x="414.0" y="430.5" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+<line x1="422.0" y1="427.0" x2="444.0" y2="427.0" stroke="#E03E2F" stroke-width="1"/>
+<rect x="444.0" y="461.0" width="280.0" height="60.0" rx="3" fill="none" stroke="#E03E2F" stroke-width="1"/>
+<circle cx="414.0" cy="491.0" r="8" fill="#E03E2F"/>
+<text x="414.0" y="494.5" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">2</text>
+<line x1="422.0" y1="491.0" x2="444.0" y2="491.0" stroke="#E03E2F" stroke-width="1"/>
+<rect x="444.0" y="534.0" width="280.0" height="140.0" rx="3" fill="none" stroke="#E03E2F" stroke-width="1"/>
+<circle cx="414.0" cy="612.0" r="8" fill="#E03E2F"/>
+<text x="414.0" y="615.5" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">3</text>
+<line x1="422.0" y1="612.0" x2="444.0" y2="612.0" stroke="#E03E2F" stroke-width="1"/>
+<text x="434.0" y="870.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">① status = SUSPENDED일 때</text>
+<text x="434.0" y="884.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">  suspendedUntil이 null이면 '해제될 때까지'로 표시</text>
+<text x="434.0" y="898.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">② email이 있고 emailVerified = false일 때 → /verify-email</text>
+<text x="434.0" y="912.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">  ①과 ②가 함께 해당하면 ①을 위에 둔다</text>
+<text x="434.0" y="926.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">③ provider로 계정 영역 구성을 가른다</text>
+<text x="434.0" y="940.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#5B5BD6" text-anchor="start" font-weight="400">API  GET /users/me (status · suspendedUntil · provider ·</text>
+<text x="434.0" y="954.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#5B5BD6" text-anchor="start" font-weight="400">         email · emailVerified)</text>
+<text x="434.0" y="968.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#7A7F87" text-anchor="start" font-weight="600">→  이메일 인증 화면 (/verify-email)</text>
+<text x="798.0" y="222.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="13" fill="#5B5BD6" text-anchor="start" font-weight="700">MY-001-D1</text>
+<text x="891.2" y="222.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="13" fill="#555" text-anchor="start" font-weight="400">로그아웃 확인</text>
+<rect x="984.7" y="209.0" width="33.0" height="17.0" rx="8.5" fill="#E8F5EE" stroke="#A7D7BA" stroke-width="1"/>
+<text x="1001.2" y="220.5" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#1E7B4A" text-anchor="middle" font-weight="700">신규</text>
+<rect x="798.0" y="248.0" width="300.0" height="600.0" rx="10" fill="#FFFFFF" stroke="#D5D8DD" stroke-width="1"/>
+<rect x="798.0" y="248.0" width="300.0" height="44.0" rx="0" fill="#FAFAFB" stroke="none"/>
+<line x1="798.0" y1="292.0" x2="1098.0" y2="292.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="948.0" y="275.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="13" fill="#2B2F36" text-anchor="middle" font-weight="700">MY</text>
+<circle cx="844.0" cy="340.0" r="24" fill="#F3F4F6"/>
+<text x="882.0" y="334.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="14" fill="#2B2F36" text-anchor="start" font-weight="700">재현</text>
+<text x="882.0" y="354.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">★ 4.7 · 거래 12회</text>
+<text x="1082.0" y="344.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#8A9099" text-anchor="end" font-weight="400">›</text>
+<line x1="814.0" y1="388.0" x2="1082.0" y2="388.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="814.0" y="411.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#2B2F36" text-anchor="start" font-weight="400">판매 관리</text>
+<text x="1082.0" y="411.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#8A9099" text-anchor="end" font-weight="400">›</text>
+<line x1="814.0" y1="424.0" x2="1082.0" y2="424.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="814.0" y="447.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#2B2F36" text-anchor="start" font-weight="400">거래 내역</text>
+<text x="1082.0" y="447.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#8A9099" text-anchor="end" font-weight="400">›</text>
+<line x1="814.0" y1="460.0" x2="1082.0" y2="460.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="814.0" y="483.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#2B2F36" text-anchor="start" font-weight="400">찜 목록</text>
+<text x="1082.0" y="483.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#8A9099" text-anchor="end" font-weight="400">›</text>
+<line x1="814.0" y1="496.0" x2="1082.0" y2="496.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="814.0" y="519.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#2B2F36" text-anchor="start" font-weight="400">받은 후기</text>
+<text x="1082.0" y="519.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#8A9099" text-anchor="end" font-weight="400">›</text>
+<line x1="814.0" y1="532.0" x2="1082.0" y2="532.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="814.0" y="555.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#2B2F36" text-anchor="start" font-weight="400">내 신고 내역</text>
+<text x="1082.0" y="555.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#8A9099" text-anchor="end" font-weight="400">›</text>
+<line x1="814.0" y1="568.0" x2="1082.0" y2="568.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="814.0" y="591.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#2B2F36" text-anchor="start" font-weight="400">차단 목록</text>
+<text x="1082.0" y="591.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#8A9099" text-anchor="end" font-weight="400">›</text>
+<line x1="814.0" y1="604.0" x2="1082.0" y2="604.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="814.0" y="627.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#2B2F36" text-anchor="start" font-weight="400">알림 설정</text>
+<text x="1082.0" y="627.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#8A9099" text-anchor="end" font-weight="400">›</text>
+<line x1="814.0" y1="640.0" x2="1082.0" y2="640.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="814.0" y="663.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#2B2F36" text-anchor="start" font-weight="400">공지사항</text>
+<text x="1082.0" y="663.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#8A9099" text-anchor="end" font-weight="400">›</text>
+<line x1="814.0" y1="676.0" x2="1082.0" y2="676.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="814.0" y="764.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10.5" fill="#8A9099" text-anchor="start" font-weight="400">로그아웃</text>
+<text x="1082.0" y="764.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10.5" fill="#8A9099" text-anchor="end" font-weight="400">회원 탈퇴</text>
+<line x1="798.0" y1="792.0" x2="1098.0" y2="792.0" stroke="#E7E9EC" stroke-width="1"/>
+<rect x="819.0" y="808.0" width="18.0" height="14.0" rx="3" fill="none" stroke="#8A9099" stroke-width="1"/>
+<text x="828.0" y="836.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9" fill="#8A9099" text-anchor="middle" font-weight="400">홈</text>
+<rect x="879.0" y="808.0" width="18.0" height="14.0" rx="3" fill="none" stroke="#8A9099" stroke-width="1"/>
+<text x="888.0" y="836.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9" fill="#8A9099" text-anchor="middle" font-weight="400">찜</text>
+<rect x="939.0" y="808.0" width="18.0" height="14.0" rx="3" fill="none" stroke="#8A9099" stroke-width="1"/>
+<text x="948.0" y="836.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9" fill="#8A9099" text-anchor="middle" font-weight="400">채팅</text>
+<rect x="999.0" y="808.0" width="18.0" height="14.0" rx="3" fill="none" stroke="#8A9099" stroke-width="1"/>
+<text x="1008.0" y="836.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9" fill="#8A9099" text-anchor="middle" font-weight="400">커뮤니티</text>
+<rect x="1059.0" y="808.0" width="18.0" height="14.0" rx="3" fill="none" stroke="#2B2F36" stroke-width="1"/>
+<text x="1068.0" y="836.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9" fill="#2B2F36" text-anchor="middle" font-weight="700">MY</text>
+<rect x="798.0" y="248.0" width="300.0" height="600.0" rx="10" fill="#2B2F36" stroke="none" fill-opacity="0.45"/>
+<rect x="828.0" y="468.0" width="240.0" height="150.0" rx="10" fill="#FFFFFF" stroke="none"/>
+<text x="948.0" y="504.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="13" fill="#2B2F36" text-anchor="middle" font-weight="700">로그아웃할까요?</text>
+<text x="948.0" y="528.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10.5" fill="#8A9099" text-anchor="middle" font-weight="400">이 기기에서만 로그아웃됩니다.</text>
+<text x="948.0" y="544.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10.5" fill="#8A9099" text-anchor="middle" font-weight="400">다른 기기의 로그인은 유지됩니다.</text>
+<rect x="844.0" y="566.0" width="100.0" height="34.0" rx="6" fill="#FFF" stroke="#D5D8DD" stroke-width="1"/>
+<text x="894.0" y="587.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#2B2F36" text-anchor="middle" font-weight="600">취소</text>
+<rect x="952.0" y="566.0" width="100.0" height="34.0" rx="6" fill="#2B2F36" stroke="none"/>
+<text x="1002.0" y="587.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle" font-weight="600">로그아웃</text>
+<rect x="822.0" y="462.0" width="252.0" height="162.0" rx="3" fill="none" stroke="#E03E2F" stroke-width="1"/>
+<circle cx="778.0" cy="498.0" r="8" fill="#E03E2F"/>
+<text x="778.0" y="501.5" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+<line x1="786.0" y1="498.0" x2="822.0" y2="498.0" stroke="#E03E2F" stroke-width="1"/>
+<rect x="948.0" y="562.0" width="108.0" height="42.0" rx="3" fill="none" stroke="#E03E2F" stroke-width="1"/>
+<circle cx="778.0" cy="583.0" r="8" fill="#E03E2F"/>
+<text x="778.0" y="586.5" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">2</text>
+<line x1="786.0" y1="583.0" x2="948.0" y2="583.0" stroke="#E03E2F" stroke-width="1"/>
+<text x="798.0" y="870.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">① 취소 · 바깥 영역 탭 · Esc → 닫기</text>
+<text x="798.0" y="884.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">② 누르면 버튼 비활성 · '로그아웃 중…'</text>
+<text x="798.0" y="898.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">  204 · 401 → 세션 정리 후 AUTH-001로 replace 이동</text>
+<text x="798.0" y="912.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">  그 밖의 실패 → 토스트 후 MY-001에 머문다</text>
+<text x="798.0" y="926.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">  (쿠키가 남아 새로고침하면 다시 로그인되기 때문)</text>
+<text x="798.0" y="940.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#5B5BD6" text-anchor="start" font-weight="400">API  POST /auth/logout</text>
+<text x="798.0" y="954.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#7A7F87" text-anchor="start" font-weight="600">→  AUTH-001 ('로그아웃되었습니다.')</text>
+<text x="1162.0" y="222.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="13" fill="#5B5BD6" text-anchor="start" font-weight="700">MY-003</text>
+<text x="1227.6" y="222.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="13" fill="#555" text-anchor="start" font-weight="400">회원 탈퇴</text>
+<rect x="1295.1" y="209.0" width="60.5" height="17.0" rx="8.5" fill="#FFF4E5" stroke="#F5C98B" stroke-width="1"/>
+<text x="1325.4" y="220.5" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#B26A00" text-anchor="middle" font-weight="700">v1.1 변경</text>
+<rect x="1162.0" y="248.0" width="300.0" height="600.0" rx="10" fill="#FFFFFF" stroke="#D5D8DD" stroke-width="1"/>
+<rect x="1162.0" y="248.0" width="300.0" height="44.0" rx="0" fill="#FAFAFB" stroke="none"/>
+<line x1="1162.0" y1="292.0" x2="1462.0" y2="292.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="1312.0" y="275.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="13" fill="#2B2F36" text-anchor="middle" font-weight="700">회원 탈퇴</text>
+<text x="1178.0" y="276.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="17" fill="#2B2F36" text-anchor="start" font-weight="400">‹</text>
+<text x="1182.0" y="332.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="15" fill="#2B2F36" text-anchor="start" font-weight="700">정말 탈퇴하시겠어요?</text>
+<rect x="1182.0" y="352.0" width="260.0" height="172.0" rx="6" fill="#FDECEA" stroke="#F3C9C4" stroke-width="1"/>
+<text x="1198.0" y="376.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11" fill="#E03E2F" text-anchor="start" font-weight="700">탈퇴 시 처리되는 내용</text>
+<text x="1198.0" y="400.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8C3B33" text-anchor="start" font-weight="400">· 진행 중인 거래가 모두 취소됩니다</text>
+<text x="1198.0" y="417.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8C3B33" text-anchor="start" font-weight="400">· 거래 상대방에게 취소 알림이 발송됩니다</text>
+<text x="1198.0" y="434.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8C3B33" text-anchor="start" font-weight="400">· 닉네임이 '탈퇴회원#번호'로 바뀝니다</text>
+<text x="1198.0" y="451.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8C3B33" text-anchor="start" font-weight="400">· 프로필 사진과 소개가 삭제됩니다</text>
+<text x="1198.0" y="468.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8C3B33" text-anchor="start" font-weight="400">· 작성한 글 · 후기 · 메시지는 유지됩니다</text>
+<text x="1198.0" y="485.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8C3B33" text-anchor="start" font-weight="400">· 탈퇴한 계정은 복구할 수 없습니다</text>
+<text x="1198.0" y="502.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8C3B33" text-anchor="start" font-weight="700">· 다시 가입하면 새 계정으로 시작됩니다</text>
+<text x="1182.0" y="550.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11" fill="#2B2F36" text-anchor="start" font-weight="600">진행 중인 거래 2건</text>
+<rect x="1182.0" y="562.0" width="260.0" height="46.0" rx="6" fill="#FFF" stroke="#D5D8DD" stroke-width="1"/>
+<rect x="1192.0" y="569.0" width="32.0" height="32.0" rx="4" fill="#F3F4F6" stroke="#E7E9EC" stroke-width="1"/>
+<line x1="1192.0" y1="569.0" x2="1224.0" y2="601.0" stroke="#E7E9EC" stroke-width="1"/>
+<line x1="1224.0" y1="569.0" x2="1192.0" y2="601.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="1234.0" y="582.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10.5" fill="#2B2F36" text-anchor="start" font-weight="600">아이패드 프로 11형</text>
+<text x="1234.0" y="598.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#8A9099" text-anchor="start" font-weight="400">승인 · 구매 · 판매왕</text>
+<rect x="1182.0" y="614.0" width="260.0" height="46.0" rx="6" fill="#FFF" stroke="#D5D8DD" stroke-width="1"/>
+<rect x="1192.0" y="621.0" width="32.0" height="32.0" rx="4" fill="#F3F4F6" stroke="#E7E9EC" stroke-width="1"/>
+<line x1="1192.0" y1="621.0" x2="1224.0" y2="653.0" stroke="#E7E9EC" stroke-width="1"/>
+<line x1="1224.0" y1="621.0" x2="1192.0" y2="653.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="1234.0" y="634.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10.5" fill="#2B2F36" text-anchor="start" font-weight="600">에어팟 맥스</text>
+<text x="1234.0" y="650.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#8A9099" text-anchor="start" font-weight="400">요청 · 판매 · 새싹</text>
+<rect x="1182.0" y="678.0" width="16.0" height="16.0" rx="3" fill="#FFF" stroke="#D5D8DD" stroke-width="1"/>
+<text x="1206.0" y="691.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10.5" fill="#2B2F36" text-anchor="start" font-weight="400">안내 내용을 모두 확인했습니다</text>
+<rect x="1182.0" y="724.0" width="260.0" height="34.0" rx="6" fill="#C9CCD1" stroke="none"/>
+<text x="1312.0" y="745.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle" font-weight="600">탈퇴하기</text>
+<rect x="1182.0" y="768.0" width="260.0" height="34.0" rx="6" fill="#FFF" stroke="#D5D8DD" stroke-width="1"/>
+<text x="1312.0" y="789.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#2B2F36" text-anchor="middle" font-weight="600">취소</text>
+<rect x="1176.0" y="346.0" width="272.0" height="184.0" rx="3" fill="none" stroke="#E03E2F" stroke-width="1"/>
+<circle cx="1142.0" cy="438.0" r="8" fill="#E03E2F"/>
+<text x="1142.0" y="441.5" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+<line x1="1150.0" y1="438.0" x2="1176.0" y2="438.0" stroke="#E03E2F" stroke-width="1"/>
+<rect x="1176.0" y="536.0" width="272.0" height="130.0" rx="3" fill="none" stroke="#E03E2F" stroke-width="1"/>
+<circle cx="1142.0" cy="612.0" r="8" fill="#E03E2F"/>
+<text x="1142.0" y="615.5" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">2</text>
+<line x1="1150.0" y1="612.0" x2="1176.0" y2="612.0" stroke="#E03E2F" stroke-width="1"/>
+<rect x="1176.0" y="672.0" width="272.0" height="90.0" rx="3" fill="none" stroke="#E03E2F" stroke-width="1"/>
+<circle cx="1142.0" cy="718.0" r="8" fill="#E03E2F"/>
+<text x="1142.0" y="721.5" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">3</text>
+<line x1="1150.0" y1="718.0" x2="1176.0" y2="718.0" stroke="#E03E2F" stroke-width="1"/>
+<text x="1162.0" y="870.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">① v1.1 문구 수정: '동일 계정으로 재가입할 수 없습니다'</text>
+<text x="1162.0" y="884.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">  → '다시 가입하면 새 계정으로 시작됩니다' (ADR-018)</text>
+<text x="1162.0" y="898.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">② role 없이 status=REQUESTED · ACCEPTED 두 번 조회해 합친다</text>
+<text x="1162.0" y="912.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">  카드: 상태 · 내 역할(myRole) · 상대 닉네임</text>
+<text x="1162.0" y="926.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">③ 체크 전까지 비활성 · 누르면 바로 탈퇴 요청</text>
+<text x="1162.0" y="940.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#5B5BD6" text-anchor="start" font-weight="400">API  GET /trades?status=REQUESTED|ACCEPTED · DELETE /users/me</text>
+<text x="1162.0" y="954.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#7A7F87" text-anchor="start" font-weight="600">→  AUTH-001 ('회원 탈퇴가 완료되었습니다.')</text>
+<text x="70.0" y="1034.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="13" fill="#5B5BD6" text-anchor="start" font-weight="700">MY-003</text>
+<text x="135.6" y="1034.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="13" fill="#555" text-anchor="start" font-weight="400">거래 없음 · 처리 중</text>
+<rect x="272.3" y="1021.0" width="33.0" height="17.0" rx="8.5" fill="#E8F5EE" stroke="#A7D7BA" stroke-width="1"/>
+<text x="288.8" y="1032.5" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#1E7B4A" text-anchor="middle" font-weight="700">신규</text>
+<rect x="70.0" y="1060.0" width="300.0" height="600.0" rx="10" fill="#FFFFFF" stroke="#D5D8DD" stroke-width="1"/>
+<rect x="70.0" y="1060.0" width="300.0" height="44.0" rx="0" fill="#FAFAFB" stroke="none"/>
+<line x1="70.0" y1="1104.0" x2="370.0" y2="1104.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="220.0" y="1087.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="13" fill="#2B2F36" text-anchor="middle" font-weight="700">회원 탈퇴</text>
+<text x="86.0" y="1088.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="17" fill="#2B2F36" text-anchor="start" font-weight="400">‹</text>
+<text x="90.0" y="1144.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="15" fill="#2B2F36" text-anchor="start" font-weight="700">정말 탈퇴하시겠어요?</text>
+<rect x="90.0" y="1164.0" width="260.0" height="172.0" rx="6" fill="#FDECEA" stroke="#F3C9C4" stroke-width="1"/>
+<text x="106.0" y="1188.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11" fill="#E03E2F" text-anchor="start" font-weight="700">탈퇴 시 처리되는 내용</text>
+<text x="106.0" y="1212.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8C3B33" text-anchor="start" font-weight="400">· 진행 중인 거래가 모두 취소됩니다</text>
+<text x="106.0" y="1229.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8C3B33" text-anchor="start" font-weight="400">· 거래 상대방에게 취소 알림이 발송됩니다</text>
+<text x="106.0" y="1246.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8C3B33" text-anchor="start" font-weight="400">· 닉네임이 '탈퇴회원#번호'로 바뀝니다</text>
+<text x="106.0" y="1263.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8C3B33" text-anchor="start" font-weight="400">· 프로필 사진과 소개가 삭제됩니다</text>
+<text x="106.0" y="1280.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8C3B33" text-anchor="start" font-weight="400">· 작성한 글 · 후기 · 메시지는 유지됩니다</text>
+<text x="106.0" y="1297.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8C3B33" text-anchor="start" font-weight="400">· 탈퇴한 계정은 복구할 수 없습니다</text>
+<text x="106.0" y="1314.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8C3B33" text-anchor="start" font-weight="700">· 다시 가입하면 새 계정으로 시작됩니다</text>
+<text x="90.0" y="1362.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11" fill="#2B2F36" text-anchor="start" font-weight="600">진행 중인 거래</text>
+<rect x="90.0" y="1374.0" width="260.0" height="60.0" rx="6" fill="#F7F8FA" stroke="#E7E9EC" stroke-width="1"/>
+<text x="220.0" y="1409.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10.5" fill="#8A9099" text-anchor="middle" font-weight="400">취소될 거래가 없습니다</text>
+<rect x="90.0" y="1490.0" width="16.0" height="16.0" rx="3" fill="#2B2F36" stroke="#2B2F36" stroke-width="1"/>
+<text x="98.0" y="1502.5" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11" fill="#FFF" text-anchor="middle" font-weight="700">✓</text>
+<text x="114.0" y="1503.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10.5" fill="#2B2F36" text-anchor="start" font-weight="400">안내 내용을 모두 확인했습니다</text>
+<rect x="90.0" y="1536.0" width="260.0" height="34.0" rx="6" fill="#6B7280" stroke="none"/>
+<text x="220.0" y="1557.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle" font-weight="600">탈퇴 처리 중…</text>
+<rect x="90.0" y="1580.0" width="260.0" height="34.0" rx="6" fill="#FFF" stroke="#E7E9EC" stroke-width="1"/>
+<text x="220.0" y="1601.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#B6BAC0" text-anchor="middle" font-weight="600">취소</text>
+<rect x="84.0" y="1368.0" width="272.0" height="72.0" rx="3" fill="none" stroke="#E03E2F" stroke-width="1"/>
+<circle cx="50.0" cy="1404.0" r="8" fill="#E03E2F"/>
+<text x="50.0" y="1407.5" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+<line x1="58.0" y1="1404.0" x2="84.0" y2="1404.0" stroke="#E03E2F" stroke-width="1"/>
+<rect x="84.0" y="1530.0" width="272.0" height="90.0" rx="3" fill="none" stroke="#E03E2F" stroke-width="1"/>
+<circle cx="50.0" cy="1575.0" r="8" fill="#E03E2F"/>
+<text x="50.0" y="1578.5" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">2</text>
+<line x1="58.0" y1="1575.0" x2="84.0" y2="1575.0" stroke="#E03E2F" stroke-width="1"/>
+<text x="70.0" y="1682.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">① 두 조회가 모두 비었을 때</text>
+<text x="70.0" y="1696.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">  조회 실패 → '거래 정보를 불러오지 못했어요 · 다시 시도'</text>
+<text x="70.0" y="1710.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">  조회 실패여도 탈퇴는 막지 않는다 (취소는 서버가 한다)</text>
+<text x="70.0" y="1724.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">② 요청 중에는 탈퇴하기 · 취소 모두 비활성</text>
+<text x="70.0" y="1738.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#5B5BD6" text-anchor="start" font-weight="400">API  DELETE /users/me</text>
+<text x="70.0" y="1752.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#7A7F87" text-anchor="start" font-weight="600">→  AUTH-001</text>
+<text x="434.0" y="1034.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="13" fill="#5B5BD6" text-anchor="start" font-weight="700">MY-003</text>
+<text x="499.6" y="1034.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="13" fill="#555" text-anchor="start" font-weight="400">오류</text>
+<rect x="533.6" y="1021.0" width="33.0" height="17.0" rx="8.5" fill="#E8F5EE" stroke="#A7D7BA" stroke-width="1"/>
+<text x="550.1" y="1032.5" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#1E7B4A" text-anchor="middle" font-weight="700">신규</text>
+<rect x="434.0" y="1060.0" width="300.0" height="600.0" rx="10" fill="#FFFFFF" stroke="#D5D8DD" stroke-width="1"/>
+<rect x="434.0" y="1060.0" width="300.0" height="44.0" rx="0" fill="#FAFAFB" stroke="none"/>
+<line x1="434.0" y1="1104.0" x2="734.0" y2="1104.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="584.0" y="1087.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="13" fill="#2B2F36" text-anchor="middle" font-weight="700">회원 탈퇴</text>
+<text x="450.0" y="1088.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="17" fill="#2B2F36" text-anchor="start" font-weight="400">‹</text>
+<text x="454.0" y="1144.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="15" fill="#2B2F36" text-anchor="start" font-weight="700">정말 탈퇴하시겠어요?</text>
+<rect x="454.0" y="1164.0" width="260.0" height="172.0" rx="6" fill="#FDECEA" stroke="#F3C9C4" stroke-width="1"/>
+<text x="470.0" y="1188.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11" fill="#E03E2F" text-anchor="start" font-weight="700">탈퇴 시 처리되는 내용</text>
+<text x="470.0" y="1212.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8C3B33" text-anchor="start" font-weight="400">· 진행 중인 거래가 모두 취소됩니다</text>
+<text x="470.0" y="1229.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8C3B33" text-anchor="start" font-weight="400">· 거래 상대방에게 취소 알림이 발송됩니다</text>
+<text x="470.0" y="1246.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8C3B33" text-anchor="start" font-weight="400">· 닉네임이 '탈퇴회원#번호'로 바뀝니다</text>
+<text x="470.0" y="1263.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8C3B33" text-anchor="start" font-weight="400">· 프로필 사진과 소개가 삭제됩니다</text>
+<text x="470.0" y="1280.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8C3B33" text-anchor="start" font-weight="400">· 작성한 글 · 후기 · 메시지는 유지됩니다</text>
+<text x="470.0" y="1297.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8C3B33" text-anchor="start" font-weight="400">· 탈퇴한 계정은 복구할 수 없습니다</text>
+<text x="470.0" y="1314.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8C3B33" text-anchor="start" font-weight="700">· 다시 가입하면 새 계정으로 시작됩니다</text>
+<text x="454.0" y="1362.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11" fill="#2B2F36" text-anchor="start" font-weight="600">진행 중인 거래 1건</text>
+<rect x="454.0" y="1374.0" width="260.0" height="46.0" rx="6" fill="#FFF" stroke="#D5D8DD" stroke-width="1"/>
+<rect x="464.0" y="1381.0" width="32.0" height="32.0" rx="4" fill="#F3F4F6" stroke="#E7E9EC" stroke-width="1"/>
+<line x1="464.0" y1="1381.0" x2="496.0" y2="1413.0" stroke="#E7E9EC" stroke-width="1"/>
+<line x1="496.0" y1="1381.0" x2="464.0" y2="1413.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="506.0" y="1394.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10.5" fill="#2B2F36" text-anchor="start" font-weight="600">아이패드 프로 11형</text>
+<text x="506.0" y="1410.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#8A9099" text-anchor="start" font-weight="400">승인 · 구매 · 판매왕</text>
+<rect x="454.0" y="1440.0" width="16.0" height="16.0" rx="3" fill="#2B2F36" stroke="#2B2F36" stroke-width="1"/>
+<text x="462.0" y="1452.5" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11" fill="#FFF" text-anchor="middle" font-weight="700">✓</text>
+<text x="478.0" y="1453.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10.5" fill="#2B2F36" text-anchor="start" font-weight="400">안내 내용을 모두 확인했습니다</text>
+<rect x="454.0" y="1470.0" width="260.0" height="50.0" rx="6" fill="#FDECEA" stroke="#F3C9C4" stroke-width="1"/>
+<text x="466.0" y="1491.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10.5" fill="#E03E2F" text-anchor="start" font-weight="700">탈퇴하지 못했습니다.</text>
+<text x="466.0" y="1509.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#8C3B33" text-anchor="start" font-weight="400">잠시 후 다시 시도해 주세요.</text>
+<rect x="454.0" y="1536.0" width="260.0" height="34.0" rx="6" fill="#2B2F36" stroke="none"/>
+<text x="584.0" y="1557.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle" font-weight="600">탈퇴하기</text>
+<rect x="454.0" y="1580.0" width="260.0" height="34.0" rx="6" fill="#FFF" stroke="#D5D8DD" stroke-width="1"/>
+<text x="584.0" y="1601.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#2B2F36" text-anchor="middle" font-weight="600">취소</text>
+<rect x="448.0" y="1464.0" width="272.0" height="62.0" rx="3" fill="none" stroke="#E03E2F" stroke-width="1"/>
+<circle cx="414.0" cy="1495.0" r="8" fill="#E03E2F"/>
+<text x="414.0" y="1498.5" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+<line x1="422.0" y1="1495.0" x2="448.0" y2="1495.0" stroke="#E03E2F" stroke-width="1"/>
+<text x="434.0" y="1682.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">① 응답별 처리</text>
+<text x="434.0" y="1696.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">  403 FORBIDDEN → '관리자 계정은 탈퇴할 수 없습니다.'</text>
+<text x="434.0" y="1710.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">     (탈퇴하기 비활성 유지)</text>
+<text x="434.0" y="1724.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">  401 → 재발급도 실패한 경우: 세션 정리 후 AUTH-001</text>
+<text x="434.0" y="1738.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">  5xx · 네트워크 → 위 문구, 다시 누를 수 있다</text>
+<text x="434.0" y="1752.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#5B5BD6" text-anchor="start" font-weight="400">API  DELETE /users/me</text>
+<text x="798.0" y="1034.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="13" fill="#5B5BD6" text-anchor="start" font-weight="700">AUTH-001</text>
+<text x="882.0" y="1034.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="13" fill="#555" text-anchor="start" font-weight="400">로그인 · 완료 안내</text>
+<rect x="1011.2" y="1021.0" width="60.5" height="17.0" rx="8.5" fill="#FFF4E5" stroke="#F5C98B" stroke-width="1"/>
+<text x="1041.4" y="1032.5" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#B26A00" text-anchor="middle" font-weight="700">v1.1 변경</text>
+<rect x="798.0" y="1060.0" width="300.0" height="600.0" rx="10" fill="#FFFFFF" stroke="#D5D8DD" stroke-width="1"/>
+<rect x="868.0" y="1250.0" width="160.0" height="44.0" rx="6" fill="#FFF" stroke="#D5D8DD" stroke-width="1"/>
+<text x="948.0" y="1278.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="19" fill="#2B2F36" text-anchor="middle" font-weight="700">Re:Used</text>
+<text x="948.0" y="1316.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11.5" fill="#8A9099" text-anchor="middle" font-weight="400">믿을 수 있는 중고거래</text>
+<rect x="828.0" y="1360.0" width="240.0" height="40.0" rx="6" fill="#F3F4F6" stroke="#E7E9EC" stroke-width="1"/>
+<text x="948.0" y="1384.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11" fill="#2B2F36" text-anchor="middle" font-weight="600">회원 탈퇴가 완료되었습니다.</text>
+<rect x="828.0" y="1500.0" width="240.0" height="44.0" rx="6" fill="#2B2F36" stroke="none"/>
+<text x="948.0" y="1527.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle" font-weight="600">카카오로 시작하기</text>
+<text x="948.0" y="1572.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11" fill="#8A9099" text-anchor="middle" font-weight="400">이메일로 로그인</text>
+<rect x="822.0" y="1354.0" width="252.0" height="52.0" rx="3" fill="none" stroke="#E03E2F" stroke-width="1"/>
+<circle cx="778.0" cy="1380.0" r="8" fill="#E03E2F"/>
+<text x="778.0" y="1383.5" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+<line x1="786.0" y1="1380.0" x2="822.0" y2="1380.0" stroke="#E03E2F" stroke-width="1"/>
+<text x="798.0" y="1682.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">① 로그아웃 · 탈퇴 뒤 넘겨받은 안내 문구 (router state)</text>
+<text x="798.0" y="1696.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">  로그아웃: '로그아웃되었습니다.'</text>
+<text x="798.0" y="1710.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">  탈퇴: '회원 탈퇴가 완료되었습니다.'</text>
+<text x="798.0" y="1724.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10" fill="#8A9099" text-anchor="start" font-weight="400">  replace 이동이라 뒤로 가기로 MY에 돌아가지 않는다</text>
+<text x="798.0" y="1738.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="9.5" fill="#7A7F87" text-anchor="start" font-weight="600">→  기존 AUTH-001 화면을 그대로 쓴다</text>
+<text x="1162.0" y="1034.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="13" fill="#5B5BD6" text-anchor="start" font-weight="700">공통</text>
+<text x="1202.0" y="1034.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="13" fill="#555" text-anchor="start" font-weight="400">세션 정리 절차</text>
+<rect x="1162.0" y="1060.0" width="300.0" height="330.0" rx="10" fill="#FFFFFF" stroke="#D5D8DD" stroke-width="1"/>
+<text x="1182.0" y="1094.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#2B2F36" text-anchor="start" font-weight="700">로그아웃 · 탈퇴 성공 뒤 (프론트)</text>
+<text x="1182.0" y="1124.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11" fill="#2B2F36" text-anchor="start" font-weight="400">1. Access Token · 사용자 정보 삭제</text>
+<text x="1182.0" y="1146.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11" fill="#2B2F36" text-anchor="start" font-weight="400">2. React Query 캐시 비우기</text>
+<text x="1182.0" y="1168.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11" fill="#2B2F36" text-anchor="start" font-weight="400">3. 채팅 소켓 연결 끊기</text>
+<text x="1182.0" y="1190.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="11" fill="#2B2F36" text-anchor="start" font-weight="400">4. /login으로 replace 이동 + 안내 문구</text>
+<line x1="1182.0" y1="1220.0" x2="1442.0" y2="1220.0" stroke="#E7E9EC" stroke-width="1"/>
+<text x="1182.0" y="1246.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="12" fill="#2B2F36" text-anchor="start" font-weight="700">서버가 하는 일</text>
+<text x="1182.0" y="1274.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10.5" fill="#555" text-anchor="start" font-weight="400">로그아웃: 이 기기의 Refresh Token 폐기</text>
+<text x="1182.0" y="1294.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10.5" fill="#555" text-anchor="start" font-weight="400">탈퇴: 모든 Refresh Token 폐기</text>
+<text x="1182.0" y="1314.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10.5" fill="#555" text-anchor="start" font-weight="400">둘 다 refresh_token 쿠키 만료 (Set-Cookie)</text>
+<text x="1182.0" y="1334.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10.5" fill="#555" text-anchor="start" font-weight="400">Access Token은 만료(최대 30분)까지 유효</text>
+<text x="1182.0" y="1354.0" font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','Malgun Gothic',sans-serif" font-size="10.5" fill="#555" text-anchor="start" font-weight="400">→ 프론트가 메모리에서 바로 버린다 (ADR-005)</text>
+</svg>
