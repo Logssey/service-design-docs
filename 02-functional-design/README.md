@@ -16,6 +16,7 @@
 ## 화면 설계
 
 - [현재 와이어프레임](screen-design/wireframe.svg)
+- [마이페이지 계정 화면 (v1.1 보완)](screen-design/my-account.md) — MY-001 · 로그아웃 확인 · MY-003 회원 탈퇴
 
 ## 관련 문서
 
