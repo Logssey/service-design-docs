@@ -36,5 +36,6 @@
 ## 후속 검토
 
 - [결정에 따른 워크로드 구성, 후속 문서 이관 및 미결정 사항](workload-and-open-items.md)
+- [애플리케이션 배포 설정값](deployment-configuration.md) — API·채팅·웹이 요구하는 환경변수와 빌드 변수
 
 초기 ADR은 현재 결정과 번호가 중복되고 내용이 변경되었으므로 [초기 설계 문서](../archive/initial-design/README.md)에만 보관한다.
