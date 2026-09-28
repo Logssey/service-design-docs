@@ -45,7 +45,7 @@ CI는 OIDC로 `secrets.AWS_ROLE_ARN`을 맡아 ECR에 올리고, GitHub App(`sec
 | `MAIL_USERNAME` / `MAIL_PASSWORD` | Secret | SMTP 인증 시 | SMTP 자격증명 | — |
 | `MAIL_FROM` | Config | | 발신 주소. 기본 `no-reply@reused.local`은 운영에 맞지 않는다 | 기본값 |
 | `IMAGE_S3_BUCKET` | Config | 이미지 사용 시 O | 비공개 버킷 이름. 비어 있으면 서버는 뜨지만 이미지 API가 503이다 | `reused-images` |
-| `IMAGE_S3_REGION` | Config | O | **`ap-northeast-1`(도쿄)**. 서비스 리전은 도쿄로 정했다. 코드 기본값은 `ap-northeast-2`(서울)라서 반드시 명시한다 | `us-east-1`(로컬 S3 대역) |
+| `IMAGE_S3_REGION` | Config | O | **`ap-northeast-1`(도쿄)**. 서비스 리전은 도쿄로 정했고 코드 기본값도 같다. 버킷 리전과 어긋나지 않게 운영에서도 명시한다 | `us-east-1`(로컬 S3 대역) |
 | `ANTHROPIC_API_KEY` | Secret | | 챗봇 자유 입력용. 비어 있으면 자유 입력 503 | — |
 | `CHATBOT_FREE_INPUT_ENABLED` | Config | | 기본 `false`. 개인정보 외부 전송 정책 검토 전에는 켜지 않는다 | — |
 
@@ -101,8 +101,9 @@ nginx(비루트, 포트 `8080`)가 빌드 산출물을 서빙하며 `/api`를 �
 | `VITE_USE_MOCKS` | Build | `false` | **목 켜짐**(`'false'`가 아니면 모두 목) | `vars.VITE_USE_MOCKS` 또는 `false` |
 | `VITE_USE_MOCKS_AUTH` | Build | 미설정 | `VITE_USE_MOCKS`를 따름 | 미설정 |
 | `VITE_KAKAO_STUB` | Build | 미설정 또는 `false` | 목 모드일 때만 켜짐 | 미설정 |
-| `VITE_KAKAO_CLIENT_ID` | Build | 카카오 REST API 키(인가 요청 주소에 드러나는 공개 값) | **빈 문자열** | **미설정 — 추가 필요** |
+| `VITE_KAKAO_CLIENT_ID` | Build | 카카오 REST API 키(인가 요청 주소에 드러나는 공개 값) | **빈 문자열** | `vars.VITE_KAKAO_CLIENT_ID`. 기본값이 없고, 비어 있으면 빌드 로그에 경고를 남긴다 |
 | `VITE_KAKAO_REDIRECT_URI` | Build | 미설정 권장 | 접속 도메인 + `/oauth/callback` | 미설정 |
+| `VITE_CHAT_REALTIME` | Build | 채팅 서버를 배포한 뒤 `true` | 꺼짐(채팅은 REST로만 동작) | `vars.VITE_CHAT_REALTIME` 또는 `false` |
 | `VITE_API_PROXY_TARGET` | — | 해당 없음 | `http://localhost:8080` | 개발 서버 전용 |
 
 - `VITE_KAKAO_CLIENT_ID`가 비면 카카오 인가 요청이 빈 `client_id`로 나가 로그인이 실패한다. 공개 값이므로 CI에서는 `secrets`가 아니라 저장소 Variables(`vars.VITE_KAKAO_CLIENT_ID`)로 넣는다.
@@ -113,6 +114,7 @@ nginx(비루트, 포트 `8080`)가 빌드 산출물을 서빙하며 `/api`를 �
 | 대상 | 필요한 것 | 쓰는 곳 |
 | --- | --- | --- |
 | 카카오 개발자 앱 | REST API 키, Client Secret(설정 시), 운영 리디렉트 URI `https://{도메인}/oauth/callback` 등록 | `KAKAO_CLIENT_ID`, `KAKAO_CLIENT_SECRET`, `VITE_KAKAO_CLIENT_ID` |
+| 프론트 GitHub 저장소 | Actions **Variables**에 `VITE_KAKAO_CLIENT_ID`(위 REST API 키). Client Secret은 넣지 않는다 | 웹 빌드 |
 | 메일 발송 수단 | SMTP 호스트·포트·계정, 발신 주소 도메인 인증 | `MAIL_*` |
 | S3 버킷 | 공개 차단·암호화, 웹 도메인의 `PUT`·`Content-Type` CORS 허용, `pending/` 1일 Lifecycle | `IMAGE_S3_*` |
 | 워크로드 역할 | 위 버킷의 `s3:GetObject`·`PutObject`·`DeleteObject` | API 서버 파드 |
@@ -137,7 +139,5 @@ S3 운영 조건의 상세는 백엔드 README "이미지 저장소 운영 조�
 | --- | --- | --- |
 | 채팅 서버 배포 경로 | ECR 저장소·GitOps values·CI 작업이 없다 | 백엔드 CI, GitOps 레포 |
 | 운영 메일 발송 수단 | 미결정 (ADR-016 결과) | 클라우드 아키텍처 |
-| 프론트 CI의 카카오 값 | `VITE_KAKAO_CLIENT_ID`를 빌드 변수로 넘기지 않는다 | 프론트엔드 CI |
 | RDS 스키마 적용 단계 | CI/CD에 없다. Flyway 기동 적용과 수동 baseline 중 운영 방식 결정 | [백엔드 DB 환경](../04-data/backend-db-environments.md) |
-| 이미지 버킷 리전 기본값 | 서비스 리전은 도쿄(`ap-northeast-1`)로 정했지만 코드의 `IMAGE_S3_REGION` 기본값은 `ap-northeast-2`다. 운영에서는 값을 명시하고, 기본값도 맞출지 정한다 | 백엔드 `application.properties`, README |
 | GitOps values 내용 | 이 문서의 변수가 `apps/reused-api`, `apps/reused-web` values에 빠짐없이 있는지 대조하지 않았다 | GitOps 레포 |
