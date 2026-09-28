@@ -11,7 +11,7 @@
 - [백엔드 DB 환경과 마이그레이션 전환](backend-db-environments.md)
 - [Redis 키 규약](redis-keys.md)
 
-`database-ddl.md`는 설계 기준 DDL이다. 현재 실제 실행 스크립트는 백엔드 저장소 `schema/`가 소유한다. CI 테스트는 그 스크립트로 임시 DB를 초기화하며, Flyway 전환은 백엔드 #43이 병합되기 전까지 예정 작업이다.
+`database-ddl.md`는 설계 기준 DDL이다. 실제 실행 SQL은 백엔드 저장소 `schema/`가 소유하고, 새 빈 DB와 CI 임시 DB에는 Flyway `V1`~`V5`가 자동 적용된다(`V5`는 이번 백엔드 작업 브랜치). 기존 데이터가 있는 DB의 안전한 전환은 [DB 환경 가이드](backend-db-environments.md)를 따른다.
 
 ## 관련 문서
 
