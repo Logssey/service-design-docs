@@ -1,6 +1,6 @@
 # Re:Used — DB DDL
 
-> PostgreSQL 18.6 기준 설계 스냅샷. 현재 백엔드 `spring.jpa.hibernate.ddl-auto=none`; 실행 파일은 백엔드 저장소 `schema/`가 소유한다. CI는 Testcontainers에서 자동 초기화하며 로컬·기존 운영 DB는 아직 수동 적용한다. Flyway 전환 진행 상태와 기존 DB 안전 절차는 [DB 환경·전환 가이드](backend-db-environments.md)를 본다.
+> PostgreSQL 18.6 기준 설계 스냅샷. 백엔드는 `spring.jpa.hibernate.ddl-auto=none`이며 실행 SQL은 백엔드 저장소 `schema/`가 소유한다. 새 빈 DB와 CI Testcontainers DB에는 Flyway가 `V1`~`V5`를 자동 적용한다(`V5`는 이번 백엔드 작업 브랜치). 기존 데이터가 있는 DB는 스키마를 비교하고 백업한 뒤 수동 baseline 절차를 따른다. [DB 환경·전환 가이드](backend-db-environments.md)를 본다.
 > 
 
 #### DB 초기 세팅

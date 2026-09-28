@@ -18,7 +18,7 @@ API 서버, 채팅 서버, 웹 프론트엔드가 실행·빌드에 요구하는
 | 워크로드 | 이미지 | 배포 값 위치 | CI 트리거 |
 | --- | --- | --- | --- |
 | API 서버 | ECR `logssey/reused-api` (`ap-northeast-1`) | GitOps `Logssey/gitops` `apps/reused-api/values.yaml` | `main` 대상 PR |
-| 웹 프론트엔드 | ECR `logssey/reused-web` (`ap-northeast-1`) | GitOps `Logssey/gitops` `apps/reused-web/values.yaml` | `main`·`develop` 대상 PR |
+| 웹 프론트엔드 | ECR `logssey/reused-web` (`ap-northeast-1`) | GitOps `Logssey/gitops` `apps/reused-web/values.yaml` | `main`·`develop` 대상 PR. 이번 기능 PR은 lint·test·build도 수행 |
 | 채팅 서버 | 백엔드 CI에 없음 | 백엔드 CI에 없음 | `tests.yml`이 검증용 이미지만 빌드한다 |
 
 CI는 OIDC로 `secrets.AWS_ROLE_ARN`을 맡아 ECR에 올리고, GitHub App(`secrets.GITOPS_APP_ID`, `secrets.GITOPS_APP_PRIVATE_KEY`)으로 GitOps 레포의 이미지 태그만 갱신한다. **서비스 레포의 CI에는 RDS 스키마 적용 단계와 채팅 서버 배포 경로가 없다.** 인프라 쪽에서 따로 다루는지는 인프라 docs 레포에서 확인한다.
@@ -45,7 +45,7 @@ CI는 OIDC로 `secrets.AWS_ROLE_ARN`을 맡아 ECR에 올리고, GitHub App(`sec
 | `MAIL_USERNAME` / `MAIL_PASSWORD` | Secret | SMTP 인증 시 | SMTP 자격증명 | — |
 | `MAIL_FROM` | Config | | 발신 주소. 기본 `no-reply@reused.local`은 운영에 맞지 않는다 | 기본값 |
 | `IMAGE_S3_BUCKET` | Config | 이미지 사용 시 O | 비공개 버킷 이름. 비어 있으면 서버는 뜨지만 이미지 API가 503이다 | `reused-images` |
-| `IMAGE_S3_REGION` | Config | O | **`ap-northeast-1`(도쿄)**. 서비스 리전은 도쿄로 정했고 코드 기본값도 같다. 버킷 리전과 어긋나지 않게 운영에서도 명시한다 | `us-east-1`(로컬 S3 대역) |
+| `IMAGE_S3_REGION` | Config | O | **`ap-northeast-1`(도쿄)**. 코드 기본값도 같지만 버킷 리전과 맞도록 운영에서 명시한다 | `us-east-1`(로컬 S3 대역) |
 | `ANTHROPIC_API_KEY` | Secret | | 챗봇 자유 입력용. 비어 있으면 자유 입력 503 | — |
 | `CHATBOT_FREE_INPUT_ENABLED` | Config | | 기본 `false`. 개인정보 외부 전송 정책 검토 전에는 켜지 않는다 | — |
 
@@ -64,7 +64,7 @@ CI는 OIDC로 `secrets.AWS_ROLE_ARN`을 맡아 ECR에 올리고, GitHub App(`sec
 | 변수 | 기본값 | 설명 |
 | --- | --- | --- |
 | `ANTHROPIC_BASE_URL` | SDK 기본 주소 | 게이트웨이를 거칠 때만 |
-| `CHATBOT_ENABLED` | `true` | `false`면 챗봇 두 엔드포인트 모두 503 (ADR-003 비활성화 스위치) |
+| `CHATBOT_ENABLED` | `true` | 환경 강제 차단. `false`면 관리자 DB 스위치를 켜도 두 챗봇 엔드포인트가 503 |
 | `IMAGE_ORPHAN_RETENTION` | `24h` | 게시글에 연결되지 않은 이미지 보존 기간 |
 | `IMAGE_CLEANUP_INTERVAL` | `1h` | 고아 이미지 정리 주기 |
 | `IMAGE_UNATTACHED_LIMIT` | `20` | 사용자별 미연결 이미지 상한 |
@@ -73,7 +73,7 @@ CI는 OIDC로 `secrets.AWS_ROLE_ARN`을 맡아 ECR에 올리고, GitHub App(`sec
 
 ### 1.4 실행 조건
 
-- **스키마:** Flyway가 기동 시 `V1`~`V4`(`schema/001`~`004`)를 적용한다. 비어 있지 않은 기존 DB는 자동 기준선을 쓰지 않으므로(`spring.flyway.baseline-on-migrate=false`) `flyway_schema_history` 없이 기동하면 안전하게 실패한다. 담당자가 실제 스키마를 확인하고 적용된 마지막 버전으로 수동 baseline을 기록한 뒤 기동하면, 그 뒤 버전(예: `V4`)만 적용된다. 절차는 백엔드 README "DB 스키마와 마이그레이션"과 [백엔드 DB 환경](../04-data/backend-db-environments.md)에 있다. `V4`의 내용과 적용 전 점검은 [004 마이그레이션](../04-data/social-identity-email-migration.md)에 있다.
+- **스키마:** 이번 백엔드 PR의 Flyway는 기동 시 `V1`~`V5`(`schema/001`~`005`)를 적용한다. `V5`는 관리자 챗봇 스위치 테이블을 만든다. 비어 있지 않은 기존 DB는 자동 기준선을 쓰지 않으므로(`spring.flyway.baseline-on-migrate=false`) `flyway_schema_history` 없이 기동하면 안전하게 실패한다. 담당자가 실제 스키마를 확인하고 적용된 마지막 버전으로 수동 baseline을 기록한 뒤 기동한다. 절차는 백엔드 README "DB 스키마와 마이그레이션"과 [백엔드 DB 환경](../04-data/backend-db-environments.md)에 있다. `V4`의 적용 전 점검은 [004 마이그레이션](../04-data/social-identity-email-migration.md)에 있다.
 - **다중 인스턴스:** 예약 작업(고아 이미지 정리, 정지 만료 해제)은 행 잠금(`FOR UPDATE SKIP LOCKED`)과 행 단위 조건부 갱신으로 여러 인스턴스에서 돌아도 중복 처리하지 않는다.
 - **같은 도메인:** API 서버에는 CORS 설정이 없다. Refresh 쿠키도 `Path=/api/v1/auth`, `SameSite=Lax`다. 따라서 브라우저는 웹과 **같은 도메인의 `/api` 경로**로 API를 호출해야 한다. 도메인을 나누려면 CORS와 쿠키 정책을 함께 다시 설계한다.
 
@@ -101,10 +101,12 @@ nginx(비루트, 포트 `8080`)가 빌드 산출물을 서빙하며 `/api`를 �
 | `VITE_USE_MOCKS` | Build | `false` | **목 켜짐**(`'false'`가 아니면 모두 목) | `vars.VITE_USE_MOCKS` 또는 `false` |
 | `VITE_USE_MOCKS_AUTH` | Build | 미설정 | `VITE_USE_MOCKS`를 따름 | 미설정 |
 | `VITE_KAKAO_STUB` | Build | 미설정 또는 `false` | 목 모드일 때만 켜짐 | 미설정 |
-| `VITE_KAKAO_CLIENT_ID` | Build | 카카오 REST API 키(인가 요청 주소에 드러나는 공개 값) | **빈 문자열** | `vars.VITE_KAKAO_CLIENT_ID`. 기본값이 없고, 비어 있으면 빌드 로그에 경고를 남긴다 |
-| `VITE_KAKAO_REDIRECT_URI` | Build | 미설정 권장 | 접속 도메인 + `/oauth/callback` | 미설정 |
-| `VITE_CHAT_REALTIME` | Build | 채팅 서버를 배포한 뒤 `true` | 꺼짐(채팅은 REST로만 동작) | `vars.VITE_CHAT_REALTIME` 또는 `false` |
+| `VITE_KAKAO_CLIENT_ID` | Build | 카카오 REST API 키(인가 요청 주소에 드러나는 공개 값) | **빈 문자열** | `vars.VITE_KAKAO_CLIENT_ID`; 비어 있으면 빌드 로그에 경고 |
+| `VITE_KAKAO_REDIRECT_URI` | Build | 미설정 권장 | 접속 도메인 + `/oauth/callback` | `vars.VITE_KAKAO_REDIRECT_URI` 또는 빈 문자열 |
+| `VITE_CHAT_REALTIME` | Build | 게이트웨이 배포·Ingress 준비 후 `true` | `false` | `vars.VITE_CHAT_REALTIME` 또는 `false` |
+| `VITE_CHAT_SOCKET_URL` | Build | 별도 게이트웨이 도메인을 쓸 때만 설정 | 같은 도메인의 `/socket.io` | `vars.VITE_CHAT_SOCKET_URL` 또는 빈 문자열 |
 | `VITE_API_PROXY_TARGET` | — | 해당 없음 | `http://localhost:8080` | 개발 서버 전용 |
+| `VITE_CHAT_PROXY_TARGET` | — | 해당 없음 | `http://localhost:3001` | 개발 서버 전용 |
 
 - `VITE_KAKAO_CLIENT_ID`가 비면 카카오 인가 요청이 빈 `client_id`로 나가 로그인이 실패한다. 공개 값이므로 CI에서는 `secrets`가 아니라 저장소 Variables(`vars.VITE_KAKAO_CLIENT_ID`)로 넣는다.
 - 리디렉트 URI는 기본값(접속 도메인 기준)을 쓰고, 그 주소를 카카오 개발자 콘솔에 등록한다.
@@ -118,7 +120,7 @@ nginx(비루트, 포트 `8080`)가 빌드 산출물을 서빙하며 `/api`를 �
 | 메일 발송 수단 | SMTP 호스트·포트·계정, 발신 주소 도메인 인증 | `MAIL_*` |
 | S3 버킷 | 공개 차단·암호화, 웹 도메인의 `PUT`·`Content-Type` CORS 허용, `pending/` 1일 Lifecycle | `IMAGE_S3_*` |
 | 워크로드 역할 | 위 버킷의 `s3:GetObject`·`PutObject`·`DeleteObject` | API 서버 파드 |
-| RDS | 애플리케이션 전용 계정, `V1`~`V4` 적용 또는 수동 baseline | `SPRING_DATASOURCE_*` |
+| RDS | 애플리케이션 전용 계정, `V1`~`V5` 적용 또는 수동 baseline | `SPRING_DATASOURCE_*` |
 | 관리형 Redis | API·채팅 공용 인스턴스, 인증·TLS 설정 | `SPRING_DATA_REDIS_*`, `CHAT_REDIS_URL` |
 | LLM API 키 (선택) | 챗봇 자유 입력을 켤 때만 | `ANTHROPIC_API_KEY` |
 
@@ -139,5 +141,6 @@ S3 운영 조건의 상세는 백엔드 README "이미지 저장소 운영 조�
 | --- | --- | --- |
 | 채팅 서버 배포 경로 | ECR 저장소·GitOps values·CI 작업이 없다 | 백엔드 CI, GitOps 레포 |
 | 운영 메일 발송 수단 | 미결정 (ADR-016 결과) | 클라우드 아키텍처 |
+| 카카오 실제 로그인 | CI는 공개 키 변수를 번들에 넣지만, GitHub Variables 값과 카카오 운영 리디렉트 URI 등록은 별도 필요 | 프론트엔드 CI·카카오 콘솔 |
 | RDS 스키마 적용 단계 | CI/CD에 없다. Flyway 기동 적용과 수동 baseline 중 운영 방식 결정 | [백엔드 DB 환경](../04-data/backend-db-environments.md) |
 | GitOps values 내용 | 이 문서의 변수가 `apps/reused-api`, `apps/reused-web` values에 빠짐없이 있는지 대조하지 않았다 | GitOps 레포 |

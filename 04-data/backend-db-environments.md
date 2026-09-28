@@ -1,25 +1,28 @@
-# 백엔드 DB 환경과 마이그레이션 전환
+# 백엔드 DB 환경과 마이그레이션
 
-이 문서는 **현재 병합된 백엔드 코드**와 [마이그레이션 작업 #43](https://github.com/Logssey/service-backend/issues/43)의 목표를 구분한다. PostgreSQL은 회원·상품·거래·채팅·커뮤니티·신고 등의 진실의 원천이고, Redis는 토큰·인증 코드·속도 제한·채팅 Pub/Sub 등의 공유 상태다. Redis를 PostgreSQL의 대체 DB로 쓰지 않는다.
+기준: 2026-09-28, 백엔드 `develop` (`42f0362`)과 이번 `feat/finish-marketplace-api` 작업 브랜치. `V5`는 작업 브랜치 변경이라 PR 병합 전 `develop`에는 없다. PostgreSQL은 회원·상품·거래·커뮤니티·신고의 영속 데이터 저장소이고, Redis는 토큰·인증 코드·속도 제한·채팅 Pub/Sub 등 공유 상태다. Redis는 PostgreSQL을 대체하지 않는다.
 
-| 환경 | PostgreSQL·Redis | 데이터와 검증 |
+| 환경 | DB와 데이터 | 검증 범위 |
 | --- | --- | --- |
-| PR CI | Docker 위 Testcontainers가 테스트 실행 중 각각 임시 컨테이너를 기동 | 스키마 001→002→003과 카테고리, 테스트별 픽스처를 넣고 실제 DB 쿼리·트랜잭션을 검증한다. 종료 후 테스트 데이터는 버린다. 별도 공유 DB·운영 비밀키가 필요 없다. |
-| 로컬 웹 시연 | 개발자가 기동한 PostgreSQL·Redis. 테스트 컨테이너와 별개 | 현재 백엔드 README의 `docker run` 및 SQL 적용 절차를 따른다. 카테고리 외 회원·상품·채팅방은 회원가입/API 사용 또는 **로컬 전용** 시드가 있어야 보인다. 컨테이너를 재생성하면 이름 없는 저장 계층의 데이터가 사라질 수 있으므로 시연 데이터를 보존하려면 별도 볼륨·백업을 둔다. |
-| 스테이징·운영 | 관리형 PostgreSQL(RDS 등)·Redis 및 실제 외부 연동 | 연결 설정과 시크릿만 환경별로 주입한다. 스키마·인증정보·백업·네트워크·TLS·배포 순서는 인프라 저장소에서 관리·검증한다. CI의 임시 데이터는 운영으로 복사하지 않는다. |
+| PR CI | Testcontainers가 실행마다 독립 PostgreSQL·Redis를 기동하고 종료 시 버린다 | 운영 JAR와 같은 Flyway 마이그레이션, API 통합 테스트. 실제 RDS·Redis 접속 정보는 쓰지 않는다. |
+| 로컬 시연 | 운영·기존 개발 DB와 다른 `reused_demo_*` PostgreSQL DB 및 Redis. 명시적 `local-demo` 프로필과 `APP_DEMO_SEED=true`에서만 가상 데이터 생성 | 화면·API 확인. 데이터 보존이 필요하면 전용 Docker 볼륨을 사용한다. [백엔드 데모 가이드](https://github.com/Logssey/service-backend/blob/develop/scripts/README-demo.md) 참고. |
+| 스테이징·운영 | 관리형 PostgreSQL(RDS 등)·Redis와 실제 외부 저장소·메일 | 시크릿·네트워크·TLS·백업·복구 및 스키마 이력을 별도로 검증한다. CI/로컬 데이터를 복사하지 않는다. |
 
-## 현재 스키마 적용과 #43 목표
+## 현재 Flyway 동작
 
-현재 `develop`은 `spring.jpa.hibernate.ddl-auto=none`이고 `schema/001_init.sql`, `002_seed_categories.sql`, `003_profile_images.sql`을 사용한다. Testcontainers는 이 순서로 자동 초기화하지만, 로컬·운영 DB에는 백엔드 README에 따라 아직 수동 적용한다. 테스트가 통과했다는 사실만으로 이미 운영 중인 DB에 새 스키마가 적용되지는 않는다. 소셜 선택 이메일의 `004_social_identity_email.sql`은 해당 백엔드 PR이 병합되면 같은 방식으로 추가되며, 새 애플리케이션을 배포하기 **전에** 적용해야 한다([004 소셜 인증 수단 이메일](social-identity-email-migration.md)). #43과 병합 순서가 겹치면 Flyway 패키징 매핑에 `V4`로 등록한다.
+백엔드는 `schema/001_init.sql`부터 `005_chatbot_feature_flag.sql`까지 하나의 SQL 원본을 유지하고, Gradle `processResources`가 각각 `V1`~`V5` Flyway 리소스로 패키징한다. **새 빈 DB**에서 앱이 시작될 때 순서대로 적용된다. Hibernate는 스키마를 만들지 않는다(`ddl-auto=none`). 앞으로의 스키마 변경은 기존 SQL을 수정하지 않고 다음 번호 파일을 `schema/`에 추가해 Gradle 매핑에도 등록한다.
 
-[#43](https://github.com/Logssey/service-backend/issues/43)의 목표는 **동일한 SQL 원본을 버전 관리형 마이그레이션으로 실행**해 새 빈 DB의 테스트·로컬·운영 경로가 달라지지 않게 하는 것이다. #43이 병합·검증되기 전에는 Flyway 자동 적용을 현재 동작이라고 설명하지 않는다. 이미 001~003을 수동 적용한 DB는 테이블·인덱스·데이터와 적용 순서를 먼저 확인한다. 자동 `baselineOnMigrate`를 켜거나 기존 스크립트를 재실행하지 않고, 백업 후 수동 baseline/전환 계획을 결정한다. 개발용 DB 재생성은 가능하지만 운영 데이터를 초기화하지 않는다.
+기존 데이터가 있는 DB에 `flyway_schema_history`가 없으면 기동이 실패하도록 `baseline-on-migrate=false`를 유지한다. 자동 baseline이나 기존 SQL 재실행으로 운영 데이터에 손대지 않는다. 기존 DB 전환 담당자는 다음 순서를 따른다.
 
-스키마 변경은 기존 적용 파일을 고치지 않고 다음 버전 파일로 추가한다. DDL의 설계 원본은 [DB DDL](database-ddl.md), [003 프로필 이미지](profile-images-migration.md), [004 소셜 인증 수단 이메일](social-identity-email-migration.md)에 있고, 실제 실행 파일은 백엔드 저장소 `schema/`가 소유한다. 마이그레이션 체계가 확정되면 백엔드 README의 수동 적용 절차와 이 문서를 함께 갱신한다.
+1. 대상 서버·DB명·스키마를 읽기 전용으로 확인하고 백업 및 복구 연습을 완료한다.
+2. 실제 테이블·인덱스·제약과 `schema/` 원본을 비교한다. 특히 `V3` 프로필 이미지 컬럼, `V4` 소셜 선택 이메일 컬럼·제약과 `V5` 운영 스위치 테이블의 존재 여부를 확인한다. 일부만 적용되었거나 차이가 있으면 중단하고 별도 수정 계획을 세운다.
+3. 정확히 적용된 최종 버전까지만 Flyway CLI로 **수동 baseline**한다. 예를 들어 `V4`까지 동일하고 `V5` 테이블이 없는 DB라면 baseline version `4`를 사용하고, 이후 `V5`를 적용한다. `V5`까지 동일한 DB에만 version `5` baseline을 고려한다. baseline은 SQL 내용 자체를 검증하거나 재실행하지 않으므로 비교·백업이 선행되어야 한다.
+4. `flyway info`와 다음 마이그레이션을 확인하고, 운영과 같은 상태의 일회용 복제 DB에서 먼저 기동·롤백을 연습한다. 기존 버전 앱과 호환성이 필요한 DDL은 새 앱보다 먼저 적용하는 배포 순서를 정한다.
+
+[백엔드 README](https://github.com/Logssey/service-backend/blob/develop/README.md#2-db-스키마와-마이그레이션)에 버전별 확인점과 명령 예시가 있다. 새 마이그레이션이 추가되면 이 문서의 버전 표기도 함께 갱신한다.
 
 ## CI/CD와 클라우드 연결
 
-백엔드 `Marketplace tests` 워크플로는 `develop`·`main` 대상 PR에서 `./gradlew test marketplaceE2E`를 실행한다. Spring 통합 테스트가 PostgreSQL·Redis Testcontainers를 직접 기동하므로 Actions에 고정 DB를 별도로 만들거나 운영 RDS 접속값을 넣을 필요가 없다. 카카오·SMTP·S3·LLM은 테스트 대역 또는 비활성 경로이며, 이 결과는 실제 클라우드 연결의 증명이 아니다.
+`Marketplace tests` 워크플로는 임시 DB에서 Spring 테스트와 별도 전체 거래 E2E를 실행한다. 이미지 빌드·배포용 `CI/CD` 워크플로는 Spring API 이미지를 ECR/GitOps로 전달한다. 운영 RDS의 기존 스키마에 대한 수동 baseline, 백업 및 복구 계획을 이 테스트가 대신하지 않는다. 새 빈 DB라면 앱 기동 시 Flyway가 적용되지만, 다중 인스턴스 시작·DDL 권한·이전 버전 호환성을 운영 환경에서 확인해야 한다.
 
-이미지 빌드·배포용 `CI/CD` 워크플로는 `main` PR에 대해 테스트 제외 빌드와 ECR 이미지·GitOps 태그 갱신을 한다. **현행 워크플로에 RDS 스키마 적용 단계는 없다.** #43의 마이그레이션 전략을 정한 뒤 배포 전 작업(Job 또는 통제된 시작 절차), 실패 시 중단, 백업·복구를 GitOps/인프라 측에 연결해야 한다. 서비스 기동 시 자동 마이그레이션을 선택한다면 다중 인스턴스 경합, DB 권한, 이전 버전 앱과의 호환성을 먼저 검증한다.
-
-로컬 → RDS·관리형 Redis 전환에서 도메인 API 코드를 바꾸는 것이 기본 전제는 아니다. 런타임의 `SPRING_DATASOURCE_URL`, `SPRING_DATASOURCE_USERNAME`, `SPRING_DATASOURCE_PASSWORD`와 Redis 접속/인증/TLS 설정, 네트워크 접근을 환경별로 주입한다. 채팅 서버 `CHAT_REDIS_URL`은 API와 **같은** Redis를 가리키게 한다. CI에는 임시 DB용 설정만 쓰고, 운영 접속값·`JWT_SECRET`·외부 API 키는 Git이나 공개 문서가 아닌 CI/CD·런타임 시크릿 경로에 둔다. `.env` 파일 자체가 배포 산출물일 필요는 없으며 필요한 것은 해당 값의 안전한 주입이다.
+로컬에서 RDS·관리형 Redis로 옮길 때 도메인 API 코드를 바꾸는 것이 기본 전제는 아니다. 환경별 PostgreSQL JDBC URL·계정·비밀번호 및 Redis 주소·인증·TLS, 네트워크 접근을 런타임에 주입한다. 별도 채팅 서버의 `CHAT_REDIS_URL`은 API와 같은 Redis를 가리킨다. 시크릿은 Git·공개 문서나 프론트 번들에 넣지 않고 CI/CD·런타임 비밀값 전달 경로로 관리한다.
